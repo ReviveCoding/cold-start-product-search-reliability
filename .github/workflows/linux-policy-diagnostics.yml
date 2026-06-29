@@ -29,11 +29,10 @@ jobs:
             pyproject.toml
             constraints/validated.txt
 
-      - name: Print runtime identity
+      - name: Print Python runtime
         shell: bash
         run: |
           python --version
-          python -c "import numpy, pandas, sklearn, xgboost; print({'numpy': numpy.__version__, 'pandas': pandas.__version__, 'sklearn': sklearn.__version__, 'xgboost': xgboost.__version__})"
 
       - name: Install package and integration dependencies
         shell: bash
@@ -42,6 +41,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -c constraints/validated.txt -e ".[dev]"
           python -m pip check
+
+      - name: Print installed dependency identity
+        shell: bash
+        run: |
+          python --version
+          python -c "import numpy, pandas, sklearn, xgboost; print({'numpy': numpy.__version__, 'pandas': pandas.__version__, 'sklearn': sklearn.__version__, 'xgboost': xgboost.__version__})"
 
       - name: Generate Linux smoke artifacts
         shell: bash
