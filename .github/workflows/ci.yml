@@ -1,0 +1,127 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: quality-${{ matrix.os }}-py${{ matrix.python }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.11"
+          - os: ubuntu-latest
+            python: "3.13"
+          - os: windows-latest
+            python: "3.11"
+          - os: windows-latest
+            python: "3.13"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/validated.txt
+      - name: Install package and development dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -c constraints/validated.txt -e ".[dev]"
+      - name: Validate dependency graph
+        run: python -m pip check
+      - name: Lint
+        run: python -m ruff check src tests scripts
+      - name: Unit and contract tests
+        run: python scripts/run_tests.py
+      - name: Byte-compile sources
+        run: python -m compileall -q src scripts
+      - name: Build wheel and source distribution
+        run: python scripts/verify_build_reproducibility.py
+
+  smoke:
+    name: smoke-${{ matrix.os }}
+    timeout-minutes: 20
+    needs: quality
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.11"
+          - os: windows-latest
+            python: "3.11"
+          - os: windows-latest
+            python: "3.13"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/validated.txt
+      - name: Install package and integration dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -c constraints/validated.txt -e ".[dev]"
+      - name: Validate dependency graph
+        run: python -m pip check
+      - name: Clean-checkout integration validation
+        run: python scripts/integration_validation.py --config configs/smoke.yaml
+      - name: Deterministic reproducibility validation
+        run: python scripts/reproducibility_check.py --config configs/smoke.yaml
+
+  docker:
+    name: docker-build
+    timeout-minutes: 20
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - name: Build production image
+        run: docker build --tag cold-start-product-search:ci .
+      - name: Run container readiness smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          container_name="cold-start-product-search-ci"
+
+          docker run --detach --rm             --name "$container_name"             -p 127.0.0.1:8000:8000             cold-start-product-search:ci
+
+          cleanup() {
+            docker logs "$container_name" || true
+            docker stop "$container_name" || true
+          }
+
+          trap cleanup EXIT
+
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error               http://127.0.0.1:8000/ready > /tmp/ready.json; then
+              cat /tmp/ready.json
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          exit 1

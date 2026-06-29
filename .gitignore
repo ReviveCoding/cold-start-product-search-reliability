@@ -1,0 +1,63 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+artifacts/*
+!artifacts/sample/
+!artifacts/sample/**
+data/external/
+*.egg-info/
+.coverage
+htmlcov/
+.mypy_cache/
+.tox/
+.hypothesis/
+
+releases/
+
+
+# >>> Project 9 generated/local-only files >>>
+# Python environments and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Test and coverage output
+.coverage
+coverage.xml
+htmlcov/
+
+# Rebuildable local artifacts; compact evidence remains tracked
+build/
+dist/
+artifacts/smoke/
+
+# Local execution output
+.local-run/
+wheel-smoke-venv/
+logs/
+reports/
+diagnostics/
+error-bundles/
+markers/
+controller.lock.json
+*.stdout.log
+*.stderr.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+# <<< Project 9 generated/local-only files <<<
+
+# One-off local diagnostic output
+coverage_windows_diagnostic.*.txt

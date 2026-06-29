@@ -1,0 +1,8 @@
+{
+    "status":  "PASS",
+    "package_path":  "C:\\\\p9b\\\\p14ws\\\\p11-cli-sync-v1\\\\Lib\\\\site-packages\\\\product_search\\\\__init__.py",
+    "model_version":  "94413ab1f52a",
+    "results":  5,
+    "fallback_used":  false,
+    "raw_stdout":  "{\u0027package_path\u0027: \u0027C:\\\\p9b\\\\p14ws\\\\p11-cli-sync-v1\\\\Lib\\\\site-packages\\\\product_search\\\\__init__.py\u0027, \u0027model_version\u0027: \u002794413ab1f52a\u0027, \u0027results\u0027: 5, \u0027fallback_used\u0027: False}"
+}

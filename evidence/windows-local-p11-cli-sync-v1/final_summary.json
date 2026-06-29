@@ -1,0 +1,17 @@
+{
+    "reports":  "C:\\Users\\bjw-0\\Downloads\\Project_Outputs\\Amazon09_cold-start-product-search-reliability\\.local-run\\cold-start-product-search-reliability\\p11-cli-sync-v1\\reports",
+    "known_external_gates":  [
+                                 "GitHub-hosted workflow execution",
+                                 "Docker build",
+                                 "native Windows CI runner parity",
+                                 "optional GPU/Qwen/FAISS path"
+                             ],
+    "final_status":  "LOCAL_PIPELINE_COMPLETED",
+    "generated_sdist":  "C:\\Users\\bjw-0\\Downloads\\Amazon09_cold-start-product-search-reliability\\dist\\cold_start_product_search_reliability-0.6.0.tar.gz",
+    "wheel_smoke_venv":  "C:\\p9b\\p14ws\\p11-cli-sync-v1",
+    "generated_wheel":  "C:\\Users\\bjw-0\\Downloads\\Amazon09_cold-start-product-search-reliability\\dist\\cold_start_product_search_reliability-0.6.0-py3-none-any.whl",
+    "run_id":  "p11-cli-sync-v1",
+    "logs":  "C:\\Users\\bjw-0\\Downloads\\Project_Outputs\\Amazon09_cold-start-product-search-reliability\\.local-run\\cold-start-product-search-reliability\\p11-cli-sync-v1\\logs",
+    "completed_at_utc":  "2026-06-29T19:54:16.4361708Z",
+    "repo_root":  "C:\\Users\\bjw-0\\Downloads\\Amazon09_cold-start-product-search-reliability"
+}

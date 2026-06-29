@@ -1,0 +1,62 @@
+[
+    {
+        "stage":  "P00_INPUTS",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T14:22:51.4749285-04:00"
+    },
+    {
+        "stage":  "P01_PREFLIGHT",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T14:22:52.3323094-04:00"
+    },
+    {
+        "stage":  "P03_VENV",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T14:22:52.6542999-04:00"
+    },
+    {
+        "stage":  "P04_DEPENDENCIES",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T14:23:13.5213318-04:00"
+    },
+    {
+        "stage":  "P05_GPU_DECISION",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T14:23:13.5693236-04:00"
+    },
+    {
+        "stage":  "P07_TESTS",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:45:53.1355282-04:00"
+    },
+    {
+        "stage":  "P08_SMOKE_PIPELINE",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:48:35.3083728-04:00"
+    },
+    {
+        "stage":  "P09_INTEGRATION_REPLAY",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:49:12.1593370-04:00"
+    },
+    {
+        "stage":  "P11_EVALUATION",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:51:21.9997165-04:00"
+    },
+    {
+        "stage":  "P12_INFERENCE",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:51:24.2424667-04:00"
+    },
+    {
+        "stage":  "P13_SERVICE_SMOKE",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:51:27.8442906-04:00"
+    },
+    {
+        "stage":  "P14_FINALIZE",
+        "status":  "PASSED",
+        "local_timestamp":  "2026-06-29T15:54:16.4641686-04:00"
+    }
+]

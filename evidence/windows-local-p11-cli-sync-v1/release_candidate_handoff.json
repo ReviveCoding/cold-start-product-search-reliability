@@ -1,0 +1,226 @@
+{
+  "build_artifacts": [
+    {
+      "bytes": 85484,
+      "kind": "wheel",
+      "path": "dist/cold_start_product_search_reliability-0.6.0-py3-none-any.whl",
+      "sha256": "9d3a350d0ce3dc19ac4412480d95f234df3ea6469279bb10f00d7b42dd8e0e79"
+    },
+    {
+      "bytes": 129939,
+      "kind": "sdist",
+      "path": "dist/cold_start_product_search_reliability-0.6.0.tar.gz",
+      "sha256": "61a4794c0e4623ee9d6f7cc8b51b3df77d881325070f90dff819757882732bf0"
+    }
+  ],
+  "candidate_version": "0.6.0-candidate.1-windows-local-qualified-p11-cli-sync-v1",
+  "created_at_utc": "2026-06-29T19:02:20.426106Z",
+  "dataset_and_fixtures": {
+    "candidate_gate_data": "Deterministic synthetic/small canonical product-search fixture",
+    "claim_boundary": "Correctness, integration, and offline research evidence only; not production traffic or an online A/B-test result."
+  },
+  "dependency_manifests": [
+    {
+      "bytes": 2117,
+      "kind": "dependency_manifest",
+      "path": "pyproject.toml",
+      "sha256": "242691cbcb77ec165caf7b213e2c32a8d8c5950a01d018cb3592e9e949ed4f25"
+    },
+    {
+      "bytes": 73,
+      "kind": "dependency_manifest",
+      "path": "requirements.txt",
+      "sha256": "56a3ea36f2584976ffc4746a371d44d423515564a485a4f718e536507e202762"
+    },
+    {
+      "bytes": 562,
+      "kind": "validated_constraints",
+      "path": "constraints/validated.txt",
+      "sha256": "c2f95cf27598313677156c70f7c20c5090e841882a4c87db0299fca84f740eca"
+    }
+  ],
+  "evidence_level": {
+    "E0": "Repository and artifact inspection completed.",
+    "E1": "Canonical commands and gates documented.",
+    "E2": "Tests, pipeline, service, replay, and build executed in current workspace.",
+    "E3": "Clean virtual-environment installation and execution completed.",
+    "E4": "Not achieved; exact-commit GitHub-hosted execution remains for qualification.",
+    "maximum_achieved": "E3"
+  },
+  "known_limitations": [
+    "Synthetic/small canonical evidence does not establish production business lift.",
+    "Running workers do not hot-reload current.json; publish and rollback require rolling restart.",
+    "Metrics and admission limits are process-local in multi-worker serving.",
+    "Local release-store atomicity assumes one filesystem and is not distributed consensus.",
+    "Docker daemon, native Windows, hosted GitHub workflows, and GitHub attestations were not executed in this environment.",
+    "GPU/Qwen/FAISS and full public-data scale paths were not candidate-gating validations."
+  ],
+  "metrics": {
+    "baseline": {
+      "cold_ndcg_at_10": 0.4917516967329057,
+      "dynamic_utility": 3670.24,
+      "overall_ndcg_at_10": 0.8878968841182803,
+      "warm_ndcg_at_10": 0.6348397916956806
+    },
+    "final": {
+      "behavior_brier": 0.1311269378197755,
+      "behavior_ece": 0.024053597286542078,
+      "cold_lift_ci_high": 0.017026509441044724,
+      "cold_lift_ci_low": 0.002674331364341492,
+      "cold_ndcg_at_10": 0.4999537382371646,
+      "dynamic_p10_utility_delta": 0.0,
+      "dynamic_utility": 3705.366666666667,
+      "future_behavior_roc_auc": 0.7740443387187366,
+      "ope_dr_abs_error": 0.01138999904810023,
+      "ope_effective_sample_size": 4049.418172035972,
+      "overall_ndcg_at_10": 0.8892631807239469,
+      "serving_fallbacks": 0,
+      "serving_p95_ms": 102.31994998466689,
+      "warm_ndcg_at_10": 0.6289677270423968
+    },
+    "gates": {
+      "failed": [],
+      "passed": 29,
+      "regression_tolerance": "Frozen 29-gate policy in configs/smoke.yaml; no threshold or metric definition was changed during the handoff round.",
+      "release_status": "LAUNCH",
+      "total": 29
+    }
+  },
+  "next_qualification_gates": [
+    "Push the exact candidate snapshot to GitHub and require all hosted CI jobs to pass.",
+    "Run the release workflow and verify GitHub artifact attestations for wheel and sdist.",
+    "Build and health-check the Docker image on an Ubuntu Docker host.",
+    "Run the canonical commands on native Windows Python 3.11.",
+    "Confirm repository protection rules and dependency-review enforcement."
+  ],
+  "package_version": "0.6.0",
+  "project_name": "cold-start-product-search-reliability",
+  "qualification_status": "RELEASE_CANDIDATE_NOT_RELEASE_QUALIFIED",
+  "required_entrypoints": {
+    "api": "PRODUCT_SEARCH_ARTIFACT_DIR=artifacts/smoke python scripts/serve.py",
+    "build": "python scripts/build_release.py --output-dir dist",
+    "integration": "python scripts/integration_validation.py --config configs/smoke.yaml --skip-pipeline",
+    "pipeline": "python scripts/run_full_pipeline.py --config configs/smoke.yaml",
+    "release_publish": "python scripts/manage_release.py publish --source artifacts/smoke --release-root releases",
+    "replay": "python scripts/reproducibility_check.py --config configs/smoke.yaml",
+    "tests": "python scripts/run_tests.py"
+  },
+  "runtime": {
+    "implementation": "CPython",
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "schema_version": "1.0",
+  "source": {
+    "baseline_source_fingerprint": "4897de79e29e5f8abe51db92e82ef6b13470b1494a3649419519d92bb382d71e",
+    "candidate_source_fingerprint": "4897de79e29e5f8abe51db92e82ef6b13470b1494a3649419519d92bb382d71e",
+    "changed_files": [],
+    "diff_checksum_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "dirty_tree": null,
+    "dirty_tree_reason": "Git metadata was not present in the supplied archive; file-level before/after hashes and a deterministic diff checksum are recorded instead.",
+    "source_fingerprint_scope": "Repository files excluding Git metadata, caches, build/dist/artifacts/releases, egg-info, bytecode, and release_candidate_handoff.json to avoid self-reference.",
+    "supplied_source_commit": null,
+    "vcs_metadata_available": false
+  },
+  "supported_environment_claims": [
+    "Python 3.11 through 3.13 by package metadata",
+    "Ubuntu and Windows GitHub Actions workflows are configured",
+    "CPU execution is required and locally validated",
+    "GPU and Qwen/FAISS paths are optional and not candidate-gating"
+  ],
+  "tests_and_command_evidence": [
+    {
+      "command": "python scripts/verify_build_reproducibility.py",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_build_reproducibility",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/integration_validation.py --config configs/smoke.yaml --skip-pipeline",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_integration",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/run_full_pipeline.py --config configs/smoke.yaml",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_pipeline",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/run_policy_sensitivity.py --config configs/smoke.yaml",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_policy_sensitivity",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/build_release.py --output-dir dist",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_release_build",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/reproducibility_check.py --config configs/smoke.yaml",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_reproducibility",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/run_tests.py",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_tests",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "python scripts/uvicorn_validation.py --artifact-dir artifacts/smoke --requests 16 --concurrency 4 --workers 1",
+      "evidence_level": "E2",
+      "exit_code": 0,
+      "name": "windows_uvicorn_single_worker",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    }
+  ],
+  "unresolved_items": [
+    {
+      "item": "Hosted GitHub Actions and artifact attestation execution",
+      "reason": "Requires a pushed exact commit and GitHub-hosted release context.",
+      "severity": "Medium"
+    },
+    {
+      "item": "Docker image build and health check",
+      "reason": "No Docker daemon is available in the current execution environment.",
+      "severity": "Medium"
+    },
+    {
+      "item": "Native Windows runtime execution",
+      "reason": "No PowerShell/Windows runner is available in the current environment.",
+      "severity": "Medium"
+    }
+  ],
+  "validated_dependency_versions": {
+    "PyYAML": "6.0.3",
+    "fastapi": "0.137.1",
+    "joblib": "1.5.3",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "pydantic": "2.13.4",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.17.1",
+    "uvicorn": "0.49.0",
+    "xgboost": "3.2.0"
+  }
+}

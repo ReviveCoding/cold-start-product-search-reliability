@@ -1,0 +1,13 @@
+{
+    "project_name":  "cold-start-product-search-reliability",
+    "run_id":  "p11-cli-sync-v1",
+    "repo_root":  "C:\\Users\\bjw-0\\Downloads\\Amazon09_cold-start-product-search-reliability",
+    "output_root":  "C:\\Users\\bjw-0\\Downloads\\Project_Outputs\\Amazon09_cold-start-product-search-reliability",
+    "current_stage":  "P14_FINALIZE",
+    "stage_status":  "PASSED",
+    "latest_successful_stage":  "P14_FINALIZE",
+    "failed_command":  "",
+    "exit_code":  0,
+    "resume_command":  ".\\Amazon09_run_controller_verified_v12.ps1 -Stage COMPLETED -RunId p11-cli-sync-v1",
+    "timestamp_utc":  "2026-06-29T19:54:16.4431683Z"
+}

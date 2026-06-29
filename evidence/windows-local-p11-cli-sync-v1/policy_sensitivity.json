@@ -1,0 +1,31 @@
+{
+  "bootstrap_samples": 300,
+  "dynamic_days": 10,
+  "dynamic_finalists": [
+    0.0125,
+    0.01275,
+    0.013,
+    0.01325
+  ],
+  "dynamic_replications": 30,
+  "dynamic_scenarios": 3,
+  "dynamic_traffic_per_day": 120,
+  "selected_max_boost": 0.01275,
+  "selected_metrics": {
+    "cold_ndcg_ci_high": 0.01698411035650869,
+    "cold_ndcg_ci_low": 0.0023910190599165087,
+    "cold_ndcg_delta": 0.008202041504258906,
+    "cold_relevant_exposure_delta": 0.010416666666666685,
+    "irrelevant_exposure_delta": 0.0,
+    "max_boost": 0.01275,
+    "mean_scenario_replication_utility_delta": 11.708888888888886,
+    "overall_ndcg_delta": 0.0013662966056666725,
+    "p10_scenario_replication_utility_delta": 0.0,
+    "warm_ndcg_ci_high": -0.001325433087478162,
+    "warm_ndcg_ci_low": -0.011123073194532169,
+    "warm_ndcg_delta": -0.005872064653283826,
+    "worst_scenario_utility_delta": 8.246666666666666
+  },
+  "static_candidates": 12,
+  "status": "PASS"
+}

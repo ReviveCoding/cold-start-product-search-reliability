@@ -1,0 +1,8 @@
+{
+    "status":  "TRACKED_EVIDENCE_CREATED",
+    "evidence_directory":  "evidence/windows-local-p11-cli-sync-v1",
+    "run_id":  "p11-cli-sync-v1",
+    "external_freeze":  "C:\\p9b\\p9freeze\\p11-cli-sync-v1-20260629T170511",
+    "created_at_local":  "2026-06-29T17:05:11.5288126-04:00",
+    "release_handoff_sha256":  "eb070b20e99d178070db18bc90e1ade0c555b1440cc23cc0b293078c688f9bd9"
+}

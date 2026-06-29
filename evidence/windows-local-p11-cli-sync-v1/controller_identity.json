@@ -1,0 +1,12 @@
+{
+    "controller_file":  "Amazon09_run_controller_verified_v18.ps1",
+    "controller_sha256":  "d3c8b225dbea085074fe735da4fe6716bdbb57999c2394bf597828d3c6cfa752",
+    "preflight_file":  "Amazon09_verify_controller_preflight_v14.ps1",
+    "preflight_sha256":  "ca51796db485aae30465e24188cc99abbbabf2609f09062ad90887a356a2a149",
+    "qualified_run_id":  "p11-cli-sync-v1",
+    "runtime_os":  "Windows-11-10.0.26200-SP0",
+    "runtime_python":  "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "candidate_source_fingerprint":  "4897de79e29e5f8abe51db92e82ef6b13470b1494a3649419519d92bb382d71e",
+    "wheel_sha256":  "9d3a350d0ce3dc19ac4412480d95f234df3ea6469279bb10f00d7b42dd8e0e79",
+    "sdist_sha256":  "61a4794c0e4623ee9d6f7cc8b51b3df77d881325070f90dff819757882732bf0"
+}

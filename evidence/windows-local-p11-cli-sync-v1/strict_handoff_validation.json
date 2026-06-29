@@ -1,0 +1,11 @@
+{
+    "candidate_version":  "0.6.0-candidate.1-windows-local-qualified-p11-cli-sync-v1",
+    "command_evidence":  8,
+    "handoff_sha256":  "eb070b20e99d178070db18bc90e1ade0c555b1440cc23cc0b293078c688f9bd9",
+    "missing_build_artifacts":  [
+
+                                ],
+    "status":  "PASS",
+    "strict_build_artifacts_verified":  true,
+    "verified_records":  5
+}
