@@ -28,7 +28,7 @@ RUN useradd --create-home --uid 10001 appuser
 # Reuse the exact tested runtime environment instead of resolving dependencies a second time.
 # This preserves the package-version contract recorded in the immutable artifact manifest.
 COPY --from=builder /usr/local /usr/local
-COPY --from=builder /app/artifacts/smoke ./artifacts/smoke
+COPY --chown=appuser:appuser --from=builder /app/artifacts/smoke ./artifacts/smoke
 USER appuser
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
