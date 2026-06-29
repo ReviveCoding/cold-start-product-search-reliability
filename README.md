@@ -1,5 +1,7 @@
 # Reliability-Aware Cold-Start Product Search v0.6.0
 
+[![CI](https://github.com/ReviveCoding/cold-start-product-search-reliability/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/ReviveCoding/cold-start-product-search-reliability/actions/workflows/ci.yml?query=branch%3Amain)
+
 An end-to-end research and production-style framework for **query-conditioned substitute behavioral transfer**, strict temporal retrieval, bounded cold-start intervention, offline experimentation validity, immutable release publication, and failure-aware serving.
 
 ## What problem it solves
@@ -18,24 +20,9 @@ The framework implements **Q-RSBT** (Query-Conditioned Reliable Substitute Behav
 
 ## End-to-end architecture
 
-```text
-canonical or synthetic temporal bundle
-  -> schema/key/time/leakage validation
-  -> train / calibration / test / untouched future blocks
-  -> block-local BM25 + dense retrieval
-  -> frozen release catalog
-  -> LambdaMART semantic ranker
-  -> calibrated behavioral champion
-  -> global Q-RSBT substitute transfer
-  -> bounded coverage-overreach gate
-  -> static + future + multi-replication dynamic evaluation
-  -> known-propensity OPE laboratory
-  -> full serving-path benchmark
-  -> 29-gate release decision
-  -> hash-verified runtime bundle
-  -> immutable generation publish / rollback
-  -> bounded FastAPI/Uvicorn serving
-```
+![Q-RSBT architecture overview](docs/figures/qrsbt_pipeline.svg)
+
+The implementation combines time-aware retrieval, semantic ranking, calibrated behavioral evidence, query-conditioned substitute transfer, bounded promotion, and release-gated serving. Text-first implementation details remain in [docs/architecture.md](docs/architecture.md).
 
 ## Core capabilities
 
@@ -75,29 +62,30 @@ canonical or synthetic temporal bundle
 
 ## Validated smoke evidence
 
-The default smoke profile is deterministic synthetic/small-canonical evidence, not production traffic or a live A/B test.
+![Frozen qualification evidence snapshot](docs/figures/frozen_evidence_snapshot.svg)
+
+The default smoke profile is deterministic synthetic/small-canonical offline evidence, not production traffic or a live A/B test. The tracked result below is the frozen Windows local qualification run `p11-cli-sync-v1`.
 
 | Evidence | Result |
 |---|---:|
+| Qualification status | **CONDITIONALLY QUALIFIED** |
+| Final controller stage | **P14_FINALIZE PASS** |
 | Release status | **LAUNCH** |
 | Release gates | **29 / 29** |
-| Tests | **113 passed** |
-| Isolated test modules | **26** |
-| Core coverage | **73%** |
-| Overall NDCG@10 | 0.89104 -> **0.89226** |
-| Cold NDCG@10 | 0.45735 -> **0.46931** |
-| Cold lift 95% CI | **[0.00577, 0.02028]** |
-| Calibrated Brier / ECE | **0.13112 / 0.02499** |
-| Future ROC-AUC / ECE | **0.77405 / 0.03346** |
-| Dynamic utility | 3,450.32 -> **3,534.44** |
-| Lower-tail dynamic utility delta | **+6.20** |
-| DR absolute error / ESS | **0.01139 / 4,049** |
+| Cold NDCG@10 lift | **+0.82 pp** |
+| Cold lift 95% CI | **[+0.24 pp, +1.70 pp]** |
+| Overall NDCG@10 delta | **+0.14 pp** |
+| Warm NDCG@10 delta | **-0.59 pp**, bounded by frozen guardrails |
+| Irrelevant exposure delta | **+0.00 pp** |
+| Dynamic worst-case utility delta | **+8.25** |
+| Dynamic p10 utility delta | **0.00** |
+| Future behavior ROC-AUC / Brier / ECE | **0.774 / 0.138 / 0.034** |
+| Serving p95 latency | **72.3 ms** |
 | Serving fallback count | **0** |
-| Independent replay | **16 byte-identical artifacts** |
-| Atomic publish / rollback | **PASS** |
-| Real Uvicorn | **single-worker, multi-worker, and overload paths PASS** |
+| Strict handoff validation | **PASS** |
+| Installed-wheel smoke | **PASS: 5 results, fallback false** |
 
-Warm NDCG decreases slightly and is disclosed explicitly; it remains within frozen point and confidence-interval non-inferiority limits.
+Warm-item ranking is a disclosed bounded trade-off, not a universal ranking improvement claim. The release contract accepted this configuration because overall quality, irrelevant-exposure safety, dynamic utility, calibration, OPE, serving, and artifact-integrity gates jointly passed. See [tracked machine-readable evidence](evidence/windows-local-p11-cli-sync-v1/) and [results interpretation](docs/results.md).
 
 ## Quick start
 
@@ -244,6 +232,6 @@ Hosted Actions and attestations require an actual GitHub push/release and are no
 
 ## Claim boundaries
 
-This repository does not claim proprietary traffic, real launch timestamps where only first-observed time exists, causal production sales lift, a live online A/B test, executed full KuaiSearch/ESCI benchmarks, Qwen3 GPU tuning, million-item FAISS profiling, a local Docker build, or a hosted GitHub release attestation.
+This repository does not claim proprietary traffic, real launch timestamps where only first-observed time exists, causal production sales lift, a live online A/B test, executed full KuaiSearch/ESCI benchmarks, Qwen3 GPU tuning, million-item FAISS profiling, a completed GitHub-hosted CI run, Docker runtime validation, or a hosted GitHub release attestation.
 
 See `IMPROVEMENT_AUDIT.md`, `FINAL_VALIDATION_REPORT.md`, and `PROJECT_IMPLEMENTATION_SUMMARY.md` for the full evidence trail.

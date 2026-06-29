@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Frozen local qualification evidence snapshot</title>
+  <desc id="desc">Cold NDCG improves by +0.82 pp with a positive confidence interval, while overall quality remains positive, warm quality is a bounded trade-off, irrelevant exposure is unchanged, and all 29 release gates pass.</desc>
+  <rect width="1200" height="760" rx="28" fill="#F7FAFC"/>
+  <rect x="36" y="32" width="1128" height="696" rx="22" fill="#FFFFFF" stroke="#D9E3EC"/>
+
+  <text x="72" y="86" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#162033" text-anchor="start">Frozen qualification evidence</text>
+  <text x="72" y="116" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#526579" text-anchor="start">Windows local run: p11-cli-sync-v1 • deterministic synthetic / small-canonical offline evaluation</text>
+
+  <rect x="876" y="64" width="224" height="58" rx="29" fill="#EAF8F0"/>
+  <text x="988" y="99" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#20764D" text-anchor="middle">29 / 29 gates PASS</text>
+
+  <rect x="72" y="162" width="338" height="144" rx="18" fill="#EFF6FF" stroke="#B8D4F1"/>
+  <text x="98" y="206" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1D5FA7" text-anchor="start">Cold NDCG@10 lift</text>
+  <text x="98" y="258" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#114B86" text-anchor="start">+0.82 pp</text>
+  <text x="98" y="286" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#526579" text-anchor="start">95% CI [+0.24 pp, +1.70 pp]</text>
+
+  <rect x="430" y="162" width="318" height="144" rx="18" fill="#F1F8F5" stroke="#BCE2CD"/>
+  <text x="456" y="206" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#20764D" text-anchor="start">Exposure safety</text>
+  <text x="456" y="258" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#20764D" text-anchor="start">+0.00 pp</text>
+  <text x="456" y="286" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#526579" text-anchor="start">irrelevant exposure delta</text>
+
+  <rect x="768" y="162" width="332" height="144" rx="18" fill="#F6F1FC" stroke="#D8C3EE"/>
+  <text x="794" y="206" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#69419A" text-anchor="start">Release integrity</text>
+  <text x="794" y="252" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#69419A" text-anchor="start">Strict handoff PASS</text>
+  <text x="794" y="280" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#526579" text-anchor="start">installed wheel: 5 results, no fallback</text>
+
+  <text x="72" y="360" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#162033" text-anchor="start">Ranking trade-off snapshot</text>
+  <text x="72" y="388" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#526579" text-anchor="start">Percentage-point deltas against the frozen baseline. Zero is the vertical center line.</text>
+
+  <line x1="424" y1="426" x2="424" y2="620" stroke="#93A6B8" stroke-width="2"/>
+  <text x="424" y="414" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#526579" text-anchor="middle">0.00 pp</text>
+
+  <text x="92" y="466" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#162033" text-anchor="start">Cold NDCG@10</text>
+  <rect x="424" y="442" width="123" height="30" rx="8" fill="#2F80ED"/>
+  <text x="561" y="465" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1D5FA7" text-anchor="start">+0.82 pp</text>
+
+  <text x="92" y="522" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#162033" text-anchor="start">Overall NDCG@10</text>
+  <rect x="424" y="498" width="20" height="30" rx="8" fill="#5B8CC0"/>
+  <text x="458" y="521" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#315E8C" text-anchor="start">+0.14 pp</text>
+
+  <text x="92" y="578" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#162033" text-anchor="start">Warm NDCG@10</text>
+  <rect x="336" y="554" width="88" height="30" rx="8" fill="#E58A22"/>
+  <text x="322" y="577" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#A55C0B" text-anchor="end">-0.59 pp</text>
+
+  <text x="92" y="634" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#162033" text-anchor="start">Irrelevant exposure</text>
+  <circle cx="424" cy="620" r="9" fill="#2CA36A"/>
+  <text x="442" y="633" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#20764D" text-anchor="start">+0.00 pp</text>
+
+  <rect x="72" y="664" width="1028" height="38" rx="12" fill="#172235"/>
+  <text x="586" y="689" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Dynamic worst-case utility +824.67 pp equivalent units • p10 utility 0.00 • ROC-AUC 0.774 • p95 latency 72.3 ms</text>
+</svg>
