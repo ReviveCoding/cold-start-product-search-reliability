@@ -87,6 +87,14 @@ jobs:
         run: python scripts/integration_validation.py --config configs/smoke.yaml
       - name: Deterministic reproducibility validation
         run: python scripts/reproducibility_check.py --config configs/smoke.yaml
+      - name: Upload smoke parity evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: smoke-evidence-${{ matrix.os }}-py${{ matrix.python }}
+          path: artifacts/smoke
+          if-no-files-found: warn
+          retention-days: 7
 
   docker:
     name: docker-build

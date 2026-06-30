@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import pytest
 
 from product_search.data.synthetic import generate_synthetic_bundle
@@ -62,7 +63,9 @@ def test_relation_probabilities_sum_to_one(transferred):
         behavior.product_id.head(8).astype(int).tolist(),
         query_category=str(row.query_category) if "query_category" in behavior else "unknown",
     )
-    assert np.allclose(probabilities[["exact", "substitute", "complement", "irrelevant"]].sum(axis=1), 1.0)
+    assert np.allclose(
+        probabilities[["exact", "substitute", "complement", "irrelevant"]].sum(axis=1), 1.0
+    )
 
 
 def test_relation_model_ignores_synthetic_oracle_target():
@@ -74,11 +77,14 @@ def test_relation_model_ignores_synthetic_oracle_target():
         impressions_per_query_time=8,
     )
     dense = DenseRetriever(dimension=16).fit(bundle.products)
-    anchor_ids = {int(qid): int(pid) for qid, pid in zip(
-        bundle.queries.query_id,
-        bundle.queries.target_product_id,
-        strict=True,
-    )}
+    anchor_ids = {
+        int(qid): int(pid)
+        for qid, pid in zip(
+            bundle.queries.query_id,
+            bundle.queries.target_product_id,
+            strict=True,
+        )
+    }
     original = QRSBT(QRSBTConfig(neighbors=4, min_support=1)).fit(
         bundle.products,
         bundle.queries,
@@ -88,9 +94,7 @@ def test_relation_model_ignores_synthetic_oracle_target():
         query_anchor_ids=anchor_ids,
     )
     changed_queries = bundle.queries.copy()
-    changed_queries["target_product_id"] = np.roll(
-        changed_queries.target_product_id.to_numpy(), 1
-    )
+    changed_queries["target_product_id"] = np.roll(changed_queries.target_product_id.to_numpy(), 1)
     changed = QRSBT(QRSBTConfig(neighbors=4, min_support=1)).fit(
         bundle.products,
         changed_queries,
@@ -115,7 +119,10 @@ def test_relation_model_ignores_synthetic_oracle_target():
         query_intent=str(query.intent),
         anchor_product_id=anchor_ids[int(query.query_id)],
     )
-    assert np.allclose(left[["exact", "substitute", "complement", "irrelevant"]], right[["exact", "substitute", "complement", "irrelevant"]])
+    assert np.allclose(
+        left[["exact", "substitute", "complement", "irrelevant"]],
+        right[["exact", "substitute", "complement", "irrelevant"]],
+    )
 
 
 def test_global_reference_makes_transfer_candidate_subset_invariant():
@@ -174,7 +181,10 @@ def test_global_reference_makes_transfer_candidate_subset_invariant():
     ]
     for column in columns[:-1]:
         assert np.allclose(full.loc[shared, column], subset.loc[shared, column])
-    assert full.loc[shared, "qrsbt_neighbors"].tolist() == subset.loc[shared, "qrsbt_neighbors"].tolist()
+    assert (
+        full.loc[shared, "qrsbt_neighbors"].tolist()
+        == subset.loc[shared, "qrsbt_neighbors"].tolist()
+    )
 
 
 def test_relation_cache_is_thread_safe_and_serialization_drops_runtime_cache(transferred, tmp_path):
@@ -213,3 +223,49 @@ def test_relation_cache_is_thread_safe_and_serialization_drops_runtime_cache(tra
     assert not restored._relation_probability_cache_
     restored._relation_lookup(context, set(ids))
     assert restored._relation_probability_cache_
+
+
+def _tied_neighbor_graph(
+    product_order: list[int],
+) -> dict[int, tuple[int, ...]]:
+    model = QRSBT(
+        QRSBTConfig(
+            neighbors=2,
+            neighbor_candidates_multiplier=1,
+        )
+    )
+
+    model.products_ = pd.DataFrame(
+        {"category": ["audio"] * len(product_order)},
+        index=pd.Index(product_order, name="product_id"),
+    )
+
+    model.product_ids_ = np.asarray(
+        product_order,
+        dtype=int,
+    )
+
+    model.product_id_to_idx_ = {
+        int(product_id): index for index, product_id in enumerate(product_order)
+    }
+
+    model.embeddings_ = np.tile(
+        np.asarray([[1.0, 0.0]], dtype=np.float32),
+        (len(product_order), 1),
+    )
+
+    model._fit_neighbor_graph(None)
+
+    return {
+        int(product_id): tuple(int(neighbor_id) for neighbor_id in neighbor_ids)
+        for product_id, (neighbor_ids, _) in model.neighbor_graph_.items()
+    }
+
+
+def test_neighbor_ties_are_catalog_order_invariant():
+    left = _tied_neighbor_graph([40, 10, 30, 20])
+    right = _tied_neighbor_graph([20, 30, 40, 10])
+
+    assert left == right
+    assert left[40] == (10, 20)
+    assert left[10] == (20, 30)

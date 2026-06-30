@@ -100,9 +100,13 @@ class QRSBT:
             int(query_id): int(product_id)
             for query_id, product_id in (query_anchor_ids or {}).items()
         }
-        unknown_anchors = set(self.query_anchor_ids_.values()) - set(self.products_.index.astype(int))
+        unknown_anchors = set(self.query_anchor_ids_.values()) - set(
+            self.products_.index.astype(int)
+        )
         if unknown_anchors:
-            raise ValueError(f"Query anchors reference unknown products: {sorted(unknown_anchors)[:10]}")
+            raise ValueError(
+                f"Query anchors reference unknown products: {sorted(unknown_anchors)[:10]}"
+            )
 
         self._fit_neighbor_graph(precomputed_neighbors)
 
@@ -132,9 +136,7 @@ class QRSBT:
             ]
         ).fit(x, y)
         self.relation_classes_ = list(self.relation_model_.named_steps["model"].classes_)
-        self.relation_validation_ = self._evaluate_relation_model(
-            relevance, validation_query_ids
-        )
+        self.relation_validation_ = self._evaluate_relation_model(relevance, validation_query_ids)
         self.clear_runtime_cache()
         self.relation_feature_contract_ = (
             "query_title_overlap",
@@ -205,7 +207,12 @@ class QRSBT:
                     if keep <= 0:
                         selected = np.array([], dtype=int)
                     else:
-                        selected = np.argpartition(-similarities[local_row], keep - 1)[:keep]
+                        selected = np.lexsort(
+                            (
+                                category_ids,
+                                -similarities[local_row],
+                            )
+                        )[:keep]
                         selected = selected[
                             np.lexsort(
                                 (
@@ -366,9 +373,7 @@ class QRSBT:
             str(context["query_text"]),
             str(context["query_category"]),
             str(context["query_intent"]),
-            int(context["anchor_product_id"])
-            if context["anchor_product_id"] is not None
-            else None,
+            int(context["anchor_product_id"]) if context["anchor_product_id"] is not None else None,
         )
         requested = sorted(map(int, product_ids))
         # Synchronous FastAPI handlers may run concurrently.  Keep OrderedDict mutations inside
@@ -484,7 +489,8 @@ class QRSBT:
             dict[int, dict[int, tuple[float, float, float]]],
             dict[tuple[int, str], tuple[float, float]],
             dict[int, tuple[float, float]],
-        ] | None = None,
+        ]
+        | None = None,
     ) -> pd.DataFrame:
         required = {
             "time_block",
@@ -521,9 +527,7 @@ class QRSBT:
             "qrsbt_transfer_source": ["none"] * n,
         }
 
-        for (time_block, query_id), group in base.groupby(
-            ["time_block", "query_id"], sort=False
-        ):
+        for (time_block, query_id), group in base.groupby(["time_block", "query_id"], sort=False):
             time_block = int(time_block)
             query_id = int(query_id)
             if time_block not in reference_by_time:
@@ -565,9 +569,7 @@ class QRSBT:
                 )
                 selected_rows: list[tuple[int, float, float, float]] = []
                 target_attribute = self.attribute_map_[pid]
-                for neighbor_id, similarity in zip(
-                    neighbor_ids, neighbor_similarity, strict=True
-                ):
+                for neighbor_id, similarity in zip(neighbor_ids, neighbor_similarity, strict=True):
                     neighbor_id = int(neighbor_id)
                     behavior = reference_values.get(neighbor_id)
                     if behavior is None or behavior[0] <= 0:
@@ -583,7 +585,9 @@ class QRSBT:
                         * (0.20 + 0.80 * pair_compatible)
                     )
                     if weight > 0:
-                        selected_rows.append((neighbor_id, weight, relation_utility, pair_compatible))
+                        selected_rows.append(
+                            (neighbor_id, weight, relation_utility, pair_compatible)
+                        )
                 selected_rows.sort(key=lambda item: (-item[1], item[0]))
                 selected_rows = selected_rows[: self.config.neighbors]
                 support = len(selected_rows)
@@ -606,9 +610,7 @@ class QRSBT:
                 )
                 neighbor_ctr = float(np.sum(normalized * ctr))
                 neighbor_purchase = float(np.sum(normalized * purchase))
-                dispersion = float(
-                    np.sqrt(np.sum(normalized * (ctr - neighbor_ctr) ** 2))
-                )
+                dispersion = float(np.sqrt(np.sum(normalized * (ctr - neighbor_ctr) ** 2)))
                 relation_quality = float(
                     np.sum(normalized * np.asarray([item[2] for item in selected_rows]))
                 )
@@ -628,8 +630,7 @@ class QRSBT:
                 )
                 transfer_ctr = confidence * neighbor_ctr + (1.0 - confidence) * category_ctr
                 transfer_purchase = (
-                    confidence * neighbor_purchase
-                    + (1.0 - confidence) * category_purchase
+                    confidence * neighbor_purchase + (1.0 - confidence) * category_purchase
                 )
                 outputs["qrsbt_ctr"][global_i] = transfer_ctr
                 outputs["qrsbt_purchase"][global_i] = transfer_purchase
@@ -662,7 +663,9 @@ class QRSBT:
         known = set(self.products_.index.astype(int))
         unknown = set(reference.product_id.astype(int)) - known
         if unknown:
-            raise ValueError(f"Behavior reference contains unknown products: {sorted(unknown)[:10]}")
+            raise ValueError(
+                f"Behavior reference contains unknown products: {sorted(unknown)[:10]}"
+            )
         return reference
 
     def _resolve_query_context(self, group: pd.DataFrame, query_id: int) -> dict[str, object]:
@@ -685,9 +688,7 @@ class QRSBT:
             "query_anchor_product_id" in group.columns
             and group.query_anchor_product_id.notna().any()
         ):
-            context["anchor_product_id"] = int(
-                group.query_anchor_product_id.dropna().iloc[0]
-            )
+            context["anchor_product_id"] = int(group.query_anchor_product_id.dropna().iloc[0])
         if context["anchor_product_id"] is None:
             score = group.get("retrieval_score")
             if score is None:
