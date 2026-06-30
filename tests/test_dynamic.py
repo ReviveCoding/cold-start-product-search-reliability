@@ -1,6 +1,10 @@
+import numpy as np
 import pandas as pd
 
-from product_search.simulation.dynamic import run_dynamic_simulation
+from product_search.simulation.dynamic import (
+    _top_indices,
+    run_dynamic_simulation,
+)
 
 
 def _frame():
@@ -38,9 +42,50 @@ def test_dynamic_simulation_is_seed_deterministic():
 
 
 def test_dynamic_multi_replication_summary_uses_scenario_means_and_tail_metric():
-    result = run_dynamic_simulation(
-        _frame(), days=2, traffic_per_day=20, seed=9, replications=3
-    )
+    result = run_dynamic_simulation(_frame(), days=2, traffic_per_day=20, seed=9, replications=3)
     assert result.summary["replications"] == 3.0
     assert "p10_scenario_replication_utility_delta" in result.summary
     assert set(result.daily["replication"]) == {0, 1, 2}
+
+
+def test_top_indices_break_cutoff_ties_by_product_id():
+    scores = np.asarray([0.70, 0.70, 0.70, 0.60])
+    product_ids = np.asarray([30, 10, 20, 40])
+
+    indices = _top_indices(
+        scores,
+        product_ids,
+        k=2,
+    )
+
+    assert product_ids[indices].tolist() == [10, 20]
+
+
+def test_dynamic_input_order_is_invariant():
+    baseline = _frame()
+
+    shuffled = baseline.sample(frac=1.0, random_state=91).reset_index(drop=True)
+
+    left = run_dynamic_simulation(
+        baseline,
+        days=3,
+        traffic_per_day=24,
+        seed=31,
+        replications=3,
+    )
+
+    right = run_dynamic_simulation(
+        shuffled,
+        days=3,
+        traffic_per_day=24,
+        seed=31,
+        replications=3,
+    )
+
+    assert left.summary == right.summary
+
+    pd.testing.assert_frame_equal(
+        left.daily,
+        right.daily,
+        check_exact=True,
+    )

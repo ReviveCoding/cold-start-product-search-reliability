@@ -40,17 +40,26 @@ class _QueryArrays:
     zero_history: np.ndarray
 
 
-def _top_indices(score: np.ndarray, product_ids: np.ndarray, k: int = 10) -> np.ndarray:
+def _top_indices(
+    score: np.ndarray,
+    product_ids: np.ndarray,
+    k: int = 10,
+) -> np.ndarray:
+    """Return top-k with a complete deterministic ordering."""
+
     count = min(k, len(score))
+
     if count == 0:
         return np.empty(0, dtype=int)
-    if count == len(score):
-        candidates = np.arange(len(score))
-    else:
-        candidates = np.argpartition(-score, count - 1)[:count]
-    # Deterministic tie-breaking matches offline ranking: descending score, ascending product id.
-    order = np.lexsort((product_ids[candidates], -score[candidates]))
-    return candidates[order]
+
+    order = np.lexsort(
+        (
+            product_ids.astype(int),
+            -score,
+        )
+    )
+
+    return order[:count]
 
 
 def run_dynamic_simulation(
@@ -80,10 +89,15 @@ def run_dynamic_simulation(
     frame = ranked_frame.copy()
     if frame.duplicated(["query_id", "product_id"]).any():
         raise ValueError("Dynamic simulation requires unique query-product candidates")
+
+    frame = frame.sort_values(
+        ["query_id", "product_id"],
+        kind="mergesort",
+    ).reset_index(drop=True)
     product_ids = np.sort(frame.product_id.astype(int).unique())
     product_to_state = {int(pid): idx for idx, pid in enumerate(product_ids)}
     query_arrays: dict[int, _QueryArrays] = {}
-    for query_id, group in frame.groupby("query_id", sort=False):
+    for query_id, group in frame.groupby("query_id", sort=True):
         pids = group.product_id.to_numpy(dtype=int)
         query_arrays[int(query_id)] = _QueryArrays(
             state_indices=np.asarray([product_to_state[int(pid)] for pid in pids], dtype=int),
@@ -95,7 +109,7 @@ def run_dynamic_simulation(
             zero_history=group.zero_history.to_numpy(dtype=int),
         )
 
-    query_ids = np.asarray(list(query_arrays), dtype=int)
+    query_ids = np.asarray(sorted(query_arrays), dtype=int)
     policies = {"base": "base_score", "qrsbt_gate": "final_score"}
     rows: list[dict] = []
     for replication in range(replications):
@@ -107,9 +121,7 @@ def run_dynamic_simulation(
         )
         click_uniform = rng.random((len(scenarios), days, traffic_per_day, 10))
         for scenario_index, scenario in enumerate(scenarios):
-            product_state = {
-                policy: np.zeros(len(product_ids), dtype=float) for policy in policies
-            }
+            product_state = {policy: np.zeros(len(product_ids), dtype=float) for policy in policies}
             for day in range(days):
                 for policy, score_name in policies.items():
                     relevant_discovery = 0
@@ -118,9 +130,7 @@ def run_dynamic_simulation(
                     cold_to_warm = 0
                     clicks = 0
                     state = product_state[policy]
-                    for event_index, query_id in enumerate(
-                        traffic_queries[scenario_index, day]
-                    ):
+                    for event_index, query_id in enumerate(traffic_queries[scenario_index, day]):
                         query = query_arrays[int(query_id)]
                         static_score = getattr(query, score_name)
                         popularity = state[query.state_indices]
@@ -146,9 +156,7 @@ def run_dynamic_simulation(
                         )
                         click_probability = 1.0 / (1.0 + np.exp(-click_logit))
                         clicked = (
-                            click_uniform[
-                                scenario_index, day, event_index, : len(top_local)
-                            ]
+                            click_uniform[scenario_index, day, event_index, : len(top_local)]
                             < click_probability
                         )
                         before = state[top_state_indices].copy()
@@ -162,26 +170,16 @@ def run_dynamic_simulation(
                         irrelevant_exposure += int((top_relevance == 0).sum())
                         false_warmup += int(
                             (
-                                (top_cold == 1)
-                                & (top_relevance == 0)
-                                & (before < 3)
-                                & (after >= 3)
+                                (top_cold == 1) & (top_relevance == 0) & (before < 3) & (after >= 3)
                             ).sum()
                         )
                         cold_to_warm += int(
                             (
-                                (top_cold == 1)
-                                & (top_relevance >= 2)
-                                & (before < 3)
-                                & (after >= 3)
+                                (top_cold == 1) & (top_relevance >= 2) & (before < 3) & (after >= 3)
                             ).sum()
                         )
 
-                    utility = (
-                        relevant_discovery
-                        - 0.20 * irrelevant_exposure
-                        - 2.0 * false_warmup
-                    )
+                    utility = relevant_discovery - 0.20 * irrelevant_exposure - 2.0 * false_warmup
                     rows.append(
                         {
                             "replication": replication,
@@ -202,9 +200,9 @@ def run_dynamic_simulation(
         numeric_only=True
     )
     aggregate = replication_policy.groupby("policy").mean(numeric_only=True)
-    scenario_replication = daily.groupby(
-        ["replication", "scenario", "policy"], as_index=False
-    ).sum(numeric_only=True)
+    scenario_replication = daily.groupby(["replication", "scenario", "policy"], as_index=False).sum(
+        numeric_only=True
+    )
     deltas: list[dict[str, float | str | int]] = []
     for (replication, scenario_name), group in scenario_replication.groupby(
         ["replication", "scenario"], sort=False
@@ -223,8 +221,7 @@ def run_dynamic_simulation(
                     - view.loc["base", "irrelevant_exposure"]
                 ),
                 "utility_delta": float(
-                    view.loc["qrsbt_gate", "utility"]
-                    - view.loc["base", "utility"]
+                    view.loc["qrsbt_gate", "utility"] - view.loc["base", "utility"]
                 ),
             }
         )
@@ -232,13 +229,9 @@ def run_dynamic_simulation(
     scenario_means = delta_frame.groupby("scenario").mean(numeric_only=True)
     summary = {
         "base_relevant_discovery": float(aggregate.loc["base", "relevant_discovery"]),
-        "qrsbt_relevant_discovery": float(
-            aggregate.loc["qrsbt_gate", "relevant_discovery"]
-        ),
+        "qrsbt_relevant_discovery": float(aggregate.loc["qrsbt_gate", "relevant_discovery"]),
         "base_irrelevant_exposure": float(aggregate.loc["base", "irrelevant_exposure"]),
-        "qrsbt_irrelevant_exposure": float(
-            aggregate.loc["qrsbt_gate", "irrelevant_exposure"]
-        ),
+        "qrsbt_irrelevant_exposure": float(aggregate.loc["qrsbt_gate", "irrelevant_exposure"]),
         "base_false_warmup": float(aggregate.loc["base", "false_warmup"]),
         "qrsbt_false_warmup": float(aggregate.loc["qrsbt_gate", "false_warmup"]),
         "base_cold_to_warm": float(aggregate.loc["base", "cold_to_warm"]),
@@ -248,9 +241,7 @@ def run_dynamic_simulation(
         "worst_scenario_relevant_delta": float(scenario_means.relevant_delta.min()),
         "worst_scenario_irrelevant_delta": float(scenario_means.irrelevant_delta.max()),
         "worst_scenario_utility_delta": float(scenario_means.utility_delta.min()),
-        "p10_scenario_replication_utility_delta": float(
-            delta_frame.utility_delta.quantile(0.10)
-        ),
+        "p10_scenario_replication_utility_delta": float(delta_frame.utility_delta.quantile(0.10)),
         "mean_scenario_replication_utility_delta": float(delta_frame.utility_delta.mean()),
         "scenario_count": float(len(scenarios)),
         "replications": float(replications),

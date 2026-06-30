@@ -144,3 +144,93 @@ def test_boundary_entry_only_does_not_reorder_existing_top_k_cold_item():
 
     assert cold.base_rank == 1
     assert cold.qrsbt_boost == 0
+
+
+def _tied_boundary_entry_frame() -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "query_id": [1, 1, 1],
+            "product_id": [10, 20, 30],
+            "dense_score": [0.90, 0.90, 0.90],
+            "semantic_rank_score": [0.50, 0.50, 0.50],
+            "behavior_score": [0.50, 0.50, 0.50],
+            "zero_history": [0, 1, 0],
+            "qrsbt_confidence": [0.00, 1.00, 0.00],
+            "qrsbt_support": [0, 8, 0],
+            "qrsbt_compatibility": [0.00, 1.00, 0.00],
+            "qrsbt_irrelevant_probability": [0.00, 0.00, 0.00],
+            "qrsbt_ctr_lower": [0.00, 10.00, 0.00],
+            "qrsbt_purchase_lower": [0.00, 10.00, 0.00],
+        }
+    )
+
+
+def test_boundary_entry_ties_are_input_order_invariant():
+    config = GateConfig(
+        top_k=1,
+        promotion_window=1,
+        max_boost=0.75,
+        promotion_mode="boundary_entry_only",
+    )
+
+    baseline = apply_coverage_overreach_gate(
+        _tied_boundary_entry_frame(),
+        config,
+    )
+
+    shuffled = apply_coverage_overreach_gate(
+        _tied_boundary_entry_frame().sample(frac=1.0, random_state=73).reset_index(drop=True),
+        config,
+    )
+
+    columns = [
+        "product_id",
+        "base_rank",
+        "qrsbt_boost",
+        "final_score",
+        "gate_action",
+        "gate_reason",
+        "boundary_entry_rejected",
+    ]
+
+    baseline_view = baseline.loc[:, columns].sort_values("product_id").reset_index(drop=True)
+
+    shuffled_view = shuffled.loc[:, columns].sort_values("product_id").reset_index(drop=True)
+
+    pd.testing.assert_frame_equal(
+        baseline_view,
+        shuffled_view,
+        check_dtype=False,
+    )
+
+    cold = baseline.loc[baseline["product_id"].eq(20)].iloc[0]
+
+    assert int(cold["base_rank"]) == 2
+    assert cold["qrsbt_boost"] > 0
+    assert cold["gate_action"] == "BOOST"
+
+
+def test_numeric_product_id_tie_break_matches_dynamic_order():
+    frame = _tied_boundary_entry_frame().copy()
+    frame["product_id"] = [10, 2, 30]
+
+    config = GateConfig(
+        top_k=1,
+        promotion_window=1,
+        max_boost=0.75,
+        promotion_mode="boundary_entry_only",
+    )
+
+    result = apply_coverage_overreach_gate(
+        frame,
+        config,
+    )
+
+    ranks = {
+        int(row.product_id): int(row.base_rank)
+        for row in result[["product_id", "base_rank"]].itertuples(index=False)
+    }
+
+    assert ranks[2] == 1
+    assert ranks[10] == 2
+    assert ranks[30] == 3

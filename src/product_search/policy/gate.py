@@ -39,6 +39,81 @@ def compose_base_score(frame: pd.DataFrame, config: GateConfig) -> pd.DataFrame:
     return result
 
 
+def _canonical_descending_rank(
+    frame: pd.DataFrame,
+    score_column: str,
+) -> pd.Series:
+    """Return one-based query ranks with an explicit stable tie-break."""
+
+    required = {"query_id", score_column}
+    missing = sorted(required - set(frame.columns))
+
+    if missing:
+        raise ValueError(f"Canonical ranking missing columns: {missing}")
+
+    working = pd.DataFrame(
+        {
+            "query_id": frame["query_id"].to_numpy(),
+            "_score": frame[score_column].to_numpy(),
+            "_row_position": np.arange(
+                len(frame),
+                dtype=np.int64,
+            ),
+        },
+        index=frame.index,
+    )
+
+    if "product_id" in frame.columns:
+        product_id = pd.to_numeric(
+            frame["product_id"],
+            errors="raise",
+        )
+
+        if product_id.isna().any():
+            raise ValueError("Canonical ranking requires non-null product_id values.")
+
+        working["_tie_break"] = product_id.astype("int64")
+    else:
+        fingerprint_columns = sorted(column for column in frame.columns if column != score_column)
+
+        working["_tie_break"] = pd.util.hash_pandas_object(
+            frame.loc[:, fingerprint_columns],
+            index=False,
+        ).astype("uint64")
+
+    ordered = working.sort_values(
+        [
+            "query_id",
+            "_score",
+            "_tie_break",
+            "_row_position",
+        ],
+        ascending=[True, False, True, True],
+        kind="mergesort",
+    ).copy()
+
+    ordered["_canonical_rank"] = ordered.groupby("query_id", sort=False).cumcount().add(1)
+
+    rank_values = np.empty(
+        len(working),
+        dtype=np.int64,
+    )
+
+    rank_values[
+        ordered["_row_position"].to_numpy(
+            dtype=np.int64,
+        )
+    ] = ordered["_canonical_rank"].to_numpy(
+        dtype=np.int64,
+    )
+
+    return pd.Series(
+        rank_values,
+        index=frame.index,
+        dtype="int64",
+    )
+
+
 def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd.DataFrame:
     required = {
         "dense_score",
@@ -72,8 +147,9 @@ def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd
     conservative_utility = 0.75 * result["qrsbt_ctr_lower"] + 0.25 * result["qrsbt_purchase_lower"]
     raw_boost = result["qrsbt_confidence"] * np.maximum(conservative_utility, 0.0)
     proposed_boost = np.where(eligible, np.minimum(raw_boost, config.max_boost), 0.0)
-    result["base_rank"] = result.groupby("query_id", sort=False)["base_score"].rank(
-        method="first", ascending=False
+    result["base_rank"] = _canonical_descending_rank(
+        result,
+        "base_score",
     )
     if config.promotion_mode == "boundary_entry_only":
         in_promotion_window = result["base_rank"].gt(config.top_k) & result["base_rank"].le(
@@ -101,7 +177,11 @@ def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd
         if "product_id" in eligible_rows.columns:
             sort_columns.append("product_id")
             ascending.append(True)
-        eligible_rows = eligible_rows.sort_values(sort_columns, ascending=ascending)
+        eligible_rows = eligible_rows.sort_values(
+            sort_columns,
+            ascending=ascending,
+            kind="mergesort",
+        )
         chosen_index = (
             eligible_rows.groupby("query_id", sort=False)
             .head(config.max_promotions_per_query)
@@ -116,10 +196,12 @@ def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd
             proposed_boost,
             0.0,
         )
-        tentative_rank = tentative_score.groupby(
-            result["query_id"],
-            sort=False,
-        ).rank(method="first", ascending=False)
+        tentative_rank = _canonical_descending_rank(
+            result.assign(
+                _tentative_score=tentative_score,
+            ),
+            "_tentative_score",
+        )
         boundary_entry_rejected = selected & tentative_rank.gt(config.top_k)
         selected = selected & ~boundary_entry_rejected
 
