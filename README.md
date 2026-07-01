@@ -230,6 +230,12 @@ The workflows configure:
 
 Hosted Actions and attestations require an actual GitHub push/release and are not claimed as locally executed evidence.
 
+## V5 selective-promotion closeout
+
+A later V5 addendum tested whether fully observed synthetic action effects and recovered pre-action runtime state could justify a **personalized** rank-placement policy for cold-start promotion. The answer was no: V5-J predictive viability was **not justified**, so the source baseline remains the approved policy. No V5 final serving model, threshold, calibration, or confirmation artifact was created.
+
+This no-go decision concerns the later personalized-promotion extension and does not re-label the existing baseline smoke-release evidence. The complete evidence chain, stability analysis, and checksum-verification instructions are in [`docs/v5_selective_promotion_closeout.md`](docs/v5_selective_promotion_closeout.md) and [`evidence/v5/`](evidence/v5/).
+
 ## Claim boundaries
 
 This repository does not claim proprietary traffic, real launch timestamps where only first-observed time exists, causal production sales lift, a live online A/B test, executed full KuaiSearch/ESCI benchmarks, Qwen3 GPU tuning, million-item FAISS profiling, a completed GitHub-hosted CI run, Docker runtime validation, or a hosted GitHub release attestation.
