@@ -30,10 +30,10 @@ jobs:
             python: "3.13"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
         with:
           persist-credentials: false
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.python }}
           cache: pip
@@ -53,26 +53,79 @@ jobs:
       - name: Build wheel and source distribution
         run: python scripts/verify_build_reproducibility.py
 
-  smoke:
-    name: smoke-${{ matrix.os }}
-    timeout-minutes: 20
+  canonical-smoke:
+    name: canonical-smoke-ubuntu-latest-py3.11
+    timeout-minutes: 30
     needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/validated.txt
+      - name: Install package and integration dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -c constraints/validated.txt -e ".[dev]"
+      - name: Validate dependency graph
+        run: python -m pip check
+      - name: Build canonical smoke artifact
+        run: python scripts/run_full_pipeline.py --config configs/smoke.yaml --stage-timeout-seconds 300
+      - name: Validate canonical artifact operationally
+        run: python scripts/artifact_transport_validation.py --config configs/smoke.yaml --mode canonical-serving --allow-nonlaunch
+      - name: Reproduce canonical model-stage artifact
+        run: python scripts/reproducibility_check.py --config configs/smoke.yaml --stage-timeout-seconds 300
+      - name: Upload canonical smoke artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: canonical-smoke-artifact
+          path: artifacts/smoke
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Enforce canonical release decision
+        if: ${{ success() }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          decision = json.loads(Path("artifacts/smoke/release_decision.json").read_text(encoding="utf-8"))
+          status = decision.get("status")
+          failed = decision.get("failed_gates", [])
+          print(json.dumps({"release_status": status, "failed_gates": failed}, sort_keys=True))
+          if status != "LAUNCH":
+              sys.exit(f"Canonical release is {status}: {failed}")
+          PY
+
+  portable-artifact-smoke:
+    name: portable-artifact-smoke-${{ matrix.os }}-py${{ matrix.python }}
+    timeout-minutes: 20
+    needs: canonical-smoke
+    if: ${{ always() && needs['canonical-smoke'].result != 'cancelled' }}
     strategy:
       fail-fast: false
       matrix:
         include:
           - os: ubuntu-latest
-            python: "3.11"
+            python: "3.13"
           - os: windows-latest
             python: "3.11"
           - os: windows-latest
             python: "3.13"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
         with:
           persist-credentials: false
-      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.python }}
           cache: pip
@@ -83,53 +136,47 @@ jobs:
         run: python -m pip install --upgrade pip && python -m pip install -c constraints/validated.txt -e ".[dev]"
       - name: Validate dependency graph
         run: python -m pip check
-      - name: Clean-checkout integration validation
-        run: python scripts/integration_validation.py --config configs/smoke.yaml
-      - name: Deterministic reproducibility validation
-        run: python scripts/reproducibility_check.py --config configs/smoke.yaml
-      - name: Upload smoke parity evidence
-        if: ${{ always() }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - name: Download canonical smoke artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: smoke-evidence-${{ matrix.os }}-py${{ matrix.python }}
+          name: canonical-smoke-artifact
           path: artifacts/smoke
-          if-no-files-found: warn
-          retention-days: 7
+      - name: Validate canonical artifact operationally
+        run: python scripts/artifact_transport_validation.py --config configs/smoke.yaml --mode transport --allow-nonlaunch
 
   docker:
-    name: docker-build
+    name: docker-canonical-artifact-readiness
     timeout-minutes: 20
-    needs: quality
+    needs: canonical-smoke
+    if: ${{ always() && needs['canonical-smoke'].result != 'cancelled' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
         with:
           persist-credentials: false
-      - name: Build production image
+      - name: Download canonical smoke artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: canonical-smoke-artifact
+          path: artifacts/smoke
+      - name: Build production image from canonical artifact
         run: docker build --tag cold-start-product-search:ci .
       - name: Run container readiness smoke
         shell: bash
         run: |
           set -euo pipefail
-
           container_name="cold-start-product-search-ci"
-
-          docker run --detach --rm             --name "$container_name"             -p 127.0.0.1:8000:8000             cold-start-product-search:ci
-
+          docker run --detach --rm --name "$container_name" -e PRODUCT_SEARCH_ALLOW_NONLAUNCH=1 -p 127.0.0.1:8000:8000 cold-start-product-search:ci
           cleanup() {
             docker logs "$container_name" || true
             docker stop "$container_name" || true
           }
-
           trap cleanup EXIT
-
           for attempt in $(seq 1 30); do
-            if curl --fail --silent --show-error               http://127.0.0.1:8000/ready > /tmp/ready.json; then
+            if curl --fail --silent --show-error http://127.0.0.1:8000/ready > /tmp/ready.json; then
               cat /tmp/ready.json
               exit 0
             fi
-
             sleep 1
           done
-
           exit 1

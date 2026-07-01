@@ -4,8 +4,10 @@ __pycache__
 *.py[cod]
 .pytest_cache
 .ruff_cache
-artifacts
 data/external
 build
 dist
 *.egg-info
+artifacts/*
+!artifacts/smoke/
+!artifacts/smoke/**
