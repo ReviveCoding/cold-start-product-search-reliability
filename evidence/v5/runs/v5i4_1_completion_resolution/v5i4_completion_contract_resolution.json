@@ -1,0 +1,79 @@
+{
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "closure": {
+    "calibration_seeds_executed": [],
+    "confirmation_seeds_executed": [],
+    "final_serving_model_trained": false,
+    "no_promotion_serving_policy_authorized": true,
+    "source_baseline_retained": true,
+    "threshold_selected": false,
+    "v5j_paired_contrast_predictive_model_viability": "NOT_JUSTIFIED"
+  },
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "final_serving_model_trained": false,
+  "key_aligned_reconstruction_contract": {
+    "action_key_columns": [
+      "seed",
+      "proposal_index",
+      "action"
+    ],
+    "exact": true,
+    "key_aligned_max_abs_error": 1.7486012637846216e-14,
+    "key_aligned_mean_abs_error": 3.053580889944974e-15,
+    "matched_action_count": 720,
+    "tolerance": 1e-08
+  },
+  "model_trained": false,
+  "next_gate": "Close V5 selective-promotion optimization. Preserve the source baseline. Do not execute V5-J predictive modeling, threshold selection, calibration, or confirmation.",
+  "original_metadata_field_under_review": {
+    "field": "policy_delta_label_contract.utility_reconstruction_max_abs_error",
+    "interpretation": "The original decision metadata used a positional array subtraction after independently ordered action tables. It is not a valid reconstruction diagnostic unless action-key order is first aligned.",
+    "reported_value": 4.5200000000000005
+  },
+  "original_v5i4_status": "V5I4_PAIRED_CONTRAST_STABILITY_INSUFFICIENT",
+  "paired_block_integrity": {
+    "contexts_per_alternative_action": 144,
+    "contrast_row_count": 576,
+    "coverage_row_count": 576,
+    "paired_blocks_per_context_action": 15,
+    "replications_per_scenario": 5,
+    "scenarios_per_context_action": 3
+  },
+  "push_performed": false,
+  "recomputed_label_stability_gate": {
+    "safe_label_signal": false,
+    "safe_stable_context_count": 6,
+    "safe_stable_seed_count": 6,
+    "utility_label_signal": false,
+    "utility_stable_context_count": 13,
+    "utility_stable_seed_count": 11
+  },
+  "recomputed_oracle_gap_decomposition": {
+    "oracle_non_place_at_1_context_count": 90,
+    "stable_oracle_gap": 20.56,
+    "stable_oracle_gap_share": 0.27884267631103077,
+    "strict_safe_stable_oracle_gap": 8.97333333333333,
+    "strict_safe_stable_oracle_gap_share": 0.12169981916817356,
+    "total_oracle_gap_vs_place_at_1": 73.73333333333332,
+    "unstable_oracle_gap": 53.17333333333332
+  },
+  "source_modified": false,
+  "status": "V5I4_COMPLETION_CONTRACT_RESOLVED_BASELINE_RETAINED",
+  "threshold_selected": false,
+  "v5d_corpus_rerun": false,
+  "v5d_decision_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_direct_action_effect_decision.json",
+  "v5d_decision_sha256": "744e90ba8585330b2d1b32a42c9b7e88f161fd495f61e874c800872f67156eb7",
+  "v5e_decision_path": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z\\v5e_label_feasibility_and_feature_provenance_decision.json",
+  "v5e_decision_sha256": "6ddc7acbd30b7bded6d4b83dec3f442b86672cde27fac75d6248289936fb33d1",
+  "v5g1_decision_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\v5g1_preaction_runtime_state_recovery_decision.json",
+  "v5g1_decision_sha256": "0734263ef24278e267e98c01de2d415774746c61c4f180ca6fa1c72ff2b595dd",
+  "v5h_decision_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_rich_preaction_multihead_viability_decision.json",
+  "v5h_decision_sha256": "ae0d7afaf873c45845b8b963edade5d53d424ac9512340cea06f529e276ab702",
+  "v5i3_decision_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_policy_delta_utility_reconstruction_decision.json",
+  "v5i3_decision_sha256": "63b4cb7f08fb0c2f0c762be832590eba3a08771349342184824275e2509ea8b1",
+  "v5i4_decision_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_policy_delta_paired_contrast_stability_decision.json",
+  "v5i4_decision_sha256": "706b0c8d0ae573a8d644c37e660ddba00231a55a4472e60c60b077f59ca63829"
+}

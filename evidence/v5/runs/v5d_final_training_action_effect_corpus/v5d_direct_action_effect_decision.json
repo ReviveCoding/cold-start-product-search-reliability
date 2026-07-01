@@ -1,0 +1,79 @@
+{
+  "action_count": 720,
+  "action_effects_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_labels.csv",
+  "action_space": [
+    "NO_PROMOTION",
+    "PLACE_AT_10",
+    "PLACE_AT_5",
+    "PLACE_AT_3",
+    "PLACE_AT_2",
+    "PLACE_AT_1"
+  ],
+  "available_dynamic_metrics": [
+    "relevant_discovery_delta",
+    "irrelevant_exposure_delta",
+    "false_warmup_delta",
+    "mean_scenario_replication_utility_delta",
+    "worst_scenario_utility_delta",
+    "p10_scenario_replication_utility_delta"
+  ],
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": false,
+  "counterfactual_comparator": "NO_PROMOTION",
+  "daily_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_daily.csv",
+  "dynamic_pilot_budget": {
+    "days": 5,
+    "replications": 5,
+    "scenarios": [
+      "conservative",
+      "neutral",
+      "exploratory"
+    ],
+    "traffic_per_day": 80
+  },
+  "dynamic_replay_executed_at_release_scale": false,
+  "expected_action_count": 720,
+  "model_trained": false,
+  "next_gate": "Audit action-label integrity, common outcome coverage, and placement monotonicity. Only then expand V5 direct action-effect enumeration to the remaining independent model-training seeds.",
+  "outcome_label_boundary": "Synthetic dynamic simulator outcomes only. Not a production causal-effect estimate.",
+  "placement_contract": "Set candidate final_score to nextafter(base-score at requested rank boundary, +infinity); retain only counterfactuals that achieve the requested canonical rank under final_score descending and product_id ascending ordering.",
+  "proposal_count": 144,
+  "proposal_manifest_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_runtime_safe_proposal_manifest.csv",
+  "proposal_runtime_columns": [
+    "qrsbt_relevance_probability",
+    "qrsbt_confidence",
+    "qrsbt_support_score",
+    "base_rank",
+    "product_id"
+  ],
+  "push_performed": false,
+  "seed_runs_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_seed_execution_manifest.json",
+  "source_modified": false,
+  "status": "V5D_FINAL_TRAINING_DIRECT_ACTION_EFFECT_CORPUS_COMPLETE",
+  "summary_by_action_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_action_effect_summary_by_placement.csv",
+  "teacher_or_oracle_columns_used_for_proposal": false,
+  "threshold_selected": false,
+  "training_seeds": [
+    263,
+    269,
+    271,
+    277,
+    281,
+    283,
+    293,
+    307,
+    311,
+    313,
+    317,
+    331,
+    337,
+    347,
+    349,
+    353,
+    359,
+    367
+  ]
+}

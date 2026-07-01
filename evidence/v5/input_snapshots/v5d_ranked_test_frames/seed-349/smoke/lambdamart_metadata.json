@@ -1,0 +1,14 @@
+{
+  "features": [
+    "bm25_score",
+    "dense_score",
+    "price_log",
+    "quality",
+    "first_observed_age",
+    "zero_history",
+    "sparse_history"
+  ],
+  "format": "xgboost-stable-model",
+  "n_estimators": 45,
+  "seed": 349
+}

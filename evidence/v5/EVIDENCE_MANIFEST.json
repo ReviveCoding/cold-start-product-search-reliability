@@ -1,0 +1,111 @@
+{
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "candidate_worktree_cleanup_deferred": true,
+  "closeout_status": "V5_BASELINE_RETAINED",
+  "closure": {
+    "calibration_seeds_executed": [],
+    "confirmation_seeds_executed": [],
+    "final_serving_model_trained": false,
+    "no_promotion_serving_policy_authorized": true,
+    "source_baseline_retained": true,
+    "threshold_selected": false,
+    "v5j_paired_contrast_predictive_model_viability": "NOT_JUSTIFIED"
+  },
+  "created_utc": "2026-07-01T05:07:48.578951+00:00",
+  "downloads_wrapper_cleanup_deferred": true,
+  "external_cleanup_deferred": true,
+  "ordinary_git_max_file_bytes_guard": 99614720,
+  "package_file_manifest": "FILE_MANIFEST.csv",
+  "package_file_manifest_excludes_self": true,
+  "planned_candidate_worktree_cleanup": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226",
+  "planned_external_cleanup_roots": [
+    "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z",
+    "C:\\p9b\\p9-v5d-completion-corpus-integrity-audit-20260701T011543Z",
+    "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z",
+    "C:\\p9b\\p9-v5f-seed-disjoint-multihead-viability-20260701T025441Z",
+    "C:\\p9b\\p9-v5g-runtime-state-recoverability-audit-20260701T030018Z",
+    "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z",
+    "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z",
+    "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z",
+    "C:\\p9b\\p9-v5i2-daily-utility-metric-discovery-20260701T040235Z",
+    "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z",
+    "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z",
+    "C:\\p9b\\p9-v5i4-completion-contract-resolution-20260701T044215Z"
+  ],
+  "planned_failed_or_superseded_root_cleanup": [
+    "C:\\p9b\\p9-v5i-paired-action-contrast-stability-audit-20260701T034559Z",
+    "C:\\p9b\\p9-v5i1-daily-pairing-grain-diagnostic-20260701T035157Z"
+  ],
+  "project": "Amazon09_cold-start-product-search-reliability",
+  "schema_version": "3.0",
+  "source_file_count": 483,
+  "source_file_manifest": "SOURCE_FILE_MANIFEST.csv",
+  "source_file_total_bytes": 153537410,
+  "source_roots": [
+    {
+      "destination_relative_root": "runs/v5d_final_training_action_effect_corpus",
+      "id": "v5d_final_training_action_effect_corpus",
+      "source_root": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z"
+    },
+    {
+      "destination_relative_root": "runs/v5d_completion_integrity",
+      "id": "v5d_completion_integrity",
+      "source_root": "C:\\p9b\\p9-v5d-completion-corpus-integrity-audit-20260701T011543Z"
+    },
+    {
+      "destination_relative_root": "runs/v5e_label_feasibility_feature_provenance",
+      "id": "v5e_label_feasibility_feature_provenance",
+      "source_root": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z"
+    },
+    {
+      "destination_relative_root": "runs/v5f_seed_disjoint_multihead_viability",
+      "id": "v5f_seed_disjoint_multihead_viability",
+      "source_root": "C:\\p9b\\p9-v5f-seed-disjoint-multihead-viability-20260701T025441Z"
+    },
+    {
+      "destination_relative_root": "runs/v5g_runtime_state_recoverability",
+      "id": "v5g_runtime_state_recoverability",
+      "source_root": "C:\\p9b\\p9-v5g-runtime-state-recoverability-audit-20260701T030018Z"
+    },
+    {
+      "destination_relative_root": "runs/v5g1_preaction_state_recovery",
+      "id": "v5g1_preaction_state_recovery",
+      "source_root": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z"
+    },
+    {
+      "destination_relative_root": "runs/v5g1_rank_contract_diagnostic",
+      "id": "v5g1_rank_contract_diagnostic",
+      "source_root": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z"
+    },
+    {
+      "destination_relative_root": "runs/v5h_rich_preaction_multihead_viability",
+      "id": "v5h_rich_preaction_multihead_viability",
+      "source_root": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z"
+    },
+    {
+      "destination_relative_root": "runs/v5i2_daily_utility_metric_discovery",
+      "id": "v5i2_daily_utility_metric_discovery",
+      "source_root": "C:\\p9b\\p9-v5i2-daily-utility-metric-discovery-20260701T040235Z"
+    },
+    {
+      "destination_relative_root": "runs/v5i3_policy_delta_utility_reconstruction",
+      "id": "v5i3_policy_delta_utility_reconstruction",
+      "source_root": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z"
+    },
+    {
+      "destination_relative_root": "runs/v5i4_paired_contrast_stability",
+      "id": "v5i4_paired_contrast_stability",
+      "source_root": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z"
+    },
+    {
+      "destination_relative_root": "runs/v5i4_1_completion_resolution",
+      "id": "v5i4_1_completion_resolution",
+      "source_root": "C:\\p9b\\p9-v5i4-completion-contract-resolution-20260701T044215Z"
+    },
+    {
+      "destination_relative_root": "input_snapshots/v5d_ranked_test_frames",
+      "id": "v5d_ranked_test_frame_snapshot",
+      "source_root": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z"
+    }
+  ]
+}

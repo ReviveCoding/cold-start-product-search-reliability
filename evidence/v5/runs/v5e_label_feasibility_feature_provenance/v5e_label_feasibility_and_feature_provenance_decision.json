@@ -1,0 +1,55 @@
+{
+  "action_effects_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_labels.csv",
+  "action_effects_sha256": "3107ed4345a48d995df977894abd1eae250b3610f8da7132d64737a7161d64d1",
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "completion_contract_path": "C:\\p9b\\p9-v5d-completion-corpus-integrity-audit-20260701T011543Z\\completion_execution_20260701T012007Z\\v5d_completion_contract_resolution.json",
+  "completion_contract_sha256": "ddb257f77a0635d845bbdac6a906c780f8f3c1b01c43735199d0106c4a248fa7",
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "daily_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_daily.csv",
+  "daily_sha256": "8b37e861ffff293983dd59013c71defabad3c3957ab84c7110448462050f40d5",
+  "forbidden_proposal_columns_present": [],
+  "label_feasibility": {
+    "action_label_count": 720,
+    "context_count": 144,
+    "contexts_with_action_utility_variation": 144,
+    "contexts_with_any_positive_benefit_action": 142,
+    "contexts_with_no_risk_free_action": 102,
+    "core_safe_improving_action_count": 162,
+    "core_safe_improving_context_count": 77,
+    "seed_count": 18,
+    "strict_safe_improving_action_count": 57,
+    "strict_safe_improving_context_count": 42
+  },
+  "model_trained": false,
+  "modeling_recommendation": {
+    "fit_continuous_utility_regressor_after_audit": true,
+    "fit_separate_harm_models_after_audit": true,
+    "fit_single_multiclass_action_classifier_now": false,
+    "future_serving_contract": "NO_PROMOTION remains the default. Choose a placement only after benefit and harm models both pass pre-registered development thresholds.",
+    "future_validation_group": "seed",
+    "future_validation_protocol": "Use seed-disjoint grouped folds. Do not randomly split rows from the same seed across training and test."
+  },
+  "next_gate": "Freeze the V5-E runtime feature contract and label definitions. Then run a seed-disjoint development-only multi-head model viability audit: utility regression plus separate irrelevant-exposure, false-warmup, worst-utility, and P10-risk models. Do not fit any final artifact, choose a serving threshold, or execute calibration/confirmation seeds.",
+  "proposal_manifest_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_runtime_safe_proposal_manifest.csv",
+  "proposal_manifest_sha256": "283e652fb9ffc2dff789583432545305ba7f7978cf5098315f0b09966051fc11",
+  "push_performed": false,
+  "runtime_feature_columns_categorical": [
+    "proposal_selection_rule"
+  ],
+  "runtime_feature_columns_numeric": [
+    "qrsbt_relevance_probability",
+    "qrsbt_confidence",
+    "qrsbt_support_score",
+    "base_rank"
+  ],
+  "source_modified": false,
+  "status": "V5E_LABEL_FEASIBILITY_AND_FEATURE_PROVENANCE_AUDIT_COMPLETE",
+  "summary_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_action_effect_summary_by_placement.csv",
+  "summary_sha256": "8cb154c7357958a02a185d1e428d436279c1c6897d03893369cdbf4b0dd21a09",
+  "threshold_selected": false,
+  "v5d_decision_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_direct_action_effect_decision.json",
+  "v5d_decision_sha256": "744e90ba8585330b2d1b32a42c9b7e88f161fd495f61e874c800872f67156eb7"
+}

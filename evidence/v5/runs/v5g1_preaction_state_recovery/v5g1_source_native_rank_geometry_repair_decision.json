@@ -1,0 +1,21 @@
+{
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "model_trained": false,
+  "push_performed": false,
+  "recovery_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\recover_v5d_preaction_runtime_state.py",
+  "recovery_sha256_after": "61cf1c3f373c44f0b2b63fe60a4b1398ad2b092a9a5d19272b51b2a0500b3e6a",
+  "repair_scope": [
+    "replace reconstructed canonical rank with source-native base_rank",
+    "validate each source query has contiguous one-based ranks",
+    "validate base_score is non-increasing by source-native rank",
+    "construct target-rank boundaries and local gaps from source rank",
+    "require complete geometry for every selected V5-D context"
+  ],
+  "source_modified": false,
+  "status": "V5G1_SOURCE_NATIVE_RANK_GEOMETRY_REPAIRED",
+  "threshold_selected": false,
+  "v5d_corpus_rerun": false
+}

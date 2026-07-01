@@ -1,0 +1,8 @@
+strategy,mean_query_row_agreement,minimum_query_row_agreement,exact_query_count,total_query_count
+base_score_desc_product_id_asc,0.9982154119963411,0.9285714285714286,819,864
+base_score_desc_stable,0.9880292578487304,0.8983050847457628,613,864
+final_score_desc_stable_diagnostic_only,0.9837496345091011,0.8771929824561403,545,864
+base_score_desc_product_id_desc,0.979930065520948,0.8666666666666667,498,864
+semantic_rank_score_desc_stable,0.08144945779973822,0.0,0,864
+retrieval_score_desc_stable,0.04617444943321653,0.0,0,864
+base_score_asc_stable,0.007739299386393894,0.0,0,864

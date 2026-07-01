@@ -1,0 +1,102 @@
+{
+  "action_effect_row_count": 720,
+  "action_effects_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_labels.csv",
+  "action_effects_sha256": "3107ed4345a48d995df977894abd1eae250b3610f8da7132d64737a7161d64d1",
+  "artifacts": {
+    "action_contrast_block_coverage_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_action_contrast_block_coverage.csv",
+    "daily_rows_per_action_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_daily_rows_per_action.csv",
+    "oracle_gap_stability_decomposition_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_oracle_gap_stability_decomposition.csv",
+    "paired_context_action_contrasts_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_paired_context_action_contrasts.csv",
+    "paired_contrast_summary_by_action_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_paired_contrast_summary_by_action.csv",
+    "paired_contrast_summary_by_seed_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_paired_contrast_summary_by_seed.csv",
+    "policy_delta_blocks_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_policy_delta_scenario_replication_blocks.csv",
+    "reconstructed_action_utility_path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z\\v5i4_reconstructed_action_utility_from_blocks.csv"
+  },
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "daily_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_daily.csv",
+  "daily_row_count": 108000,
+  "daily_rows_per_action": {
+    "max": 150,
+    "min": 150
+  },
+  "daily_sha256": "8b37e861ffff293983dd59013c71defabad3c3957ab84c7110448462050f40d5",
+  "dynamic_replay_executed_at_release_scale": false,
+  "final_serving_model_trained": false,
+  "label_stability_gate": {
+    "minimum_stable_contexts": 12,
+    "minimum_stable_oracle_gap_share": 0.5,
+    "minimum_stable_seeds": 6,
+    "safe_label_signal": false,
+    "safe_stable_context_count": 6,
+    "safe_stable_seed_count": 6,
+    "utility_label_signal": false,
+    "utility_stable_context_count": 13,
+    "utility_stable_seed_count": 11
+  },
+  "model_trained": false,
+  "next_gate": "Close V5 selective-promotion optimization with the source baseline retained. The fully observed simulator does not provide enough stable, safe paired action contrast to justify another predictive model search.",
+  "oracle_gap_decomposition": {
+    "oracle_non_place_at_1_context_count": 90,
+    "stable_oracle_gap": 20.56,
+    "stable_oracle_gap_share": 0.27884267631103077,
+    "strict_safe_stable_oracle_gap": 8.97333333333333,
+    "strict_safe_stable_oracle_gap_share": 0.12169981916817356,
+    "total_oracle_gap_vs_place_at_1": 73.73333333333332,
+    "unstable_oracle_gap": 53.17333333333332
+  },
+  "paired_contrast_bootstrap_contract": {
+    "alternative_actions": [
+      "PLACE_AT_2",
+      "PLACE_AT_3",
+      "PLACE_AT_5",
+      "PLACE_AT_10"
+    ],
+    "baseline_action": "PLACE_AT_1",
+    "bootstrap_reps": 10000,
+    "paired_block_count_per_context_action": 15,
+    "replications_per_scenario": 5,
+    "resampling_unit": "paired replication blocks resampled with replacement within each of three scenarios, preserving paired action differences and equal scenario weighting",
+    "scenario_count_per_context_action": 3,
+    "stable_negative_rule": "scenario-stratified paired bootstrap 95% upper bound < 0",
+    "stable_positive_rule": "scenario-stratified paired bootstrap 95% lower bound > 0",
+    "strict_safe_rule": "stable positive utility contrast plus aggregate nonworsening irrelevant exposure, false warmup, worst utility, and P10 utility versus PLACE_AT_1"
+  },
+  "policy_delta_label_contract": {
+    "action_label_aggregation": "mean over 15 scenario-replication blocks of the 5-day qrsbt_gate-minus-base utility sum",
+    "daily_policy_pair_grain": [
+      "seed",
+      "proposal_index",
+      "action",
+      "scenario",
+      "replication",
+      "day",
+      "policy"
+    ],
+    "daily_utility_column": "utility",
+    "day_column": "day",
+    "reference_policy": "base",
+    "replication_column": "replication",
+    "scenario_column": "scenario",
+    "treatment_policy": "qrsbt_gate",
+    "utility_reconstruction_max_abs_error": 4.5200000000000005
+  },
+  "push_performed": false,
+  "source_modified": false,
+  "status": "V5I4_PAIRED_CONTRAST_STABILITY_INSUFFICIENT",
+  "threshold_selected": false,
+  "v5d_corpus_rerun": false,
+  "v5d_decision_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_direct_action_effect_decision.json",
+  "v5d_decision_sha256": "744e90ba8585330b2d1b32a42c9b7e88f161fd495f61e874c800872f67156eb7",
+  "v5e_decision_path": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z\\v5e_label_feasibility_and_feature_provenance_decision.json",
+  "v5e_decision_sha256": "6ddc7acbd30b7bded6d4b83dec3f442b86672cde27fac75d6248289936fb33d1",
+  "v5g1_decision_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\v5g1_preaction_runtime_state_recovery_decision.json",
+  "v5g1_decision_sha256": "0734263ef24278e267e98c01de2d415774746c61c4f180ca6fa1c72ff2b595dd",
+  "v5h_decision_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_rich_preaction_multihead_viability_decision.json",
+  "v5h_decision_sha256": "ae0d7afaf873c45845b8b963edade5d53d424ac9512340cea06f529e276ab702",
+  "v5i3_decision_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_policy_delta_utility_reconstruction_decision.json",
+  "v5i3_decision_sha256": "63b4cb7f08fb0c2f0c762be832590eba3a08771349342184824275e2509ea8b1"
+}

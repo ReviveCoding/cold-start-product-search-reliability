@@ -1,0 +1,94 @@
+{
+  "action_effects_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_labels.csv",
+  "action_effects_sha256": "3107ed4345a48d995df977894abd1eae250b3610f8da7132d64737a7161d64d1",
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "cross_validated_models_fitted": true,
+  "final_serving_model_artifact_created": false,
+  "next_gate": "If status is V5F_MULTIHEAD_RUNTIME_SIGNAL_PRESENT, freeze the pre-registered model-family and proceed to a train-only artifact build. If status is V5F_MULTIHEAD_RUNTIME_SIGNAL_INSUFFICIENT, do not fit a final action model; return to runtime-state feature instrumentation.",
+  "predeclared_viability_gates": {
+    "risk_minimum_brier_skill": 0.02,
+    "risk_minimum_model_roc_auc": 0.6,
+    "risk_minimum_qualified_head_count": 2,
+    "utility_regret_reduction_required": true,
+    "utility_relative_mae_improvement_minimum": 0.05,
+    "utility_top1_best_action_hit_rate_gain_minimum": 0.05
+  },
+  "proposal_manifest_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_runtime_safe_proposal_manifest.csv",
+  "proposal_manifest_sha256": "283e652fb9ffc2dff789583432545305ba7f7978cf5098315f0b09966051fc11",
+  "protocol": {
+    "inner_cv": {
+      "group": "seed",
+      "n_splits": 5,
+      "purpose": "select regularization strength inside each outer training partition",
+      "splitter": "GroupKFold"
+    },
+    "model_families": {
+      "baseline": "outer-train action-specific mean or event rate",
+      "risk_heads": "action-conditioned L2 logistic regression",
+      "utility": "action-conditioned Ridge regression"
+    },
+    "no_calibration_executed": true,
+    "no_confirmation_executed": true,
+    "no_final_model_artifact": true,
+    "no_threshold_selected": true,
+    "outer_cv": {
+      "group": "seed",
+      "n_splits": 6,
+      "random_state": 17,
+      "shuffle": true,
+      "splitter": "GroupKFold"
+    }
+  },
+  "push_performed": false,
+  "qualified_risk_heads": [],
+  "risk_gate_pass": false,
+  "runtime_feature_contract": {
+    "action_feature": "action",
+    "action_interactions": "numeric_feature x action",
+    "categorical_features": [
+      "proposal_selection_rule"
+    ],
+    "forbidden_outcome_or_oracle_inputs": true,
+    "numeric_features": [
+      "qrsbt_relevance_probability",
+      "qrsbt_confidence",
+      "qrsbt_support_score",
+      "base_rank"
+    ]
+  },
+  "source_modified": false,
+  "status": "V5F_MULTIHEAD_RUNTIME_SIGNAL_INSUFFICIENT",
+  "threshold_selected": false,
+  "utility_gate_pass": false,
+  "utility_ranking_diagnostics": {
+    "action_conditioned_model": {
+      "chosen_action_distribution": {
+        "PLACE_AT_1": 132,
+        "PLACE_AT_3": 12
+      },
+      "context_count": 144,
+      "mean_selected_observed_utility": 2.1274999999999995,
+      "mean_utility_regret": 0.5862037037037037,
+      "median_utility_regret": 0.30666666666666514,
+      "top1_best_action_hit_rate": 0.3333333333333333
+    },
+    "action_only_baseline": {
+      "chosen_action_distribution": {
+        "PLACE_AT_1": 144
+      },
+      "context_count": 144,
+      "mean_selected_observed_utility": 2.201666666666666,
+      "mean_utility_regret": 0.512037037037037,
+      "median_utility_regret": 0.24666666666666515,
+      "top1_best_action_hit_rate": 0.375
+    },
+    "rank_hit_gain": -0.041666666666666685,
+    "regret_reduction": -0.07416666666666671
+  },
+  "v5e_decision_path": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z\\v5e_label_feasibility_and_feature_provenance_decision.json",
+  "v5e_decision_sha256": "6ddc7acbd30b7bded6d4b83dec3f442b86672cde27fac75d6248289936fb33d1"
+}

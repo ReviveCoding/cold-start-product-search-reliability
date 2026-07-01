@@ -1,0 +1,24 @@
+{
+  "audit_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\run_v5h_rich_preaction_multihead_viability.py",
+  "audit_sha256_after": "46d099d65eafe9ee11216768484fab798d0ae3418af25eef2918c76e911e42bc",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "context_numeric_count_after": 38,
+  "context_numeric_count_before": 43,
+  "final_serving_model_trained": false,
+  "push_performed": false,
+  "removed_globally_constant_preaction_features": [
+    "qrsbt_support_score",
+    "qrsbt_support",
+    "attribute_compatible",
+    "zero_history",
+    "sparse_history"
+  ],
+  "repair_rule": "Remove only columns proven invariant across all 720 recovered pre-action state-action rows. This is an unsupervised X-only contract cleanup; no outcome, teacher, oracle, calibration, or confirmation information is used.",
+  "source_modified": false,
+  "status": "V5H_CONSTANT_FEATURE_CONTRACT_REPAIRED",
+  "threshold_selected": false,
+  "v5d_corpus_rerun": false
+}

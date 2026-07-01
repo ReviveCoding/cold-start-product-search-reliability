@@ -1,0 +1,29 @@
+{
+  "action_numeric_count": 5,
+  "audit_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\run_v5h_rich_preaction_multihead_viability.py",
+  "audit_sha256": "46d099d65eafe9ee11216768484fab798d0ae3418af25eef2918c76e911e42bc",
+  "calibration_seeds_executed": [],
+  "categorical_count": 6,
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "context_numeric_count": 38,
+  "model_trained": false,
+  "push_performed": false,
+  "remaining_global_constant_feature_count": 0,
+  "removed_global_constants_confirmed_absent": [
+    "attribute_compatible",
+    "qrsbt_support",
+    "qrsbt_support_score",
+    "sparse_history",
+    "zero_history"
+  ],
+  "seed_count": 18,
+  "source_modified": false,
+  "state_action_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\v5g1_recovered_preaction_state_action_matrix.csv",
+  "state_action_row_count": 720,
+  "state_action_sha256": "646d936823d588bc4a4a7f9d7c6b185e287cf216385391da873b7370c5b00375",
+  "status": "V5H_REPAIRED_FEATURE_CONTRACT_PREFLIGHT_PASS",
+  "threshold_selected": false,
+  "total_feature_count": 49
+}

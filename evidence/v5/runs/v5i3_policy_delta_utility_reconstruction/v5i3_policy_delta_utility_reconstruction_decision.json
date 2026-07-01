@@ -1,0 +1,143 @@
+{
+  "action_effect_row_count": 720,
+  "action_effects_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_labels.csv",
+  "action_effects_sha256": "3107ed4345a48d995df977894abd1eae250b3610f8da7132d64737a7161d64d1",
+  "artifacts": {
+    "policy_augmented_daily_grain_counts_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_policy_augmented_daily_grain_counts.csv",
+    "policy_delta_reconciliation_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_policy_delta_reconciliation.csv",
+    "policy_levels_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_daily_policy_levels.csv",
+    "policy_pairing_coverage_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_policy_pairing_coverage.csv",
+    "selected_policy_delta_action_matrix_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_selected_policy_delta_action_matrix.csv"
+  },
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "daily_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_daily.csv",
+  "daily_policy_delta_contract": {
+    "candidate_aggregations": [
+      "mean_paired_daily_policy_utility_delta",
+      "mean_scenario_replication_daily_mean_policy_delta",
+      "mean_scenario_replication_five_day_sum_policy_delta"
+    ],
+    "daily_utility_column": "utility",
+    "day_column": "day",
+    "policy_augmented_grain_unique": true,
+    "policy_augmented_pair_grain": [
+      "seed",
+      "proposal_index",
+      "action",
+      "scenario",
+      "replication",
+      "day",
+      "policy"
+    ],
+    "policy_column": "policy",
+    "policy_pairing_rows_per_direction": 54000,
+    "policy_values": [
+      "base",
+      "qrsbt_gate"
+    ],
+    "reconciliation_tolerance": 1e-08,
+    "replication_column": "replication",
+    "scenario_column": "scenario"
+  },
+  "daily_row_count": 108000,
+  "daily_rows_per_action": {
+    "max": 150,
+    "min": 150
+  },
+  "daily_sha256": "8b37e861ffff293983dd59013c71defabad3c3957ab84c7110448462050f40d5",
+  "dynamic_replay_executed_at_release_scale": false,
+  "exact_reconciliation_candidate_count": 1,
+  "final_serving_model_trained": false,
+  "frozen_action_effect_target": "mean_scenario_replication_utility_delta",
+  "model_trained": false,
+  "next_gate": "Patch V5-I only to use the uniquely reconciled policy difference and selected scenario-replication aggregation. Do not fit a predictive model, choose a serving threshold, or execute calibration/confirmation in this audit.",
+  "push_performed": false,
+  "selected_reconstruction": {
+    "aggregation_name": "mean_scenario_replication_five_day_sum_policy_delta",
+    "candidate_name": "qrsbt_gate_minus_base__mean_scenario_replication_five_day_sum_policy_delta",
+    "max_abs_error": 1.7430501486614958e-14,
+    "mean_abs_error": 3.05719007851027e-15,
+    "reference_policy": "base",
+    "selected_action_matrix_path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z\\v5i3_selected_policy_delta_action_matrix.csv",
+    "selected_action_matrix_sha256": "48006d210fd1f2cd70a648b18c5fd66f03be37aa247830c3e9570f2e83479736",
+    "treatment_policy": "qrsbt_gate"
+  },
+  "source_modified": false,
+  "status": "V5I3_POLICY_DELTA_UTILITY_RECONCILED",
+  "threshold_selected": false,
+  "top_reconciliation_candidates": [
+    {
+      "aggregation_name": "mean_scenario_replication_five_day_sum_policy_delta",
+      "candidate_name": "qrsbt_gate_minus_base__mean_scenario_replication_five_day_sum_policy_delta",
+      "complete_action_join": true,
+      "exact_reconciliation": true,
+      "max_abs_error": 1.7430501486614958e-14,
+      "mean_abs_error": 3.05719007851027e-15,
+      "reference_policy": "base",
+      "treatment_policy": "qrsbt_gate"
+    },
+    {
+      "aggregation_name": "mean_paired_daily_policy_utility_delta",
+      "candidate_name": "qrsbt_gate_minus_base__mean_paired_daily_policy_utility_delta",
+      "complete_action_join": true,
+      "exact_reconciliation": false,
+      "max_abs_error": 6.517333333333331,
+      "mean_abs_error": 1.3864148148148145,
+      "reference_policy": "base",
+      "treatment_policy": "qrsbt_gate"
+    },
+    {
+      "aggregation_name": "mean_scenario_replication_daily_mean_policy_delta",
+      "candidate_name": "qrsbt_gate_minus_base__mean_scenario_replication_daily_mean_policy_delta",
+      "complete_action_join": true,
+      "exact_reconciliation": false,
+      "max_abs_error": 6.517333333333331,
+      "mean_abs_error": 1.3864148148148145,
+      "reference_policy": "base",
+      "treatment_policy": "qrsbt_gate"
+    },
+    {
+      "aggregation_name": "mean_paired_daily_policy_utility_delta",
+      "candidate_name": "base_minus_qrsbt_gate__mean_paired_daily_policy_utility_delta",
+      "complete_action_join": true,
+      "exact_reconciliation": false,
+      "max_abs_error": 9.775999999999998,
+      "mean_abs_error": 2.079622222222222,
+      "reference_policy": "qrsbt_gate",
+      "treatment_policy": "base"
+    },
+    {
+      "aggregation_name": "mean_scenario_replication_daily_mean_policy_delta",
+      "candidate_name": "base_minus_qrsbt_gate__mean_scenario_replication_daily_mean_policy_delta",
+      "complete_action_join": true,
+      "exact_reconciliation": false,
+      "max_abs_error": 9.775999999999998,
+      "mean_abs_error": 2.079622222222222,
+      "reference_policy": "qrsbt_gate",
+      "treatment_policy": "base"
+    },
+    {
+      "aggregation_name": "mean_scenario_replication_five_day_sum_policy_delta",
+      "candidate_name": "base_minus_qrsbt_gate__mean_scenario_replication_five_day_sum_policy_delta",
+      "complete_action_join": true,
+      "exact_reconciliation": false,
+      "max_abs_error": 16.293333333333333,
+      "mean_abs_error": 3.466037037037037,
+      "reference_policy": "qrsbt_gate",
+      "treatment_policy": "base"
+    }
+  ],
+  "v5d_corpus_rerun": false,
+  "v5d_decision_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_direct_action_effect_decision.json",
+  "v5d_decision_sha256": "744e90ba8585330b2d1b32a42c9b7e88f161fd495f61e874c800872f67156eb7",
+  "v5e_decision_path": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z\\v5e_label_feasibility_and_feature_provenance_decision.json",
+  "v5e_decision_sha256": "6ddc7acbd30b7bded6d4b83dec3f442b86672cde27fac75d6248289936fb33d1",
+  "v5g1_decision_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\v5g1_preaction_runtime_state_recovery_decision.json",
+  "v5g1_decision_sha256": "0734263ef24278e267e98c01de2d415774746c61c4f180ca6fa1c72ff2b595dd",
+  "v5h_decision_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_rich_preaction_multihead_viability_decision.json",
+  "v5h_decision_sha256": "ae0d7afaf873c45845b8b963edade5d53d424ac9512340cea06f529e276ab702"
+}

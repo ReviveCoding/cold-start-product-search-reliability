@@ -1,0 +1,2 @@
+feature,dtype,row_count,missing_count,unique_count,top_value,top_value_count
+proposal_selection_rule,str,144,0,1,"query-local runtime-safe candidate with highest qrsbt_relevance_probability, then qrsbt_confidence, qrsbt_support_score, base_rank, product_id",144

@@ -1,0 +1,18 @@
+{
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "diagnostic_path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z\\diagnose_v5d_base_rank_semantics.py",
+  "diagnostic_sha256_after": "851990c6a6f377d2810de38fb8f55cdf275b4db37a45e6ce40b303a2efeb1bd4",
+  "model_trained": false,
+  "push_performed": false,
+  "repair_scope": [
+    "replace ndarray .eq(...).mean() with np.equal(...).mean()",
+    "replace ndarray .eq(...).all() with np.equal(...).all()"
+  ],
+  "source_modified": false,
+  "status": "V5G1_1_NDARRAY_EQUALITY_CONTRACT_REPAIRED",
+  "threshold_selected": false,
+  "v5d_corpus_rerun": false
+}

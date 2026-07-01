@@ -1,0 +1,325 @@
+{
+  "action_effects_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_dynamic_action_effect_labels.csv",
+  "action_effects_sha256": "3107ed4345a48d995df977894abd1eae250b3610f8da7132d64737a7161d64d1",
+  "artifacts": {
+    "baseline_selected_actions_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_action_only_baseline_selected_actions.csv",
+    "feature_contract_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_frozen_feature_contract.csv",
+    "model_selected_actions_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_rich_preaction_model_selected_actions.csv",
+    "oof_predictions_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_outer_fold_oof_predictions.csv",
+    "oof_predictions_sha256": "e03c38040a8156d02fc54e26f8081025b6dfd95944dd31fc40af7f341cf98f95",
+    "outer_fold_ledger_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_outer_fold_model_ledger.csv",
+    "policy_by_seed_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_policy_metrics_by_seed.csv",
+    "risk_inner_selection_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_risk_inner_selection_ledger.csv",
+    "risk_summary_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_risk_head_oof_summary.csv",
+    "utility_inner_selection_path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z\\v5h_utility_inner_selection_ledger.csv"
+  },
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "dynamic_replay_executed_at_release_scale": false,
+  "feature_contract": {
+    "action_numeric": [
+      "target_rank",
+      "action_move_distance",
+      "action_required_lift",
+      "action_score_gap",
+      "action_boundary_score"
+    ],
+    "action_numeric_count": 5,
+    "categorical": [
+      "action",
+      "candidate_source",
+      "category",
+      "query_category",
+      "query_intent",
+      "relation"
+    ],
+    "categorical_count": 6,
+    "context_numeric": [
+      "base_score",
+      "base_rank",
+      "bm25_score",
+      "dense_score",
+      "retrieval_score",
+      "semantic_rank_score",
+      "semantic_component",
+      "qrsbt_relevance_probability",
+      "qrsbt_confidence",
+      "qrsbt_dispersion",
+      "qrsbt_compatibility",
+      "qrsbt_irrelevant_probability",
+      "price",
+      "price_log",
+      "quality",
+      "query_candidate_count",
+      "query_base_score_max",
+      "query_base_score_min",
+      "query_base_score_mean",
+      "query_base_score_std",
+      "query_base_score_range",
+      "query_top1_base_score",
+      "query_top2_base_score",
+      "query_top1_to_top2_gap",
+      "candidate_score_minus_query_mean",
+      "candidate_score_z",
+      "candidate_rank_fraction",
+      "candidate_gap_to_above",
+      "candidate_gap_to_below",
+      "query_qrsbt_confidence_max",
+      "query_qrsbt_confidence_mean",
+      "query_qrsbt_confidence_std",
+      "query_qrsbt_relevance_probability_max",
+      "query_qrsbt_relevance_probability_mean",
+      "query_qrsbt_relevance_probability_std",
+      "query_qrsbt_irrelevant_probability_max",
+      "query_qrsbt_irrelevant_probability_mean",
+      "query_qrsbt_irrelevant_probability_std"
+    ],
+    "context_numeric_count": 38,
+    "contract_selection_rule": "Fixed before V5-H outcome modeling. The contract uses only recovered pre-action ranked-frame fields and source-native rank geometry. It excludes teacher/oracle/future/outcome/behavior and post-gate scoring fields.",
+    "total_feature_column_count": 49
+  },
+  "final_serving_model_trained": false,
+  "inner_cv": {
+    "group": "seed",
+    "n_splits": 3,
+    "random_state": 17,
+    "shuffle": true,
+    "splitter": "GroupKFold"
+  },
+  "next_gate": "Freeze a train-only candidate model family only if both utility and risk signal gates pass. Otherwise, inspect the pre-registered OOF result and do not fit a final artifact, choose a serving threshold, or execute calibration/confirmation seeds.",
+  "outer_cv": {
+    "group": "seed",
+    "n_splits": 6,
+    "random_state": 17,
+    "shuffle": true,
+    "splitter": "GroupKFold"
+  },
+  "push_performed": false,
+  "recovery_decision_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\v5g1_preaction_runtime_state_recovery_decision.json",
+  "recovery_decision_sha256": "0734263ef24278e267e98c01de2d415774746c61c4f180ca6fa1c72ff2b595dd",
+  "risk_model_selection": {
+    "candidates": [
+      {
+        "family": "logistic",
+        "name": "logistic_c_0p1",
+        "params": {
+          "C": 0.1
+        }
+      },
+      {
+        "family": "logistic",
+        "name": "logistic_c_1",
+        "params": {
+          "C": 1.0
+        }
+      },
+      {
+        "family": "logistic",
+        "name": "logistic_c_10",
+        "params": {
+          "C": 10.0
+        }
+      },
+      {
+        "family": "extra_trees",
+        "name": "extra_trees_leaf_5",
+        "params": {
+          "max_features": 0.7,
+          "min_samples_leaf": 5,
+          "n_estimators": 300
+        }
+      },
+      {
+        "family": "extra_trees",
+        "name": "extra_trees_leaf_10",
+        "params": {
+          "max_features": 0.7,
+          "min_samples_leaf": 10,
+          "n_estimators": 300
+        }
+      },
+      {
+        "family": "extra_trees",
+        "name": "extra_trees_leaf_20",
+        "params": {
+          "max_features": 0.7,
+          "min_samples_leaf": 20,
+          "n_estimators": 300
+        }
+      }
+    ],
+    "inner_objective": "minimize Brier score",
+    "oof_summary": [
+      {
+        "baseline_auc": 0.5623913447776763,
+        "baseline_brier": 0.23515972222222223,
+        "brier_skill": -0.06865784033323807,
+        "model_auc": 0.495374825140898,
+        "model_brier": 0.2513052808833642,
+        "positive_rate": 0.39305555555555555,
+        "risk_head": "irrelevant_exposure_increase"
+      },
+      {
+        "baseline_auc": 0.5368941314812774,
+        "baseline_brier": 0.15334953703703702,
+        "brier_skill": -0.13842728759586942,
+        "model_auc": 0.4883879028405541,
+        "model_brier": 0.17457729750315637,
+        "positive_rate": 0.19583333333333333,
+        "risk_head": "false_warmup_increase"
+      },
+      {
+        "baseline_auc": 0.46898052409024965,
+        "baseline_brier": 0.2521064814814815,
+        "brier_skill": -0.009022260207680377,
+        "model_auc": 0.5405992468903361,
+        "model_brier": 0.2543810517574502,
+        "positive_rate": 0.49722222222222223,
+        "risk_head": "negative_worst_scenario_utility"
+      },
+      {
+        "baseline_auc": 0.814028314028314,
+        "baseline_brier": 0.08919212962962964,
+        "brier_skill": 0.012872636906738122,
+        "model_auc": 0.8210624417520969,
+        "model_brier": 0.0880439917299687,
+        "positive_rate": 0.8458333333333333,
+        "risk_head": "negative_p10_scenario_utility"
+      }
+    ],
+    "positive_brier_skill_head_count": 0,
+    "risk_heads": [
+      "irrelevant_exposure_increase",
+      "false_warmup_increase",
+      "negative_worst_scenario_utility",
+      "negative_p10_scenario_utility"
+    ]
+  },
+  "scikit_learn_version": "1.9.0",
+  "signal_gate": {
+    "qualification_rule": "Utility signal requires a positive seed-bootstrap 95% lower bound for selected mean utility delta and a negative seed-bootstrap 95% upper bound for regret delta. Risk signal requires at least two of four risk heads with OOF Brier skill >= 0.02 versus an action-only prevalence baseline.",
+    "risk_signal_present": false,
+    "utility_signal_present": false
+  },
+  "source_modified": false,
+  "state_action_path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z\\v5g1_recovered_preaction_state_action_matrix.csv",
+  "state_action_sha256": "646d936823d588bc4a4a7f9d7c6b185e287cf216385391da873b7370c5b00375",
+  "status": "V5H_RICH_PREACTION_RUNTIME_SIGNAL_INSUFFICIENT",
+  "temporary_fold_models_fit_for_cv": true,
+  "threshold_selected": false,
+  "utility_model_selection": {
+    "candidates": [
+      {
+        "family": "ridge",
+        "name": "ridge_alpha_0p1",
+        "params": {
+          "alpha": 0.1
+        }
+      },
+      {
+        "family": "ridge",
+        "name": "ridge_alpha_1",
+        "params": {
+          "alpha": 1.0
+        }
+      },
+      {
+        "family": "ridge",
+        "name": "ridge_alpha_10",
+        "params": {
+          "alpha": 10.0
+        }
+      },
+      {
+        "family": "ridge",
+        "name": "ridge_alpha_100",
+        "params": {
+          "alpha": 100.0
+        }
+      },
+      {
+        "family": "extra_trees",
+        "name": "extra_trees_leaf_2",
+        "params": {
+          "max_features": 0.7,
+          "min_samples_leaf": 2,
+          "n_estimators": 300
+        }
+      },
+      {
+        "family": "extra_trees",
+        "name": "extra_trees_leaf_5",
+        "params": {
+          "max_features": 0.7,
+          "min_samples_leaf": 5,
+          "n_estimators": 300
+        }
+      },
+      {
+        "family": "extra_trees",
+        "name": "extra_trees_leaf_10",
+        "params": {
+          "max_features": 0.7,
+          "min_samples_leaf": 10,
+          "n_estimators": 300
+        }
+      }
+    ],
+    "inner_objective": "maximize observed mean utility of the action selected within held-out inner-fold contexts; tie-break by lower selected-action regret, then lower row MAE.",
+    "policy_summary": {
+      "baseline": {
+        "core_safe_improving_rate": 0.16666666666666666,
+        "mean_utility_regret": 0.512037037037037,
+        "oracle_action_hit_rate": 0.375,
+        "selected_action_counts": {
+          "PLACE_AT_1": 144,
+          "PLACE_AT_10": 0,
+          "PLACE_AT_2": 0,
+          "PLACE_AT_3": 0,
+          "PLACE_AT_5": 0
+        },
+        "selected_mean_utility": 2.201666666666666,
+        "strict_safe_improving_rate": 0.013888888888888888
+      },
+      "regret_model_minus_baseline_seed_bootstrap": {
+        "ci_high_95": 0.06101851851851836,
+        "ci_low_95": 0.000648148148148083,
+        "mean": 0.02425925925925918
+      },
+      "rich_preaction_model": {
+        "core_safe_improving_rate": 0.16666666666666666,
+        "mean_utility_regret": 0.5362962962962962,
+        "oracle_action_hit_rate": 0.3611111111111111,
+        "selected_action_counts": {
+          "PLACE_AT_1": 140,
+          "PLACE_AT_10": 0,
+          "PLACE_AT_2": 3,
+          "PLACE_AT_3": 1,
+          "PLACE_AT_5": 0
+        },
+        "selected_mean_utility": 2.1774074074074075,
+        "strict_safe_improving_rate": 0.013888888888888888
+      },
+      "utility_model_minus_baseline_seed_bootstrap": {
+        "ci_high_95": -0.0006481481481481014,
+        "ci_low_95": -0.06101851851851846,
+        "mean": -0.024259259259259227
+      }
+    },
+    "row_level_oof_metrics": {
+      "baseline_mae": 1.0860987654320986,
+      "model_mae": 1.1339474368442293
+    }
+  },
+  "v5d_decision_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_direct_action_effect_decision.json",
+  "v5d_decision_sha256": "744e90ba8585330b2d1b32a42c9b7e88f161fd495f61e874c800872f67156eb7",
+  "v5e_decision_path": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z\\v5e_label_feasibility_and_feature_provenance_decision.json",
+  "v5e_decision_sha256": "6ddc7acbd30b7bded6d4b83dec3f442b86672cde27fac75d6248289936fb33d1",
+  "v5f_decision_path": "C:\\p9b\\p9-v5f-seed-disjoint-multihead-viability-20260701T025441Z\\v5f_multihead_viability_decision.json",
+  "v5f_decision_sha256": "dd4d49648437620c1dd55c30a16a32d7166159f7a5e6fd7b886cda7ba08aa804",
+  "v5g_decision_path": "C:\\p9b\\p9-v5g-runtime-state-recoverability-audit-20260701T030018Z\\v5g_runtime_state_recoverability_decision.json",
+  "v5g_decision_sha256": "7e04ae6d6aebd5fa7cbd81a734b60dd41e1f7c9497a95cd7f957b702d16bead4"
+}

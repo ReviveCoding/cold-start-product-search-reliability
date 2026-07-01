@@ -1,0 +1,15 @@
+{
+  "auditor_path": "C:\\p9b\\p9-v5d-completion-corpus-integrity-audit-20260701T011543Z\\verify_v5d_completion_and_corpus_integrity.py",
+  "auditor_sha256_after": "f084f787f1c2ac6d26cec07ce2d9a0dac962d05123d4b6642540447fa4e502be",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "model_trained": false,
+  "push_performed": false,
+  "repair_scope": "Wrapped exactly one starred list fallback expression in parentheses so the fallback boolean expression is valid before iterable unpacking.",
+  "source_modified": false,
+  "status": "V5D_COMPLETION_AUDITOR_STARRED_FALLBACK_REPAIRED",
+  "threshold_selected": false,
+  "v5d_corpus_rerun": false
+}

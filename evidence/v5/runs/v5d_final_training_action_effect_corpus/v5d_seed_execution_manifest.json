@@ -1,0 +1,488 @@
+[
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-263\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-263\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2916,
+    "runtime_safe_actionable_queries": 18,
+    "runtime_safe_actionable_rows": 18,
+    "seed": 263,
+    "selected_pilot_queries": [
+      10,
+      12,
+      18,
+      24,
+      36,
+      41,
+      42,
+      45
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-269\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-269\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2927,
+    "runtime_safe_actionable_queries": 18,
+    "runtime_safe_actionable_rows": 18,
+    "seed": 269,
+    "selected_pilot_queries": [
+      3,
+      5,
+      12,
+      15,
+      19,
+      29,
+      34,
+      36
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-271\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-271\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2871,
+    "runtime_safe_actionable_queries": 26,
+    "runtime_safe_actionable_rows": 26,
+    "seed": 271,
+    "selected_pilot_queries": [
+      8,
+      15,
+      17,
+      22,
+      24,
+      25,
+      28,
+      47
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-277\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-277\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2907,
+    "runtime_safe_actionable_queries": 20,
+    "runtime_safe_actionable_rows": 20,
+    "seed": 277,
+    "selected_pilot_queries": [
+      8,
+      17,
+      19,
+      21,
+      27,
+      30,
+      32,
+      37
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-281\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-281\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2834,
+    "runtime_safe_actionable_queries": 20,
+    "runtime_safe_actionable_rows": 20,
+    "seed": 281,
+    "selected_pilot_queries": [
+      1,
+      4,
+      16,
+      18,
+      29,
+      30,
+      36,
+      44
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-283\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-283\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2864,
+    "runtime_safe_actionable_queries": 17,
+    "runtime_safe_actionable_rows": 17,
+    "seed": 283,
+    "selected_pilot_queries": [
+      2,
+      18,
+      22,
+      25,
+      28,
+      34,
+      40,
+      45
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-293\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-293\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2854,
+    "runtime_safe_actionable_queries": 28,
+    "runtime_safe_actionable_rows": 28,
+    "seed": 293,
+    "selected_pilot_queries": [
+      0,
+      3,
+      4,
+      12,
+      21,
+      22,
+      32,
+      36
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-307\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-307\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2869,
+    "runtime_safe_actionable_queries": 26,
+    "runtime_safe_actionable_rows": 26,
+    "seed": 307,
+    "selected_pilot_queries": [
+      0,
+      12,
+      19,
+      22,
+      24,
+      27,
+      34,
+      37
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-311\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-311\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2888,
+    "runtime_safe_actionable_queries": 26,
+    "runtime_safe_actionable_rows": 26,
+    "seed": 311,
+    "selected_pilot_queries": [
+      4,
+      6,
+      19,
+      25,
+      35,
+      37,
+      40,
+      41
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-313\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-313\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2894,
+    "runtime_safe_actionable_queries": 16,
+    "runtime_safe_actionable_rows": 16,
+    "seed": 313,
+    "selected_pilot_queries": [
+      2,
+      15,
+      16,
+      17,
+      31,
+      37,
+      38,
+      41
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-317\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-317\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2921,
+    "runtime_safe_actionable_queries": 19,
+    "runtime_safe_actionable_rows": 19,
+    "seed": 317,
+    "selected_pilot_queries": [
+      3,
+      7,
+      8,
+      19,
+      28,
+      29,
+      35,
+      46
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-331\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-331\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2870,
+    "runtime_safe_actionable_queries": 30,
+    "runtime_safe_actionable_rows": 30,
+    "seed": 331,
+    "selected_pilot_queries": [
+      7,
+      12,
+      16,
+      25,
+      27,
+      30,
+      35,
+      37
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-337\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-337\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2886,
+    "runtime_safe_actionable_queries": 25,
+    "runtime_safe_actionable_rows": 25,
+    "seed": 337,
+    "selected_pilot_queries": [
+      2,
+      16,
+      17,
+      25,
+      27,
+      30,
+      34,
+      45
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-347\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-347\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2870,
+    "runtime_safe_actionable_queries": 19,
+    "runtime_safe_actionable_rows": 19,
+    "seed": 347,
+    "selected_pilot_queries": [
+      21,
+      23,
+      24,
+      28,
+      37,
+      38,
+      40,
+      42
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-349\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-349\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2831,
+    "runtime_safe_actionable_queries": 22,
+    "runtime_safe_actionable_rows": 22,
+    "seed": 349,
+    "selected_pilot_queries": [
+      2,
+      7,
+      9,
+      20,
+      22,
+      24,
+      35,
+      41
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-353\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-353\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2901,
+    "runtime_safe_actionable_queries": 19,
+    "runtime_safe_actionable_rows": 19,
+    "seed": 353,
+    "selected_pilot_queries": [
+      8,
+      19,
+      21,
+      26,
+      27,
+      31,
+      39,
+      42
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-359\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-359\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2907,
+    "runtime_safe_actionable_queries": 26,
+    "runtime_safe_actionable_rows": 26,
+    "seed": 359,
+    "selected_pilot_queries": [
+      0,
+      9,
+      27,
+      30,
+      31,
+      34,
+      36,
+      46
+    ]
+  },
+  {
+    "dynamic_required_columns": [
+      "base_score",
+      "final_score",
+      "product_id",
+      "quality",
+      "query_id",
+      "relevance",
+      "zero_history"
+    ],
+    "model_output_dir": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-367\\smoke",
+    "ranked_frame_path": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z\\seed-367\\smoke\\ranked_test.csv",
+    "ranked_frame_rows": 2889,
+    "runtime_safe_actionable_queries": 24,
+    "runtime_safe_actionable_rows": 24,
+    "seed": 367,
+    "selected_pilot_queries": [
+      0,
+      4,
+      16,
+      18,
+      21,
+      27,
+      32,
+      33
+    ]
+  }
+]

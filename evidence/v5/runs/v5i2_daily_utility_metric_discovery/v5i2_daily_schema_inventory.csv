@@ -1,0 +1,16 @@
+column,source_dtype,row_count,non_null_count,missing_rate,unique_count_including_missing,numeric_finite_rate_after_to_numeric,fully_numeric_after_to_numeric,is_action_key,is_key_or_index_like_name,has_utility_semantic_hint
+action,str,108000,108000,0.0,5,0.0,False,True,True,False
+clicks,int64,108000,108000,0.0,210,1.0,True,False,False,False
+cold_to_warm,int64,108000,108000,0.0,33,1.0,True,False,False,False
+day,int64,108000,108000,0.0,5,1.0,True,False,True,False
+false_warmup,int64,108000,108000,0.0,5,1.0,True,False,False,False
+irrelevant_exposure,int64,108000,108000,0.0,155,1.0,True,False,False,False
+policy,str,108000,108000,0.0,2,0.0,False,False,False,False
+product_id,int64,108000,108000,0.0,106,1.0,True,False,True,False
+proposal_index,int64,108000,108000,0.0,8,1.0,True,True,True,False
+query_id,int64,108000,108000,0.0,44,1.0,True,False,True,False
+relevant_discovery,int64,108000,108000,0.0,142,1.0,True,False,False,False
+replication,int64,108000,108000,0.0,5,1.0,True,False,True,True
+scenario,str,108000,108000,0.0,3,0.0,False,False,True,False
+seed,int64,108000,108000,0.0,18,1.0,True,True,True,False
+utility,float64,108000,108000,0.0,683,1.0,True,False,False,True

@@ -1,0 +1,23 @@
+[
+  "bm25_score",
+  "dense_score",
+  "price_log",
+  "quality",
+  "first_observed_age",
+  "zero_history",
+  "sparse_history",
+  "prior_impressions",
+  "prior_clicks",
+  "prior_purchases",
+  "smoothed_ctr",
+  "smoothed_purchase_rate",
+  "behavior_velocity",
+  "semantic_rank_score",
+  "qrsbt_ctr",
+  "qrsbt_purchase",
+  "qrsbt_confidence",
+  "qrsbt_dispersion",
+  "qrsbt_support_score",
+  "qrsbt_relevance_probability",
+  "qrsbt_irrelevant_probability"
+]

@@ -1,0 +1,145 @@
+outer_fold,risk_head,candidate,family,params_json,inner_brier
+1,irrelevant_exposure_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.25816719343243805
+1,irrelevant_exposure_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2650305130145045
+1,irrelevant_exposure_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.2671446936288113
+1,irrelevant_exposure_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.2851350734867087
+1,irrelevant_exposure_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.31265711501750165
+1,irrelevant_exposure_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.31957704785459806
+1,false_warmup_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.1598207779598432
+1,false_warmup_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.1648179311757805
+1,false_warmup_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.16684151712693873
+1,false_warmup_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.17063773942115934
+1,false_warmup_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.20369284980956084
+1,false_warmup_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.24154116795351807
+1,negative_worst_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.2596924027788477
+1,negative_worst_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2668728918176709
+1,negative_worst_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.2705350194890307
+1,negative_worst_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.2947071500929032
+1,negative_worst_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.3139103620391204
+1,negative_worst_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.3337633403531468
+1,negative_p10_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.09044008131880334
+1,negative_p10_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.09162175543118967
+1,negative_p10_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.09210917505152148
+1,negative_p10_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.09739278993544175
+1,negative_p10_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.1145603033148171
+1,negative_p10_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.14108501735779902
+2,irrelevant_exposure_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.24525779597720473
+2,irrelevant_exposure_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.2461366736115378
+2,irrelevant_exposure_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.24765489624552542
+2,irrelevant_exposure_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2477962346305879
+2,irrelevant_exposure_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.27551824790623386
+2,irrelevant_exposure_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.3032299478152363
+2,false_warmup_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.17399225335296217
+2,false_warmup_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.17834771615185896
+2,false_warmup_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.18003993335405788
+2,false_warmup_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.1845323660365772
+2,false_warmup_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.22301570177890637
+2,false_warmup_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.2648097818989293
+2,negative_worst_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.27202857725310947
+2,negative_worst_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.27253022814643507
+2,negative_worst_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.27312744289188
+2,negative_worst_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.31838825010618993
+2,negative_worst_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.35620085816507646
+2,negative_worst_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.3783027282158147
+2,negative_p10_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.08969664793555061
+2,negative_p10_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.09050105838136073
+2,negative_p10_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.09065961441438407
+2,negative_p10_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.10358188497977931
+2,negative_p10_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.12934107979294632
+2,negative_p10_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.15901893883610366
+3,irrelevant_exposure_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.252646740793749
+3,irrelevant_exposure_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.25950866393160904
+3,irrelevant_exposure_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.26339573708203773
+3,irrelevant_exposure_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.2702310448570749
+3,irrelevant_exposure_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.30212204797007874
+3,irrelevant_exposure_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.30655083048616677
+3,false_warmup_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.1479494733156462
+3,false_warmup_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.14918179614112292
+3,false_warmup_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.15015371482991102
+3,false_warmup_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.17524402560691668
+3,false_warmup_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.22746114844466028
+3,false_warmup_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.2816347446665085
+3,negative_worst_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2603377882382157
+3,negative_worst_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.26034765438033564
+3,negative_worst_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.26485787699837293
+3,negative_worst_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.27731797810404113
+3,negative_worst_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.3189142141473415
+3,negative_worst_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.36141042345514857
+3,negative_p10_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.091611620990242
+3,negative_p10_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.0932677188683607
+3,negative_p10_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.09509501275695714
+3,negative_p10_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.10113110229662337
+3,negative_p10_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.10902104674682163
+3,negative_p10_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.13303691816746516
+4,irrelevant_exposure_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.25254229975501663
+4,irrelevant_exposure_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.25774249338044913
+4,irrelevant_exposure_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.2611492860794228
+4,irrelevant_exposure_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.27599534130736797
+4,irrelevant_exposure_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.291969750557394
+4,irrelevant_exposure_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.32739194285827466
+4,false_warmup_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.15470024038624905
+4,false_warmup_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.15833873801734868
+4,false_warmup_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.16054429770773745
+4,false_warmup_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.17765031940776013
+4,false_warmup_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.24210195377997942
+4,false_warmup_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.31164865605814235
+4,negative_worst_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.26890620071840576
+4,negative_worst_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2736435616529822
+4,negative_worst_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.27386421539321143
+4,negative_worst_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.28786779624877074
+4,negative_worst_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.3193615328529302
+4,negative_worst_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.34568938440630753
+4,negative_p10_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.09489054065550272
+4,negative_p10_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.09651291842255372
+4,negative_p10_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.09945190135948141
+4,negative_p10_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.10641295663313514
+4,negative_p10_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.1194560482403302
+4,negative_p10_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.14274858191038434
+5,irrelevant_exposure_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.24661996698619437
+5,irrelevant_exposure_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.25296162512987763
+5,irrelevant_exposure_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.2579434992089669
+5,irrelevant_exposure_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.26339417915033864
+5,irrelevant_exposure_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.2712206918744981
+5,irrelevant_exposure_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.289870557704766
+5,false_warmup_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.16556171061906721
+5,false_warmup_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.17280044751945067
+5,false_warmup_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.17675080170293486
+5,false_warmup_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.1874516260849555
+5,false_warmup_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.23481384017525295
+5,false_warmup_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.2673350919337581
+5,negative_worst_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.25883761654567733
+5,negative_worst_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.26445641840767375
+5,negative_worst_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.2680939751156293
+5,negative_worst_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.2806607624712292
+5,negative_worst_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.316493661073273
+5,negative_worst_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.3398295778315335
+5,negative_p10_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.09319917763957593
+5,negative_p10_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.09493116227231302
+5,negative_p10_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.09729724715317589
+5,negative_p10_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.09953111116444613
+5,negative_p10_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.11276358233519705
+5,negative_p10_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.12704268934103136
+6,irrelevant_exposure_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.2450452025078175
+6,irrelevant_exposure_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2532204584565208
+6,irrelevant_exposure_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.25361748966013226
+6,irrelevant_exposure_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.2587588757589034
+6,irrelevant_exposure_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.2728561164635297
+6,irrelevant_exposure_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.28772580581073764
+6,false_warmup_increase,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.17274267919652572
+6,false_warmup_increase,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.1787206977616885
+6,false_warmup_increase,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.18301412205452017
+6,false_warmup_increase,logistic_c_0p1,logistic,"{""C"": 0.1}",0.1860373882647919
+6,false_warmup_increase,logistic_c_1,logistic,"{""C"": 1.0}",0.21640715057593354
+6,false_warmup_increase,logistic_c_10,logistic,"{""C"": 10.0}",0.23977934945027893
+6,negative_worst_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.28383629939289534
+6,negative_worst_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.2905735219042098
+6,negative_worst_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.291785379943015
+6,negative_worst_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.3164516703925426
+6,negative_worst_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.3576870531539928
+6,negative_worst_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.38851854449071244
+6,negative_p10_scenario_utility,extra_trees_leaf_20,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 20, ""n_estimators"": 300}",0.09125360788765301
+6,negative_p10_scenario_utility,extra_trees_leaf_10,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 10, ""n_estimators"": 300}",0.09186195346150533
+6,negative_p10_scenario_utility,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",0.09273944262646656
+6,negative_p10_scenario_utility,logistic_c_0p1,logistic,"{""C"": 0.1}",0.09594713972882955
+6,negative_p10_scenario_utility,logistic_c_1,logistic,"{""C"": 1.0}",0.11082347060433695
+6,negative_p10_scenario_utility,logistic_c_10,logistic,"{""C"": 10.0}",0.14408957584999685

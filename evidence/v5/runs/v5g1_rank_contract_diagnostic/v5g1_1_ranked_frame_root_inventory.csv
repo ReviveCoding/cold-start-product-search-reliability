@@ -1,0 +1,5 @@
+experiment_root,training_seed_coverage,expected_training_seed_count,duplicate_seed_path_count,is_complete_unique_root
+C:\p9b\p9-category-intent-state-candidate-20260630T040226\artifacts\_validation\contextual-six-seed-20260630T105011,0,18,0,False
+C:\p9b\p9-category-intent-state-candidate-20260630T040226\artifacts\_validation\fresh_seed_cohort_protocol_v1,0,18,0,False
+C:\p9b\p9-category-intent-state-candidate-20260630T040226\artifacts\_validation\v5-direct-action-effect-pilot-retry-20260701T003603Z,3,18,0,False
+C:\p9b\p9-category-intent-state-candidate-20260630T040226\artifacts\_validation\v5-final-training-action-effect-corpus-retry-20260701T005116Z,18,18,0,True

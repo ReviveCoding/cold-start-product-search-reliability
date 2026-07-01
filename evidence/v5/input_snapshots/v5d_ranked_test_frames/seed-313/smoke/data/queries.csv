@@ -1,0 +1,49 @@
+query_id,query,intent,category,target_product_id
+0,earbuds headphones,attribute,headphones,240
+1,Nimbus coffee,brand_category,coffee,289
+2,lightweight running shoes,attribute,running_shoes,162
+3,Kite H167,exact_model,laptop,67
+4,Atlas A100,exact_model,skincare,180
+5,camera,generic,camera,317
+6,Kite O134,exact_model,cookware,214
+7,Vela H107,exact_model,backpack,7
+8,Vela Q156,exact_model,headphones,56
+9,coffee,generic,coffee,145
+10,trail running shoes,attribute,running_shoes,130
+11,Aster D103,exact_model,laptop,3
+12,serum skincare,attribute,skincare,132
+13,Vela B141,exact_model,camera,221
+14,Mosaic cookware,brand_category,cookware,22
+15,backpack,generic,backpack,175
+16,headphones,generic,headphones,232
+17,Atlas coffee,brand_category,coffee,201
+18,Vela running shoes,brand_category,running_shoes,34
+19,Atlas T109,exact_model,laptop,99
+20,skincare,generic,skincare,252
+21,instant camera,attribute,camera,317
+22,nonstick cookware,attribute,cookware,118
+23,backpack,generic,backpack,127
+24,headphones,generic,headphones,256
+25,espresso coffee,attribute,coffee,241
+26,running shoes,generic,running_shoes,154
+27,Atlas T149,exact_model,laptop,139
+28,skincare,generic,skincare,236
+29,Juniper B131,exact_model,camera,301
+30,Nimbus K100,exact_model,cookware,270
+31,backpack,generic,backpack,287
+32,wireless headphones,attribute,headphones,288
+33,dark roast coffee,attribute,coffee,289
+34,cushioned running shoes,attribute,running_shoes,242
+35,Aster L151,exact_model,laptop,51
+36,skincare,generic,skincare,260
+37,camera,generic,camera,309
+38,cookware,generic,cookware,142
+39,commuter backpack,attribute,backpack,87
+40,noise cancelling headphones,attribute,headphones,152
+41,coffee,generic,coffee,65
+42,Juniper C102,exact_model,running_shoes,2
+43,laptop,generic,laptop,227
+44,skincare,generic,skincare,108
+45,camera,generic,camera,309
+46,Aster cookware,brand_category,cookware,38
+47,Orion P135,exact_model,backpack,215

@@ -1,0 +1,63 @@
+config_schema_version: '6.0'
+seed: 277
+mode: smoke
+output_dir: C:\p9b\p9-category-intent-state-candidate-20260630T040226\artifacts\_validation\v5-final-training-action-effect-corpus-retry-20260701T005116Z\seed-277\smoke
+synthetic:
+  n_products: 320
+  n_queries: 48
+  n_users: 160
+  n_time_blocks: 8
+  impressions_per_query_time: 18
+retrieval:
+  bm25_k1: 1.5
+  bm25_b: 0.75
+  dense_dim: 64
+  candidate_k: 50
+  final_k: 10
+ranking:
+  xgb_estimators: 45
+  dcn_epochs: 7
+  dcn_batch_size: 256
+  learning_rate: 0.003
+  semantic_weight: 0.65
+  behavior_weight: 0.35
+qrsbt:
+  neighbors: 8
+  min_support: 2
+  semantic_threshold: 0.18
+  confidence_threshold: 0.8
+  compatibility_threshold: 0.32
+  irrelevant_risk_threshold: 0.6
+  max_boost: 0.01275
+  promotion_window: 5
+  max_promotions_per_query: 1
+  promotion_mode: boundary_entry_only
+simulation:
+  days: 10
+  traffic_per_day: 120
+  replications: 30
+release:
+  max_overall_ndcg_drop: 0.002
+  max_overall_ndcg_drop_ci: 0.005
+  min_cold_ndcg_lift: 0.005
+  min_cold_ndcg_lift_ci_low: 0.0
+  max_warm_ndcg_drop: 0.01
+  max_warm_ndcg_drop_ci: 0.02
+  max_irrelevant_exposure_increase: 0.0
+  max_irrelevant_exposure_ci_high: 0.005
+  min_ope_ess: 3000
+  max_ope_dr_abs_error: 0.02
+  min_ope_support_overlap: 0.999
+  max_dynamic_relevant_discovery_drop_rate: 0.0
+  max_dynamic_false_warmup_increase: 0
+  max_dynamic_irrelevant_exposure_increase: 0
+  min_worst_scenario_utility_delta: 0.0
+  min_p10_scenario_replication_utility_delta: 0.0
+  max_serving_p95_ms: 150.0
+  min_judgment_coverage_at_10: 1.0
+  min_future_behavior_roc_auc: 0.7
+  max_future_behavior_brier: 0.15
+  max_future_behavior_ece: 0.05
+  max_future_logged_ndcg_drop: 0.0
+  max_relation_eligibility_brier: 0.01
+  max_relation_eligibility_ece: 0.01

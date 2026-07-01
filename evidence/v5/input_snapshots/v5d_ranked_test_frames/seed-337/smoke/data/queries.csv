@@ -1,0 +1,49 @@
+query_id,query,intent,category,target_product_id
+0,Kite Q176,exact_model,headphones,256
+1,Mosaic B161,exact_model,coffee,241
+2,Vela running shoes,brand_category,running_shoes,154
+3,Atlas T149,exact_model,laptop,139
+4,skincare,generic,skincare,236
+5,camera,generic,camera,301
+6,cookware,generic,cookware,270
+7,Aster H117,exact_model,backpack,287
+8,headphones,generic,headphones,288
+9,coffee,generic,coffee,289
+10,Atlas C162,exact_model,running_shoes,242
+11,laptop,generic,laptop,51
+12,Vela skincare,brand_category,skincare,260
+13,Atlas camera,brand_category,camera,309
+14,cast iron cookware,attribute,cookware,142
+15,backpack,generic,backpack,87
+16,headphones,generic,headphones,152
+17,whole bean coffee,attribute,coffee,65
+18,running shoes,generic,running_shoes,2
+19,Kite laptop,brand_category,laptop,227
+20,Mosaic I118,exact_model,skincare,108
+21,mirrorless camera,attribute,camera,309
+22,ceramic cookware,attribute,cookware,38
+23,backpack,generic,backpack,215
+24,headphones,generic,headphones,128
+25,Kite coffee,brand_category,coffee,121
+26,running shoes,generic,running_shoes,138
+27,laptop,generic,laptop,299
+28,skincare,generic,skincare,156
+29,camera,generic,camera,93
+30,cookware,generic,cookware,22
+31,Orion P105,exact_model,backpack,95
+32,Nimbus A140,exact_model,headphones,40
+33,Mosaic coffee,brand_category,coffee,217
+34,running shoes,generic,running_shoes,298
+35,Orion H127,exact_model,laptop,27
+36,Atlas skincare,brand_category,skincare,188
+37,action camera,attribute,camera,141
+38,cast iron cookware,attribute,cookware,30
+39,Nimbus backpack,brand_category,backpack,295
+40,Orion headphones,brand_category,headphones,88
+41,Mosaic coffee,brand_category,coffee,201
+42,stability running shoes,attribute,running_shoes,98
+43,laptop,generic,laptop,163
+44,Orion skincare,brand_category,skincare,164
+45,camera,generic,camera,5
+46,Vela cookware,brand_category,cookware,246
+47,commuter backpack,attribute,backpack,31

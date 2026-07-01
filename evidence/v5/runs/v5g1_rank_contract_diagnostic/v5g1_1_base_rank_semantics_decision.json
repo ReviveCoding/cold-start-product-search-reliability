@@ -1,0 +1,45 @@
+{
+  "baseline_commit": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "calibration_seeds_executed": [],
+  "commit_created": false,
+  "config_modified": false,
+  "confirmation_seeds_executed": [],
+  "model_trained": false,
+  "next_gate": "Repair the V5-G1 recovery runner to treat the proven source-native base_rank as authoritative, build query geometry from source rank boundaries, and rerun only the read-only recovery.",
+  "proposal_context_rank_coverage_path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z\\v5g1_1_proposal_context_rank_coverage.csv",
+  "proposal_manifest_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_runtime_safe_proposal_manifest.csv",
+  "proposal_manifest_sha256": "283e652fb9ffc2dff789583432545305ba7f7978cf5098315f0b09966051fc11",
+  "proposal_source_contract": {
+    "exact_proposal_key_match_count": 144,
+    "exact_proposal_runtime_contract_match_count": 144,
+    "proposal_context_count": 144,
+    "proposal_contexts_with_all_target_boundaries": 144
+  },
+  "push_performed": false,
+  "query_count": 864,
+  "rank_contract_by_query_path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z\\v5g1_1_rank_contract_by_query.csv",
+  "rank_contract_by_seed_path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z\\v5g1_1_rank_contract_by_seed.csv",
+  "rank_semantics": {
+    "all_144_proposal_contexts_have_rank_1_2_3_5_10": true,
+    "all_queries_base_score_nonincreasing_by_source_rank": true,
+    "all_queries_one_based_rank_permutation": true,
+    "best_external_sort_candidate": {
+      "exact_query_count": 819,
+      "mean_query_row_agreement": 0.9982154119963411,
+      "minimum_query_row_agreement": 0.9285714285714286,
+      "strategy": "base_score_desc_product_id_asc",
+      "total_query_count": 864
+    },
+    "interpretation": "This audit distinguishes source-native base_rank semantics from the recovery script's prior product_id tie-break assumption. It does not modify a ranked frame or fit a model."
+  },
+  "rank_strategy_comparison_path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z\\v5g1_1_rank_strategy_comparison.csv",
+  "ranked_frame_root": "C:\\p9b\\p9-category-intent-state-candidate-20260630T040226\\artifacts\\_validation\\v5-final-training-action-effect-corpus-retry-20260701T005116Z",
+  "ranked_frame_root_inventory_path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z\\v5g1_1_ranked_frame_root_inventory.csv",
+  "ranked_row_count": 51899,
+  "source_modified": false,
+  "status": "V5G1_1_NATIVE_BASE_RANK_CONTRACT_RECOVERABLE",
+  "threshold_selected": false,
+  "training_seed_count": 18,
+  "v5d_decision_path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z\\v5d_direct_action_effect_decision.json",
+  "v5d_decision_sha256": "744e90ba8585330b2d1b32a42c9b7e88f161fd495f61e874c800872f67156eb7"
+}

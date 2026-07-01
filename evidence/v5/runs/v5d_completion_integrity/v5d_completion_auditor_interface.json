@@ -1,0 +1,24 @@
+{
+  "argv_bindings": [
+    {
+      "argv_index": 1,
+      "line": 13,
+      "source": "decision_path = Path(sys.argv[1]).resolve()",
+      "target_name": "decision_path"
+    },
+    {
+      "argv_index": 2,
+      "line": 14,
+      "source": "output_root = Path(sys.argv[2]).resolve()",
+      "target_name": "output_root"
+    },
+    {
+      "argv_index": 3,
+      "line": 15,
+      "source": "expected_head = sys.argv[3]",
+      "target_name": "expected_head"
+    }
+  ],
+  "auditor_path": "C:\\p9b\\p9-v5d-completion-corpus-integrity-audit-20260701T011543Z\\verify_v5d_completion_and_corpus_integrity.py",
+  "status": "V5D_COMPLETION_AUDITOR_INTERFACE_DISCOVERED"
+}

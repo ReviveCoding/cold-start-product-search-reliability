@@ -1,0 +1,7 @@
+outer_fold,train_seed_count,test_seed_count,train_seeds,test_seeds,utility_candidate,utility_family,utility_params_json,irrelevant_exposure_increase_candidate,false_warmup_increase_candidate,negative_worst_scenario_utility_candidate,negative_p10_scenario_utility_candidate
+1,15,3,263|269|281|283|293|307|311|313|317|331|337|349|353|359|367,271|277|347,extra_trees_leaf_5,extra_trees,"{""max_features"": 0.7, ""min_samples_leaf"": 5, ""n_estimators"": 300}",extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20
+2,15,3,263|269|271|277|281|293|307|311|313|317|347|349|353|359|367,283|331|337,ridge_alpha_100,ridge,"{""alpha"": 100.0}",extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_5,extra_trees_leaf_10
+3,15,3,263|271|277|281|283|293|307|313|331|337|347|349|353|359|367,269|311|317,ridge_alpha_100,ridge,"{""alpha"": 100.0}",extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_10,extra_trees_leaf_20
+4,15,3,263|269|271|277|283|293|311|313|317|331|337|347|353|359|367,281|307|349,ridge_alpha_1,ridge,"{""alpha"": 1.0}",extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20
+5,15,3,269|271|277|281|283|293|307|311|317|331|337|347|349|353|367,263|313|359,ridge_alpha_1,ridge,"{""alpha"": 1.0}",extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20
+6,15,3,263|269|271|277|281|283|307|311|313|317|331|337|347|349|359,293|353|367,ridge_alpha_10,ridge,"{""alpha"": 10.0}",extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20,extra_trees_leaf_20

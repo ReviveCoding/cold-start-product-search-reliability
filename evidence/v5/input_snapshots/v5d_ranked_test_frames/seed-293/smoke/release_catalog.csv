@@ -1,0 +1,309 @@
+product_id,title,brand,category,attribute,color,model,price,launch_block,quality
+0,Atlas A100 red wireless headphones,Atlas,headphones,wireless,red,A100,28.27,1,0.8374291605688686
+1,Nimbus B101 silver whole bean coffee,Nimbus,coffee,whole bean,silver,B101,38.36,0,0.565490455839535
+2,Juniper C102 black cushioned running shoes,Juniper,running_shoes,cushioned,black,C102,47.35,3,0.8442778425668366
+3,Orion D103 green creator laptop,Orion,laptop,creator,green,D103,51.03,2,0.3602136528373193
+4,Vela E104 silver sunscreen skincare,Vela,skincare,sunscreen,silver,E104,45.13,5,0.5914831069764335
+5,Aster F105 white action camera,Aster,camera,action,white,F105,17.77,0,0.926713701180035
+6,Nimbus G106 green stainless cookware,Nimbus,cookware,stainless,green,G106,12.14,2,0.795998986095367
+7,Nimbus H107 black hiking backpack,Nimbus,backpack,hiking,black,H107,46.5,4,0.44522318827889173
+8,Nimbus I108 blue wireless headphones,Nimbus,headphones,wireless,blue,I108,25.14,4,0.3971839851102794
+9,Kite J109 silver dark roast coffee,Kite,coffee,dark roast,silver,J109,39.43,1,0.6051133618353992
+10,Vela K110 green trail running shoes,Vela,running_shoes,trail,green,K110,22.99,5,0.6603769388819977
+11,Kite L111 red business laptop,Kite,laptop,business,red,L111,23.21,5,0.7955931955782568
+12,Mosaic M112 blue sunscreen skincare,Mosaic,skincare,sunscreen,blue,M112,136.0,2,0.7259028063406772
+13,Kite N113 silver compact camera,Kite,camera,compact,silver,N113,11.78,0,0.7158958197549579
+14,Atlas O114 silver ceramic cookware,Atlas,cookware,ceramic,silver,O114,18.37,5,0.3509827903668653
+15,Kite P115 white hiking backpack,Kite,backpack,hiking,white,P115,29.39,2,0.41688000529759706
+16,Kite Q116 black wireless headphones,Kite,headphones,wireless,black,Q116,37.53,3,0.5927657400777121
+17,Vela R117 green dark roast coffee,Vela,coffee,dark roast,green,R117,22.04,1,0.5511930311173552
+18,Vela S118 blue lightweight running shoes,Vela,running_shoes,lightweight,blue,S118,42.7,6,0.8583337000982015
+19,Orion T119 black ultrabook laptop,Orion,laptop,ultrabook,black,T119,32.95,5,0.43596783662438443
+21,Aster B121 red action camera,Aster,camera,action,red,B121,68.89,4,0.503021286895393
+22,Orion C122 black stainless cookware,Orion,cookware,stainless,black,C122,14.65,0,0.3019323287623623
+23,Nimbus D123 silver commuter backpack,Nimbus,backpack,commuter,silver,D123,18.57,1,0.4071854436139682
+24,Aster E124 white wireless headphones,Aster,headphones,wireless,white,E124,75.41,1,0.780320019813601
+25,Aster F125 green decaf coffee,Aster,coffee,decaf,green,F125,30.83,0,0.6083066213157831
+26,Kite G126 green trail running shoes,Kite,running_shoes,trail,green,G126,11.01,5,0.37802076098707377
+27,Mosaic H127 black business laptop,Mosaic,laptop,business,black,H127,32.86,1,0.6050294742873316
+28,Juniper I128 green cleanser skincare,Juniper,skincare,cleanser,green,I128,25.21,2,0.5230924893831628
+29,Orion J129 black instant camera,Orion,camera,instant,black,J129,48.25,4,0.7665717120530504
+30,Juniper K130 white cast iron cookware,Juniper,cookware,cast iron,white,K130,37.73,6,0.6569393373102828
+31,Orion L131 black commuter backpack,Orion,backpack,commuter,black,L131,15.91,4,0.8498245102456778
+32,Vela M132 black wireless headphones,Vela,headphones,wireless,black,M132,14.59,2,0.8623037341972608
+33,Vela N133 white espresso coffee,Vela,coffee,espresso,white,N133,64.93,3,0.9024141585665881
+34,Mosaic O134 silver trail running shoes,Mosaic,running_shoes,trail,silver,O134,11.59,2,0.540569177285881
+35,Vela P135 white ultrabook laptop,Vela,laptop,ultrabook,white,P135,72.33,1,0.5187776686831436
+36,Vela Q136 red cleanser skincare,Vela,skincare,cleanser,red,Q136,43.6,1,0.5063224783214629
+37,Atlas R137 red instant camera,Atlas,camera,instant,red,R137,80.25,1,0.8724508238502492
+38,Mosaic S138 blue nonstick cookware,Mosaic,cookware,nonstick,blue,S138,42.67,0,0.8009441909799476
+39,Orion T139 red travel backpack,Orion,backpack,travel,red,T139,51.67,3,0.6228203476540861
+40,Atlas A140 silver over ear headphones,Atlas,headphones,over ear,silver,A140,44.27,0,0.7510658540619718
+41,Nimbus B141 blue dark roast coffee,Nimbus,coffee,dark roast,blue,B141,22.63,2,0.5858625751857162
+42,Mosaic C142 black lightweight running shoes,Mosaic,running_shoes,lightweight,black,C142,45.49,0,0.4943063902560522
+43,Atlas D143 white business laptop,Atlas,laptop,business,white,D143,50.47,5,0.6735148337911996
+44,Mosaic E144 silver moisturizer skincare,Mosaic,skincare,moisturizer,silver,E144,52.16,1,0.43688852531515443
+45,Aster F145 black action camera,Aster,camera,action,black,F145,30.86,3,0.7166703534206804
+46,Nimbus G146 blue cast iron cookware,Nimbus,cookware,cast iron,blue,G146,161.05,4,0.5946046160991891
+48,Kite I148 red noise cancelling headphones,Kite,headphones,noise cancelling,red,I148,35.72,1,0.407910694037408
+49,Juniper J149 black dark roast coffee,Juniper,coffee,dark roast,black,J149,17.38,1,0.14092797887938807
+50,Aster K150 green trail running shoes,Aster,running_shoes,trail,green,K150,18.75,1,0.49867150548223005
+52,Orion M152 white serum skincare,Orion,skincare,serum,white,M152,10.99,2,0.6357776651931122
+53,Juniper N153 silver instant camera,Juniper,camera,instant,silver,N153,20.51,3,0.5491656031155143
+54,Vela O154 green cast iron cookware,Vela,cookware,cast iron,green,O154,35.31,2,0.7300276221403292
+55,Orion P155 white travel backpack,Orion,backpack,travel,white,P155,45.42,0,0.9558009912662269
+56,Mosaic Q156 red wireless headphones,Mosaic,headphones,wireless,red,Q156,30.1,2,0.98
+58,Kite S158 blue trail running shoes,Kite,running_shoes,trail,blue,S158,32.4,3,0.6189001476771617
+59,Orion T159 blue creator laptop,Orion,laptop,creator,blue,T159,55.22,3,0.4273481032355678
+60,Orion A160 red sunscreen skincare,Orion,skincare,sunscreen,red,A160,14.47,0,0.7187794114860174
+61,Juniper B161 silver action camera,Juniper,camera,action,silver,B161,25.32,5,0.40438811339475456
+62,Orion C162 black cast iron cookware,Orion,cookware,cast iron,black,C162,53.92,4,0.5439162891224754
+63,Orion D163 blue hiking backpack,Orion,backpack,hiking,blue,D163,41.04,0,0.6909079974844912
+64,Juniper E164 white wireless headphones,Juniper,headphones,wireless,white,E164,16.42,0,0.6785211640706732
+65,Aster F165 black espresso coffee,Aster,coffee,espresso,black,F165,23.55,0,0.4717371458559708
+66,Vela G166 silver cushioned running shoes,Vela,running_shoes,cushioned,silver,G166,58.92,4,0.4145017838895375
+67,Vela H167 white creator laptop,Vela,laptop,creator,white,H167,39.1,6,0.663326212882763
+68,Kite I168 red moisturizer skincare,Kite,skincare,moisturizer,red,I168,46.68,1,0.4103447295619601
+69,Orion J169 blue mirrorless camera,Orion,camera,mirrorless,blue,J169,34.63,6,0.7231863268274844
+70,Juniper K170 red cast iron cookware,Juniper,cookware,cast iron,red,K170,13.21,0,0.7761646877638587
+71,Nimbus L171 white commuter backpack,Nimbus,backpack,commuter,white,L171,40.08,0,0.8075928326337725
+72,Kite M172 white earbuds headphones,Kite,headphones,earbuds,white,M172,53.78,1,0.7362831613280932
+73,Kite N173 white dark roast coffee,Kite,coffee,dark roast,white,N173,51.85,3,0.8692787591028576
+75,Juniper P175 blue gaming laptop,Juniper,laptop,gaming,blue,P175,59.51,2,0.5323883949518724
+76,Mosaic Q176 white cleanser skincare,Mosaic,skincare,cleanser,white,Q176,28.2,0,0.7296729557354945
+77,Mosaic R177 red compact camera,Mosaic,camera,compact,red,R177,15.49,0,0.6281566470145283
+78,Vela S178 black stainless cookware,Vela,cookware,stainless,black,S178,22.57,2,0.6588442764440051
+79,Aster T179 white commuter backpack,Aster,backpack,commuter,white,T179,22.47,1,0.4577814159916429
+80,Mosaic A180 red noise cancelling headphones,Mosaic,headphones,noise cancelling,red,A180,53.8,3,0.5724035050186447
+81,Juniper B181 silver whole bean coffee,Juniper,coffee,whole bean,silver,B181,28.85,0,0.548330573904403
+82,Aster C182 black stability running shoes,Aster,running_shoes,stability,black,C182,24.08,3,0.6884126625174001
+83,Atlas D183 black business laptop,Atlas,laptop,business,black,D183,106.86,4,0.7664745933058003
+84,Juniper E184 blue moisturizer skincare,Juniper,skincare,moisturizer,blue,E184,25.39,0,0.7982265143573182
+85,Atlas F185 white mirrorless camera,Atlas,camera,mirrorless,white,F185,32.91,1,0.1826566215108606
+86,Atlas G186 silver ceramic cookware,Atlas,cookware,ceramic,silver,G186,91.43,2,0.6071536784723162
+87,Mosaic H187 silver hiking backpack,Mosaic,backpack,hiking,silver,H187,44.23,3,0.609954778207952
+88,Orion I188 green noise cancelling headphones,Orion,headphones,noise cancelling,green,I188,18.89,2,0.1747422168266321
+89,Orion J189 blue dark roast coffee,Orion,coffee,dark roast,blue,J189,49.76,1,0.9427961222886143
+91,Atlas L101 blue ultrabook laptop,Atlas,laptop,ultrabook,blue,L101,67.61,5,0.8346709902246545
+92,Orion M102 blue sunscreen skincare,Orion,skincare,sunscreen,blue,M102,46.64,0,0.735169692430948
+93,Nimbus N103 blue mirrorless camera,Nimbus,camera,mirrorless,blue,N103,38.36,6,0.5422948548507563
+94,Atlas O104 blue nonstick cookware,Atlas,cookware,nonstick,blue,O104,28.98,1,0.5142069579481754
+95,Kite P105 silver hiking backpack,Kite,backpack,hiking,silver,P105,40.51,1,0.40191054940225346
+96,Aster Q106 black wireless headphones,Aster,headphones,wireless,black,Q106,43.78,1,0.6219315130944365
+97,Orion R107 silver dark roast coffee,Orion,coffee,dark roast,silver,R107,24.12,2,0.49384610971858756
+98,Aster S108 blue cushioned running shoes,Aster,running_shoes,cushioned,blue,S108,75.52,4,0.5776470282577981
+99,Juniper T109 blue business laptop,Juniper,laptop,business,blue,T109,19.97,3,0.6897352647327124
+100,Juniper A110 green moisturizer skincare,Juniper,skincare,moisturizer,green,A110,83.96,2,0.32542903962669634
+101,Vela B111 white mirrorless camera,Vela,camera,mirrorless,white,B111,77.22,2,0.7270041294850775
+102,Vela C112 blue stainless cookware,Vela,cookware,stainless,blue,C112,84.27,0,0.7183529408964178
+104,Juniper E114 blue wireless headphones,Juniper,headphones,wireless,blue,E114,27.64,3,0.8464622274661031
+105,Nimbus F115 silver decaf coffee,Nimbus,coffee,decaf,silver,F115,35.83,4,0.7610388604722021
+106,Atlas G116 black lightweight running shoes,Atlas,running_shoes,lightweight,black,G116,44.53,1,0.565168589594686
+107,Vela H117 blue creator laptop,Vela,laptop,creator,blue,H117,35.82,0,0.6087670597123839
+108,Juniper I118 white sunscreen skincare,Juniper,skincare,sunscreen,white,I118,52.22,3,0.7418337108488193
+109,Vela J119 white compact camera,Vela,camera,compact,white,J119,15.71,2,0.5917307853001791
+110,Vela K120 black cast iron cookware,Vela,cookware,cast iron,black,K120,67.18,4,0.5848459107313652
+111,Atlas L121 green travel backpack,Atlas,backpack,travel,green,L121,78.03,1,0.46001553349884416
+112,Atlas M122 white noise cancelling headphones,Atlas,headphones,noise cancelling,white,M122,44.19,2,0.4243863213053741
+113,Kite N123 red decaf coffee,Kite,coffee,decaf,red,N123,22.97,0,0.5977955030002419
+114,Juniper O124 silver lightweight running shoes,Juniper,running_shoes,lightweight,silver,O124,42.07,5,0.5067426405704003
+115,Mosaic P125 black ultrabook laptop,Mosaic,laptop,ultrabook,black,P125,84.45,1,0.5727602779060528
+116,Atlas Q126 red sunscreen skincare,Atlas,skincare,sunscreen,red,Q126,40.29,4,0.630242649903489
+117,Vela R127 white action camera,Vela,camera,action,white,R127,31.64,3,0.3083863123804705
+118,Vela S128 red nonstick cookware,Vela,cookware,nonstick,red,S128,33.21,1,0.42621559319443425
+119,Nimbus T129 red travel backpack,Nimbus,backpack,travel,red,T129,21.61,6,0.5044334035972458
+120,Juniper A130 blue over ear headphones,Juniper,headphones,over ear,blue,A130,28.29,0,0.48195802391192566
+121,Vela B131 silver decaf coffee,Vela,coffee,decaf,silver,B131,69.37,1,0.5312134349907287
+122,Juniper C132 white stability running shoes,Juniper,running_shoes,stability,white,C132,51.43,0,0.5448301090531391
+123,Nimbus D133 white business laptop,Nimbus,laptop,business,white,D133,72.19,3,0.7591711613247598
+124,Atlas E134 blue cleanser skincare,Atlas,skincare,cleanser,blue,E134,70.36,3,0.49929493339091024
+125,Juniper F135 white mirrorless camera,Juniper,camera,mirrorless,white,F135,40.1,3,0.9745828385333708
+126,Atlas G136 green stainless cookware,Atlas,cookware,stainless,green,G136,21.24,2,0.5121149631155713
+127,Juniper H137 green travel backpack,Juniper,backpack,travel,green,H137,21.8,4,0.6989928420627897
+128,Atlas I138 blue wireless headphones,Atlas,headphones,wireless,blue,I138,37.23,3,0.6637094862712568
+129,Aster J139 black espresso coffee,Aster,coffee,espresso,black,J139,56.05,5,0.3106790871922861
+130,Atlas K140 black cushioned running shoes,Atlas,running_shoes,cushioned,black,K140,21.05,4,0.5958356954249691
+131,Vela L141 black ultrabook laptop,Vela,laptop,ultrabook,black,L141,23.29,1,0.5086481142211364
+132,Nimbus M142 red moisturizer skincare,Nimbus,skincare,moisturizer,red,M142,41.6,5,0.6283575023130834
+133,Juniper N143 red action camera,Juniper,camera,action,red,N143,53.86,4,0.6258944311547638
+134,Aster O144 white ceramic cookware,Aster,cookware,ceramic,white,O144,17.79,3,0.5889666775765318
+135,Juniper P145 silver travel backpack,Juniper,backpack,travel,silver,P145,37.62,2,0.7498035152876698
+136,Juniper Q146 green wireless headphones,Juniper,headphones,wireless,green,Q146,39.75,0,0.4929412550766887
+137,Atlas R147 green whole bean coffee,Atlas,coffee,whole bean,green,R147,11.63,3,0.7610210770657757
+138,Aster S148 black stability running shoes,Aster,running_shoes,stability,black,S148,51.09,2,0.660247662508035
+139,Juniper T149 black creator laptop,Juniper,laptop,creator,black,T149,43.12,0,0.736425766722198
+140,Kite A150 black serum skincare,Kite,skincare,serum,black,A150,51.27,0,0.6688105518232296
+141,Vela B151 blue mirrorless camera,Vela,camera,mirrorless,blue,B151,38.93,5,0.5321989084081176
+142,Vela C152 red ceramic cookware,Vela,cookware,ceramic,red,C152,25.45,4,0.6380442881654491
+143,Kite D153 white commuter backpack,Kite,backpack,commuter,white,D153,58.01,3,0.677802300848206
+144,Aster E154 silver earbuds headphones,Aster,headphones,earbuds,silver,E154,13.25,6,0.4486436627012297
+145,Nimbus F155 blue whole bean coffee,Nimbus,coffee,whole bean,blue,F155,66.32,1,0.580209125016359
+146,Mosaic G156 white cushioned running shoes,Mosaic,running_shoes,cushioned,white,G156,17.29,2,0.6225070118849548
+148,Atlas I158 black cleanser skincare,Atlas,skincare,cleanser,black,I158,24.11,5,0.5284967092035474
+149,Aster J159 green instant camera,Aster,camera,instant,green,J159,52.19,1,0.25834811438662353
+150,Kite K160 green cast iron cookware,Kite,cookware,cast iron,green,K160,21.66,3,0.36526353621285756
+151,Atlas L161 red travel backpack,Atlas,backpack,travel,red,L161,32.27,0,0.4208974198705662
+152,Vela M162 green over ear headphones,Vela,headphones,over ear,green,M162,18.31,5,0.4380203744626855
+153,Orion N163 black espresso coffee,Orion,coffee,espresso,black,N163,34.85,0,0.44800020351234804
+154,Juniper O164 red lightweight running shoes,Juniper,running_shoes,lightweight,red,O164,75.52,1,0.8284948367470039
+155,Atlas P165 green ultrabook laptop,Atlas,laptop,ultrabook,green,P165,31.46,0,0.4873272400609757
+156,Nimbus Q166 white cleanser skincare,Nimbus,skincare,cleanser,white,Q166,40.63,0,0.7874841793515173
+157,Mosaic R167 black compact camera,Mosaic,camera,compact,black,R167,13.44,2,0.4608516186334062
+158,Mosaic S168 silver cast iron cookware,Mosaic,cookware,cast iron,silver,S168,41.49,4,0.6616122098288298
+159,Kite T169 black laptop backpack,Kite,backpack,laptop,black,T169,22.59,6,0.42432623431861904
+161,Kite B171 silver whole bean coffee,Kite,coffee,whole bean,silver,B171,25.02,1,0.29472616915469413
+162,Kite C172 white lightweight running shoes,Kite,running_shoes,lightweight,white,C172,34.95,0,0.41825783974837094
+163,Juniper D173 blue gaming laptop,Juniper,laptop,gaming,blue,D173,39.34,0,0.542654406961786
+164,Atlas E174 blue serum skincare,Atlas,skincare,serum,blue,E174,93.1,4,0.5890122765319726
+165,Aster F175 black instant camera,Aster,camera,instant,black,F175,16.61,3,0.692886467254751
+166,Orion G176 red ceramic cookware,Orion,cookware,ceramic,red,G176,18.37,2,0.5773917604322782
+167,Nimbus H177 blue travel backpack,Nimbus,backpack,travel,blue,H177,15.64,0,0.46339730886205543
+168,Aster I178 black earbuds headphones,Aster,headphones,earbuds,black,I178,16.53,4,0.7248228603133712
+169,Kite J179 red dark roast coffee,Kite,coffee,dark roast,red,J179,17.78,3,0.7867571719763273
+170,Nimbus K180 green trail running shoes,Nimbus,running_shoes,trail,green,K180,63.11,2,0.35185239277362873
+171,Aster L181 blue creator laptop,Aster,laptop,creator,blue,L181,23.01,1,0.6461748543288552
+172,Kite M182 white moisturizer skincare,Kite,skincare,moisturizer,white,M182,31.81,2,0.7180875743543178
+173,Vela N183 blue instant camera,Vela,camera,instant,blue,N183,26.53,4,0.7779932080880603
+174,Nimbus O184 green nonstick cookware,Nimbus,cookware,nonstick,green,O184,10.72,5,0.49815841646569253
+175,Orion P185 blue hiking backpack,Orion,backpack,hiking,blue,P185,55.68,1,0.6039845802252591
+176,Aster Q186 red wireless headphones,Aster,headphones,wireless,red,Q186,26.64,2,0.908207811606993
+177,Orion R187 white espresso coffee,Orion,coffee,espresso,white,R187,24.06,5,0.42366097504407507
+178,Atlas S188 white trail running shoes,Atlas,running_shoes,trail,white,S188,27.28,0,0.800366179907095
+179,Vela T189 green business laptop,Vela,laptop,business,green,T189,27.91,3,0.48150192067687114
+180,Nimbus A100 blue moisturizer skincare,Nimbus,skincare,moisturizer,blue,A100,24.49,3,0.8417935988688187
+181,Vela B101 blue mirrorless camera,Vela,camera,mirrorless,blue,B101,63.79,0,0.8482178594178416
+182,Orion C102 white stainless cookware,Orion,cookware,stainless,white,C102,30.66,4,0.5153852234109935
+183,Vela D103 green travel backpack,Vela,backpack,travel,green,D103,27.79,4,0.6950238872744183
+184,Nimbus E104 red noise cancelling headphones,Nimbus,headphones,noise cancelling,red,E104,46.57,0,0.6062676442581719
+185,Nimbus F105 black decaf coffee,Nimbus,coffee,decaf,black,F105,28.46,0,0.6355648047852179
+186,Orion G106 black lightweight running shoes,Orion,running_shoes,lightweight,black,G106,21.45,1,0.4542105527360988
+187,Vela H107 black creator laptop,Vela,laptop,creator,black,H107,20.47,0,0.43278215276674636
+188,Mosaic I108 white moisturizer skincare,Mosaic,skincare,moisturizer,white,I108,29.66,2,0.7800023450239759
+189,Mosaic J109 blue instant camera,Mosaic,camera,instant,blue,J109,23.14,0,0.7158099596320624
+190,Aster K110 black stainless cookware,Aster,cookware,stainless,black,K110,40.74,1,0.4314794296927881
+191,Nimbus L111 red commuter backpack,Nimbus,backpack,commuter,red,L111,28.12,0,0.8416307690244926
+192,Aster M112 white earbuds headphones,Aster,headphones,earbuds,white,M112,45.92,1,0.5851347742360389
+193,Vela N113 blue whole bean coffee,Vela,coffee,whole bean,blue,N113,32.15,0,0.5722440937245632
+194,Mosaic O114 silver stability running shoes,Mosaic,running_shoes,stability,silver,O114,36.65,1,0.4352374656241618
+195,Vela P115 silver ultrabook laptop,Vela,laptop,ultrabook,silver,P115,51.53,4,0.8533563885650075
+196,Atlas Q116 silver sunscreen skincare,Atlas,skincare,sunscreen,silver,Q116,22.32,2,0.5723368744135239
+197,Orion R117 blue mirrorless camera,Orion,camera,mirrorless,blue,R117,85.44,1,0.5365499551021378
+198,Aster S118 white stainless cookware,Aster,cookware,stainless,white,S118,84.98,0,0.7099751387199578
+199,Kite T119 silver travel backpack,Kite,backpack,travel,silver,T119,29.74,1,0.6049037530017248
+200,Kite A120 green over ear headphones,Kite,headphones,over ear,green,A120,40.27,3,0.6421507208104656
+201,Vela B121 red espresso coffee,Vela,coffee,espresso,red,B121,17.97,3,0.812254646831583
+202,Juniper C122 silver trail running shoes,Juniper,running_shoes,trail,silver,C122,39.79,2,0.37378047256703906
+203,Kite D123 red creator laptop,Kite,laptop,creator,red,D123,34.34,5,0.8474477749871655
+204,Aster E124 red serum skincare,Aster,skincare,serum,red,E124,32.16,0,0.719482782829985
+205,Vela F125 black compact camera,Vela,camera,compact,black,F125,26.41,5,0.7174479669571237
+206,Atlas G126 red ceramic cookware,Atlas,cookware,ceramic,red,G126,27.39,3,0.6027001087089758
+207,Aster H127 silver commuter backpack,Aster,backpack,commuter,silver,H127,27.03,5,0.49009092950155475
+208,Mosaic I128 white wireless headphones,Mosaic,headphones,wireless,white,I128,84.26,0,0.4250240263054562
+209,Mosaic J129 red decaf coffee,Mosaic,coffee,decaf,red,J129,36.34,4,0.6004324381656565
+210,Nimbus K130 white lightweight running shoes,Nimbus,running_shoes,lightweight,white,K130,32.14,0,0.7868455374228215
+211,Kite L131 silver gaming laptop,Kite,laptop,gaming,silver,L131,16.58,4,0.3972666148703934
+212,Juniper M132 white moisturizer skincare,Juniper,skincare,moisturizer,white,M132,41.39,3,0.5567117036644165
+213,Nimbus N133 red instant camera,Nimbus,camera,instant,red,N133,38.81,6,0.5058570729429741
+214,Aster O134 green nonstick cookware,Aster,cookware,nonstick,green,O134,17.63,2,0.98
+215,Orion P135 blue hiking backpack,Orion,backpack,hiking,blue,P135,14.4,4,0.5163815742347497
+216,Juniper Q136 black wireless headphones,Juniper,headphones,wireless,black,Q136,21.51,6,0.4988035723716206
+217,Orion R137 green espresso coffee,Orion,coffee,espresso,green,R137,39.02,4,0.5900219347775555
+218,Atlas S138 red stability running shoes,Atlas,running_shoes,stability,red,S138,41.75,3,0.44633942062334764
+219,Nimbus T139 white gaming laptop,Nimbus,laptop,gaming,white,T139,25.5,1,0.5906606733995545
+220,Atlas A140 black cleanser skincare,Atlas,skincare,cleanser,black,A140,29.26,3,0.5383045636245043
+221,Mosaic B141 black compact camera,Mosaic,camera,compact,black,B141,9.59,0,0.6983056725352417
+222,Orion C142 black nonstick cookware,Orion,cookware,nonstick,black,C142,60.06,4,0.5009810442760824
+223,Mosaic D143 black laptop backpack,Mosaic,backpack,laptop,black,D143,28.69,0,0.8173650733581418
+224,Kite E144 green noise cancelling headphones,Kite,headphones,noise cancelling,green,E144,7.88,2,0.6826871343478691
+225,Vela F145 black espresso coffee,Vela,coffee,espresso,black,F145,68.28,6,0.7131270256411354
+226,Mosaic G146 black cushioned running shoes,Mosaic,running_shoes,cushioned,black,G146,72.85,4,0.6100806299867182
+227,Nimbus H147 green creator laptop,Nimbus,laptop,creator,green,H147,28.67,3,0.5180783905881349
+228,Orion I148 white serum skincare,Orion,skincare,serum,white,I148,19.69,4,0.3626185204551453
+229,Orion J149 silver mirrorless camera,Orion,camera,mirrorless,silver,J149,53.67,2,0.6028015281977054
+230,Vela K150 black ceramic cookware,Vela,cookware,ceramic,black,K150,35.53,4,0.24254835655017576
+231,Atlas L151 red travel backpack,Atlas,backpack,travel,red,L151,27.79,1,0.2495336227251726
+232,Nimbus M152 green over ear headphones,Nimbus,headphones,over ear,green,M152,35.85,6,0.40998630564286476
+233,Aster N153 blue whole bean coffee,Aster,coffee,whole bean,blue,N153,51.82,4,0.7206220134375834
+234,Orion O154 red lightweight running shoes,Orion,running_shoes,lightweight,red,O154,58.95,4,0.4526039748505294
+235,Kite P155 black gaming laptop,Kite,laptop,gaming,black,P155,17.91,1,0.31598381757385685
+236,Atlas Q156 black cleanser skincare,Atlas,skincare,cleanser,black,Q156,28.19,5,0.7577218352331102
+237,Atlas R157 blue action camera,Atlas,camera,action,blue,R157,28.37,2,0.37977052447983894
+238,Orion S158 green stainless cookware,Orion,cookware,stainless,green,S158,6.77,2,0.7156305212445078
+240,Aster A160 red earbuds headphones,Aster,headphones,earbuds,red,A160,44.75,2,0.7379959004102065
+241,Orion B161 silver decaf coffee,Orion,coffee,decaf,silver,B161,23.19,2,0.615035478366212
+242,Juniper C162 black trail running shoes,Juniper,running_shoes,trail,black,C162,35.01,0,0.7041750804404011
+243,Aster D163 blue business laptop,Aster,laptop,business,blue,D163,32.45,1,0.5515200179331077
+244,Aster E164 red cleanser skincare,Aster,skincare,cleanser,red,E164,17.55,6,0.9070290530631732
+245,Mosaic F165 silver instant camera,Mosaic,camera,instant,silver,F165,18.19,0,0.6320912687026917
+246,Vela G166 green cast iron cookware,Vela,cookware,cast iron,green,G166,19.17,4,0.5850177157775835
+247,Vela H167 green commuter backpack,Vela,backpack,commuter,green,H167,30.61,0,0.7731120884875062
+248,Mosaic I168 black wireless headphones,Mosaic,headphones,wireless,black,I168,72.02,3,0.4930000190528509
+249,Atlas J169 red decaf coffee,Atlas,coffee,decaf,red,J169,99.3,6,0.6435111652491522
+250,Vela K170 silver cushioned running shoes,Vela,running_shoes,cushioned,silver,K170,40.81,4,0.637534120486298
+251,Mosaic L171 white creator laptop,Mosaic,laptop,creator,white,L171,17.81,0,0.6815076582907957
+252,Vela M172 green sunscreen skincare,Vela,skincare,sunscreen,green,M172,20.62,5,0.7350503909885171
+253,Mosaic N173 white action camera,Mosaic,camera,action,white,N173,21.56,4,0.8107867526647206
+254,Kite O174 white cast iron cookware,Kite,cookware,cast iron,white,O174,15.88,1,0.6642067481150618
+255,Juniper P175 silver laptop backpack,Juniper,backpack,laptop,silver,P175,23.56,4,0.6584600518587395
+256,Vela Q176 black over ear headphones,Vela,headphones,over ear,black,Q176,24.41,5,0.25743984827174515
+257,Orion R177 green dark roast coffee,Orion,coffee,dark roast,green,R177,63.93,3,0.6217890371508425
+258,Orion S178 red cushioned running shoes,Orion,running_shoes,cushioned,red,S178,35.91,5,0.583035639022461
+259,Aster T179 red ultrabook laptop,Aster,laptop,ultrabook,red,T179,126.97,0,0.4531356775215858
+260,Mosaic A180 black serum skincare,Mosaic,skincare,serum,black,A180,25.96,1,0.5957149426574317
+261,Juniper B181 black compact camera,Juniper,camera,compact,black,B181,16.47,4,0.8324985152852884
+262,Mosaic C182 white stainless cookware,Mosaic,cookware,stainless,white,C182,22.11,3,0.562451912110795
+263,Juniper D183 green travel backpack,Juniper,backpack,travel,green,D183,66.02,1,0.3539317385757808
+264,Vela E184 black noise cancelling headphones,Vela,headphones,noise cancelling,black,E184,29.46,1,0.604304831056996
+265,Orion F185 blue decaf coffee,Orion,coffee,decaf,blue,F185,29.53,2,0.5449622840179212
+266,Orion G186 white cushioned running shoes,Orion,running_shoes,cushioned,white,G186,21.41,0,0.5482316748306876
+267,Orion H187 red creator laptop,Orion,laptop,creator,red,H187,26.92,6,0.5298998761066246
+268,Kite I188 silver cleanser skincare,Kite,skincare,cleanser,silver,I188,39.37,3,0.3469815527096836
+269,Vela J189 white instant camera,Vela,camera,instant,white,J189,14.93,5,0.6134437337416027
+270,Mosaic K100 white cast iron cookware,Mosaic,cookware,cast iron,white,K100,14.85,1,0.45937050293686266
+271,Juniper L101 red hiking backpack,Juniper,backpack,hiking,red,L101,29.43,6,0.5875769345150361
+272,Mosaic M102 white over ear headphones,Mosaic,headphones,over ear,white,M102,23.61,6,0.29924732208252625
+273,Juniper N103 black decaf coffee,Juniper,coffee,decaf,black,N103,46.26,5,0.48700924169987425
+274,Juniper O104 silver stability running shoes,Juniper,running_shoes,stability,silver,O104,38.64,6,0.6230056168360698
+275,Juniper P105 blue business laptop,Juniper,laptop,business,blue,P105,20.81,2,0.559217068796775
+276,Orion Q106 white moisturizer skincare,Orion,skincare,moisturizer,white,Q106,43.44,2,0.807137657643917
+277,Aster R107 red action camera,Aster,camera,action,red,R107,63.7,4,0.6802977540912772
+278,Vela S108 green stainless cookware,Vela,cookware,stainless,green,S108,37.48,5,0.5928797084451831
+279,Juniper T109 black commuter backpack,Juniper,backpack,commuter,black,T109,22.64,3,0.25961053520392113
+280,Kite A110 red wireless headphones,Kite,headphones,wireless,red,A110,60.34,2,0.6513810344873846
+281,Kite B111 black espresso coffee,Kite,coffee,espresso,black,B111,72.78,1,0.36214838177704545
+283,Vela D113 green gaming laptop,Vela,laptop,gaming,green,D113,108.28,1,0.708680977895545
+284,Vela E114 black moisturizer skincare,Vela,skincare,moisturizer,black,E114,15.17,2,0.8269636279748782
+285,Aster F115 blue instant camera,Aster,camera,instant,blue,F115,38.15,0,0.6263320606029631
+286,Nimbus G116 red nonstick cookware,Nimbus,cookware,nonstick,red,G116,56.34,1,0.6506509702176904
+287,Orion H117 blue travel backpack,Orion,backpack,travel,blue,H117,10.13,0,0.6217574675164659
+288,Mosaic I118 blue noise cancelling headphones,Mosaic,headphones,noise cancelling,blue,I118,56.97,3,0.672134659247149
+289,Aster J119 black whole bean coffee,Aster,coffee,whole bean,black,J119,57.5,1,0.5231792768731013
+290,Kite K120 red lightweight running shoes,Kite,running_shoes,lightweight,red,K120,39.18,4,0.287538585312945
+291,Mosaic L121 red business laptop,Mosaic,laptop,business,red,L121,16.39,0,0.6688013993191934
+292,Atlas M122 blue cleanser skincare,Atlas,skincare,cleanser,blue,M122,29.77,0,0.6886496418308556
+293,Kite N123 white mirrorless camera,Kite,camera,mirrorless,white,N123,29.59,1,0.6464165248838678
+294,Vela O124 red stainless cookware,Vela,cookware,stainless,red,O124,10.78,1,0.6277969430439824
+295,Mosaic P125 white laptop backpack,Mosaic,backpack,laptop,white,P125,20.86,5,0.5734260969765836
+296,Kite Q126 silver wireless headphones,Kite,headphones,wireless,silver,Q126,53.96,1,0.7510021477262809
+297,Nimbus R127 silver espresso coffee,Nimbus,coffee,espresso,silver,R127,7.7,3,0.5527728955358634
+298,Nimbus S128 white stability running shoes,Nimbus,running_shoes,stability,white,S128,59.42,4,0.5429287023439265
+299,Juniper T129 green gaming laptop,Juniper,laptop,gaming,green,T129,30.19,1,0.8503996671525919
+300,Atlas A130 black serum skincare,Atlas,skincare,serum,black,A130,38.06,0,0.4769012559022967
+301,Nimbus B131 white compact camera,Nimbus,camera,compact,white,B131,52.29,1,0.5346021218467645
+302,Aster C132 white cast iron cookware,Aster,cookware,cast iron,white,C132,19.07,4,0.22827945649474785
+303,Mosaic D133 black hiking backpack,Mosaic,backpack,hiking,black,D133,33.03,5,0.9738853040412158
+304,Mosaic E134 blue over ear headphones,Mosaic,headphones,over ear,blue,E134,31.48,0,0.4900365696558183
+305,Vela F135 blue decaf coffee,Vela,coffee,decaf,blue,F135,61.34,1,0.685376662685471
+306,Mosaic G136 blue cushioned running shoes,Mosaic,running_shoes,cushioned,blue,G136,16.61,1,0.8340219015753504
+307,Orion H137 green business laptop,Orion,laptop,business,green,H137,23.9,0,0.956280989854855
+308,Mosaic I138 silver moisturizer skincare,Mosaic,skincare,moisturizer,silver,I138,22.88,0,0.6910670166060592
+309,Orion J139 black instant camera,Orion,camera,instant,black,J139,40.58,3,0.7669779007662472
+310,Vela K140 silver cast iron cookware,Vela,cookware,cast iron,silver,K140,41.12,5,0.6605491323396886
+311,Juniper L141 black travel backpack,Juniper,backpack,travel,black,L141,51.21,2,0.6495302809727059
+312,Aster M142 silver over ear headphones,Aster,headphones,over ear,silver,M142,35.47,0,0.3795494167090172
+313,Orion N143 white whole bean coffee,Orion,coffee,whole bean,white,N143,46.57,1,0.6699183598673393
+314,Vela O144 white lightweight running shoes,Vela,running_shoes,lightweight,white,O144,81.2,0,0.8102901275283255
+315,Mosaic P145 red ultrabook laptop,Mosaic,laptop,ultrabook,red,P145,22.87,3,0.5308325151048721
+316,Nimbus Q146 silver serum skincare,Nimbus,skincare,serum,silver,Q146,66.37,2,0.979665375247484
+317,Aster R147 red action camera,Aster,camera,action,red,R147,31.61,1,0.39681743402925707
+319,Atlas T149 blue laptop backpack,Atlas,backpack,laptop,blue,T149,38.12,3,0.8118102728994645
