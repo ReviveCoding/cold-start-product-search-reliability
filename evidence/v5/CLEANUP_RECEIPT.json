@@ -1,0 +1,271 @@
+{
+  "baseline_commit_before_evidence_archive": "107a420e7a12390761d671d1d4018510bf2cf7c0",
+  "candidate_worktree_removed_with_git_worktree_remove": true,
+  "downloads_project_helpers_removed": [
+    {
+      "bytes": 669,
+      "path": "C:\\Users\\bjw-0\\Downloads\\closeout_v5_parser_repair_decision.json",
+      "sha256": "0d7fa4b7207ca0b4e251114bdbbef082af1591982cbb0d79f10cb8935ac693eb"
+    },
+    {
+      "bytes": 39179,
+      "path": "C:\\Users\\bjw-0\\Downloads\\closeout_v5_reproducible_repo.before-parser-repair.ps1",
+      "sha256": "4cb381bd9ed0a0026eff35d2503513c62c48f054cb6b90302917cd16af5e1514"
+    },
+    {
+      "bytes": 40615,
+      "path": "C:\\Users\\bjw-0\\Downloads\\closeout_v5_reproducible_repo.ps1",
+      "sha256": "4b0c1519ec9cfea7fe1b10eafc6229e4e79991de3b37fe677bcb5bfebe9a1e55"
+    },
+    {
+      "bytes": 7213,
+      "path": "C:\\Users\\bjw-0\\Downloads\\repair_closeout_v5_powershell_parser_and_stage.ps1",
+      "sha256": "434c128e4676cefc6c2be083f92cfaf8554d371136dd18c6faaa0ff91fde37f8"
+    },
+    {
+      "bytes": 3634,
+      "path": "C:\\Users\\bjw-0\\Downloads\\repair_closeout_v5_powershell_parser_defects.py",
+      "sha256": "baba290a1fc3fbe37ea2d41fcec030b1dabb575c5d052095e90d87b93778d7b9"
+    },
+    {
+      "bytes": 5194,
+      "path": "C:\\Users\\bjw-0\\Downloads\\repair_stage_v5_empty_collection_and_run.ps1",
+      "sha256": "d6324525f7585b4b372dd57fb66a0164237eb935f3e87b7ca6d9b4ad5ebbb34b"
+    },
+    {
+      "bytes": 2074,
+      "path": "C:\\Users\\bjw-0\\Downloads\\repair_stage_v5_empty_collection_parameter.py",
+      "sha256": "45ccf2a2b8d5d6725ed7b5e0a56ae679f768e4befa30bb4c81f6c7f54fb98099"
+    },
+    {
+      "bytes": 2545,
+      "path": "C:\\Users\\bjw-0\\Downloads\\repair_stage_v5_row_list_binding.py",
+      "sha256": "6c3d4c04427f35426e3391703affbbf027be4e6eecfe5affb6888a8ba00ad015"
+    },
+    {
+      "bytes": 5622,
+      "path": "C:\\Users\\bjw-0\\Downloads\\repair_stage_v5_row_list_binding_and_run.ps1",
+      "sha256": "2ff145c4f4ef3486d24d40b261a0c1c54a9c9e7ce5e05f5d210772df13c3434e"
+    },
+    {
+      "bytes": 665,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_stage_v5_evidence_python_first.ps1",
+      "sha256": "bc59bb46d699db888a0c80662e5f0055864912ffd1464319bdfa17cdb704ca44"
+    },
+    {
+      "bytes": 33262,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5f_seed_disjoint_multihead_viability_audit.ps1",
+      "sha256": "89770b2260e9fca2d71e2fc3abfaaed313b26d204108a31cb985de4c7d0e50b8"
+    },
+    {
+      "bytes": 29112,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5g1_1_base_rank_semantics_diagnostic.ps1",
+      "sha256": "9ac54fb2bda14bbbc67fa9d61419c9f9e72f6da0ef066e8d687244dc6fec3c2b"
+    },
+    {
+      "bytes": 9857,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5g1_1_repair_ndarray_equality_and_retry.ps1",
+      "sha256": "3222a73ff5d96c1be2798f8f77bf7315e723739038fcd5f9455d55bd13be2d3c"
+    },
+    {
+      "bytes": 9395,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5g1_2_continue_after_verification_quote_fix.ps1",
+      "sha256": "658ed0555efb0449d158f5ea498c9d41481dc59e15a27a0a056b8c82032eaf79"
+    },
+    {
+      "bytes": 24597,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5g1_2_source_native_rank_recovery_repair_and_retry.ps1",
+      "sha256": "da0075a2363530670e0e28a4b6fe6d48d3aac5d14193955a6b5cbc4d67875bf6"
+    },
+    {
+      "bytes": 39838,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5g1_path_keyed_preaction_state_recovery.ps1",
+      "sha256": "0bd9b6cd47079d702b7e26be50f7202145beff189058073dad1bded4b66e107b"
+    },
+    {
+      "bytes": 23535,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5g_runtime_state_recoverability_audit.ps1",
+      "sha256": "3915dac2936ededf9d13283e5f736f3a8e504beb301af3288728486777329451"
+    },
+    {
+      "bytes": 21184,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5h_1_remove_global_constant_features_and_retry.ps1",
+      "sha256": "c001875bc063ebdb43c48af31cc96d812b59e79f0953ce4384cc2ab3278a3679"
+    },
+    {
+      "bytes": 60922,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5h_rich_preaction_multihead_viability_audit.ps1",
+      "sha256": "4a933fded0448cbb0daa0f24c057f0504862d0b486fea376af4e7bf4cafd34d5"
+    },
+    {
+      "bytes": 29676,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5i4_1_completion_contract_resolution.ps1",
+      "sha256": "f3ff8ad667b7210f1b0ed8315cb907ace48a7eecd4614d11a8f961a3b92b7253"
+    },
+    {
+      "bytes": 55611,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5i4_policy_delta_paired_contrast_stability_audit.ps1",
+      "sha256": "943c737f19eff05b62a3341730f44360ce60749f66900601e8e6284c73eabbe2"
+    },
+    {
+      "bytes": 37798,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5i_1_daily_pairing_grain_diagnostic.ps1",
+      "sha256": "0651ba80a762182a56096cd4b91bb823afe93be9d495b63500d2fc4ec549ffc3"
+    },
+    {
+      "bytes": 27235,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5i_2_daily_utility_metric_discovery.ps1",
+      "sha256": "fd0ad7434fc38b89d6b3ecf2477b305f55465db135037add0ea2823564b006eb"
+    },
+    {
+      "bytes": 30699,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5i_3_policy_delta_utility_reconstruction.ps1",
+      "sha256": "97372ebe632820210314634aa1d87fdd4f4a4cf3cc354dfb58b7bcf5ca3cd011"
+    },
+    {
+      "bytes": 54458,
+      "path": "C:\\Users\\bjw-0\\Downloads\\run_v5i_paired_action_contrast_stability_audit.ps1",
+      "sha256": "e4298aa7f1453f008b628746942d0efd69c9625ca51e89f3915dbc222c04a642"
+    },
+    {
+      "bytes": 518,
+      "path": "C:\\Users\\bjw-0\\Downloads\\stage_v5_empty_collection_parameter_repair.json",
+      "sha256": "51b06de54e06b10683bba71ebfe77a8354cc87b45027a014e194594e3853f15a"
+    },
+    {
+      "bytes": 26002,
+      "path": "C:\\Users\\bjw-0\\Downloads\\stage_v5_evidence_into_repo_v2.before-empty-list-repair.ps1",
+      "sha256": "46e02fc6bf65f3b15b51341a45f0ed24c052a46b0b40f4d4bbb4d74f0200feff"
+    },
+    {
+      "bytes": 27042,
+      "path": "C:\\Users\\bjw-0\\Downloads\\stage_v5_evidence_into_repo_v2.before-row-list-binding-repair.ps1",
+      "sha256": "710e121c6cbf1f9b4f169b9774ca21d64f7abb285953c0bf16e40bf12bbf523e"
+    },
+    {
+      "bytes": 27042,
+      "path": "C:\\Users\\bjw-0\\Downloads\\stage_v5_evidence_into_repo_v2.ps1",
+      "sha256": "710e121c6cbf1f9b4f169b9774ca21d64f7abb285953c0bf16e40bf12bbf523e"
+    },
+    {
+      "bytes": 23735,
+      "path": "C:\\Users\\bjw-0\\Downloads\\stage_v5_evidence_python_first.py",
+      "sha256": "5188068972a1bd8715ba7dec4d9df3a7b5a1548673e2aa19bd10ececaa95b8c9"
+    }
+  ],
+  "evidence_archive_commit": "4b535bf29eddcb97fa043cee055fabbccfda2b43",
+  "evidence_manifest_sha256": "c806645c46c9326a054e2d2d1000075650edb66b81aa065ed62d65cb77c995e2",
+  "evidence_root": "C:\\Users\\bjw-0\\Downloads\\Amazon09_cold-start-product-search-reliability\\evidence\\v5",
+  "external_source_row_count_verified_before_deletion": 481,
+  "external_v5_roots_removed": [
+    {
+      "bytes": 37569,
+      "file_count": 5,
+      "path": "C:\\p9b\\p9-v5-direct-action-effect-integrity-audit-20260701T004216Z"
+    },
+    {
+      "bytes": 542218,
+      "file_count": 13,
+      "path": "C:\\p9b\\p9-v5-direct-action-effect-pilot-20260701T003322Z"
+    },
+    {
+      "bytes": 58967,
+      "file_count": 4,
+      "path": "C:\\p9b\\p9-v5-direct-utility-interface-preflight-20260701T002632Z"
+    },
+    {
+      "bytes": 7722269,
+      "file_count": 29,
+      "path": "C:\\p9b\\p9-v5-final-training-action-effect-corpus-20260701T004632Z"
+    },
+    {
+      "bytes": 60529,
+      "file_count": 9,
+      "path": "C:\\p9b\\p9-v5d-completion-corpus-integrity-audit-20260701T011543Z"
+    },
+    {
+      "bytes": 31237,
+      "file_count": 8,
+      "path": "C:\\p9b\\p9-v5e-label-feasibility-feature-provenance-audit-20260701T024729Z"
+    },
+    {
+      "bytes": 244066,
+      "file_count": 8,
+      "path": "C:\\p9b\\p9-v5f-seed-disjoint-multihead-viability-20260701T025441Z"
+    },
+    {
+      "bytes": 203838,
+      "file_count": 4,
+      "path": "C:\\p9b\\p9-v5g-runtime-state-recoverability-audit-20260701T030018Z"
+    },
+    {
+      "bytes": 1124746,
+      "file_count": 11,
+      "path": "C:\\p9b\\p9-v5g1-path-keyed-preaction-state-recovery-20260701T030602Z"
+    },
+    {
+      "bytes": 199720,
+      "file_count": 10,
+      "path": "C:\\p9b\\p9-v5g1-rank-contract-diagnostic-20260701T031120Z"
+    },
+    {
+      "bytes": 517600,
+      "file_count": 16,
+      "path": "C:\\p9b\\p9-v5h-rich-preaction-multihead-viability-20260701T033000Z"
+    },
+    {
+      "bytes": 46205,
+      "file_count": 1,
+      "path": "C:\\p9b\\p9-v5i-paired-action-contrast-stability-audit-20260701T034559Z"
+    },
+    {
+      "bytes": 29403,
+      "file_count": 1,
+      "path": "C:\\p9b\\p9-v5i1-daily-pairing-grain-diagnostic-20260701T035157Z"
+    },
+    {
+      "bytes": 51941,
+      "file_count": 6,
+      "path": "C:\\p9b\\p9-v5i2-daily-utility-metric-discovery-20260701T040235Z"
+    },
+    {
+      "bytes": 4723152,
+      "file_count": 7,
+      "path": "C:\\p9b\\p9-v5i3-policy-delta-utility-reconstruction-20260701T042102Z"
+    },
+    {
+      "bytes": 77124,
+      "file_count": 3,
+      "path": "C:\\p9b\\p9-v5i4-completion-contract-resolution-20260701T044215Z"
+    },
+    {
+      "bytes": 734743,
+      "file_count": 10,
+      "path": "C:\\p9b\\p9-v5i4-policy-delta-paired-contrast-stability-20260701T043631Z"
+    }
+  ],
+  "final_decision": {
+    "calibration_seeds_executed": [],
+    "confirmation_seeds_executed": [],
+    "final_serving_model_trained": false,
+    "no_promotion_serving_policy_authorized": true,
+    "source_baseline_retained": true,
+    "threshold_selected": false,
+    "v5j_paired_contrast_predictive_model_viability": "NOT_JUSTIFIED"
+  },
+  "finalized_utc": "2026-07-01T05:14:06.248385+00:00",
+  "finalizer_helpers_to_remove_manually_after_success": [
+    "C:\\Users\\bjw-0\\Downloads\\finalize_v5_reproducible_repo.py",
+    "C:\\Users\\bjw-0\\Downloads\\run_finalize_v5_reproducible_repo.ps1"
+  ],
+  "github_warning_file_paths_over_50_mib": [],
+  "intentionally_retained_external_dependency": "C:\\p9b\\p9-ranking-validation-20260629T194830\\venv",
+  "max_package_file_bytes": 7373562,
+  "next_step": "Use the repository-contained evidence/v5 package for final closeout documentation. Do not run V5-J, choose a serving threshold, or execute calibration/confirmation.",
+  "package_file_count_verified_before_deletion": 486,
+  "package_manifest_sha256": "2e2c955772b45e32a756f66018aa8ec707b7ad58a2aa68e92a5ef5ab81a568fe",
+  "project": "Amazon09_cold-start-product-search-reliability",
+  "source_file_count_verified_before_deletion": 483,
+  "source_manifest_sha256": "7ad8d7fb75b8f23a6cf2584ea96ac98759eeaf8ec05629f5e803fec8eb8dfd4e",
+  "status": "V5_REPRODUCIBLE_REPOSITORY_FINALIZED"
+}
