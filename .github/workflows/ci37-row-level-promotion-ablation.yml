@@ -1,0 +1,116 @@
+name: ci37-row-level-promotion-ablation
+
+on:
+  push:
+    branches:
+      - ci37-row-level-promotion-ablation-forensics
+    paths:
+      - ".github/workflows/ci37-row-level-promotion-ablation.yml"
+      - "scripts/forensics/ci37_row_level_promotion_ablation_hosted.py"
+  workflow_dispatch:
+    inputs:
+      artifact_run_id:
+        description: Canonical smoke-artifact workflow run ID
+        required: false
+        default: "28601964150"
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  ci37_row_level_promotion_ablation_ubuntu_py311:
+    name: CI37 row-level promotion ablation, Ubuntu Python 3.11
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            constraints/validated.txt
+
+      - name: Install package and integration dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install -c constraints/validated.txt -e ".[dev]"
+          python -m pip check
+
+      - name: Download and verify canonical smoke artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUESTED_ARTIFACT_RUN_ID: ${{ inputs.artifact_run_id }}
+        run: |
+          set -euo pipefail
+          artifact_run_id="${REQUESTED_ARTIFACT_RUN_ID:-28601964150}"
+
+          case "$artifact_run_id" in
+            (""|*[!0-9]*)
+              echo "artifact run ID must be a non-empty decimal integer: $artifact_run_id" >&2
+              exit 1
+              ;;
+          esac
+
+          rm -rf artifacts/ci37
+          mkdir -p artifacts/ci37
+
+          gh run download "$artifact_run_id" \
+            --repo "${{ github.repository }}" \
+            --name canonical-smoke-artifact \
+            --dir artifacts/ci37
+
+          test -f artifacts/ci37/manifest.json
+
+          ARTIFACT_RUN_ID="$artifact_run_id" python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          manifest = json.loads(
+              Path("artifacts/ci37/manifest.json").read_text(encoding="utf-8")
+          )
+          expected = "1f3e54d78060eb9d745c9480c88c22ba19d1ced2"
+          actual = str(manifest.get("git_commit", ""))
+          print(
+              json.dumps(
+                  {
+                      "artifact_run_id": os.environ["ARTIFACT_RUN_ID"],
+                      "expected_git_commit": expected,
+                      "downloaded_git_commit": actual,
+                  },
+                  sort_keys=True,
+              )
+          )
+          if actual != expected:
+              raise SystemExit(
+                  "Downloaded artifact provenance mismatch: "
+                  f"expected={expected} actual={actual}"
+              )
+          PY
+
+      - name: Run read-only row-level ablation
+        run: |
+          set -euo pipefail
+          python scripts/forensics/ci37_row_level_promotion_ablation_hosted.py \
+            --repo-root . \
+            --artifact-root artifacts/ci37 \
+            --output-root forensics
+
+      - name: Upload CI37 forensic evidence
+        if: always() && hashFiles('forensics/**') != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ci37-row-level-promotion-ablation
+          path: forensics
+          if-no-files-found: error
+          retention-days: 30
