@@ -561,6 +561,7 @@ def _gate_config_from_manifest(config: dict) -> GateConfig:
         promotion_window=int(qcfg["promotion_window"]),
         max_promotions_per_query=int(qcfg["max_promotions_per_query"]),
         promotion_mode=str(qcfg.get("promotion_mode", "in_window")),
+        boost_allocation_mode=str(qcfg.get("boost_allocation_mode", "fixed_cap")),
     )
 
 

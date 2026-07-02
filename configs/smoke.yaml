@@ -32,6 +32,7 @@ qrsbt:
   promotion_window: 5
   max_promotions_per_query: 1
   promotion_mode: boundary_entry_only
+  boost_allocation_mode: minimum_entry
 simulation:
   days: 10
   traffic_per_day: 120

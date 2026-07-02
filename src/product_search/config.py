@@ -176,7 +176,7 @@ def validate_config(raw: dict[str, Any]) -> None:
     qrsbt = raw["qrsbt"]
     _reject_unknown(
         qrsbt,
-        _SECTION_KEYS["qrsbt"] | {"promotion_mode"},
+        _SECTION_KEYS["qrsbt"] | {"promotion_mode", "boost_allocation_mode"},
         section="qrsbt",
     )
     for key in (
@@ -199,6 +199,13 @@ def validate_config(raw: dict[str, Any]) -> None:
     promotion_mode = str(qrsbt.get("promotion_mode", "in_window"))
     if promotion_mode not in {"in_window", "boundary_entry_only"}:
         raise ValueError("qrsbt.promotion_mode must be one of: in_window, boundary_entry_only")
+    boost_allocation_mode = str(qrsbt.get("boost_allocation_mode", "fixed_cap"))
+    if boost_allocation_mode not in {"fixed_cap", "minimum_entry"}:
+        raise ValueError("qrsbt.boost_allocation_mode must be one of: fixed_cap, minimum_entry")
+    if boost_allocation_mode == "minimum_entry" and promotion_mode != "boundary_entry_only":
+        raise ValueError("qrsbt.minimum_entry requires promotion_mode=boundary_entry_only")
+    if boost_allocation_mode == "minimum_entry" and int(qrsbt["max_promotions_per_query"]) != 1:
+        raise ValueError("qrsbt.minimum_entry requires max_promotions_per_query=1")
 
     ranking = raw["ranking"]
     _reject_unknown(ranking, _SECTION_KEYS["ranking"], section="ranking")

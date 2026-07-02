@@ -20,6 +20,7 @@ class GateConfig:
     promotion_window: int = 5
     max_promotions_per_query: int = 1
     promotion_mode: str = "in_window"
+    boost_allocation_mode: str = "fixed_cap"
 
 
 def _percentile_by_query(frame: pd.DataFrame, column: str) -> pd.Series:
@@ -114,6 +115,62 @@ def _canonical_descending_rank(
     )
 
 
+def _minimum_entry_boosts(
+    frame: pd.DataFrame,
+    selected: pd.Series,
+    proposed_boost: np.ndarray,
+    config: GateConfig,
+) -> np.ndarray:
+    applied = np.zeros(len(frame), dtype=float)
+    proposed = pd.Series(proposed_boost, index=frame.index, dtype=float)
+
+    for index in frame.index[selected]:
+        query = frame.loc[frame["query_id"].eq(frame.at[index, "query_id"])].copy()
+        rivals = query.drop(index=index)
+        if len(rivals) < config.top_k:
+            continue
+
+        boundary = rivals.sort_values(
+            ["base_score", "product_id"],
+            ascending=[False, True],
+            kind="mergesort",
+        ).iloc[config.top_k - 1]
+        boundary_score = float(boundary["base_score"])
+        candidate_score = float(frame.at[index, "base_score"])
+        required = max(0.0, boundary_score - candidate_score)
+
+        trial = query.assign(_minimum_entry_score=query["base_score"])
+        trial.loc[index, "_minimum_entry_score"] = candidate_score + required
+        rank = int(_canonical_descending_rank(trial, "_minimum_entry_score").loc[index])
+        if rank > config.top_k:
+            # Advance the candidate final score, rather than only the
+            # boost delta, until the deterministic score/product-id
+            # ordering enters top-K.
+            target_score = float(np.nextafter(boundary_score, np.inf))
+            for _ in range(16):
+                required = max(0.0, target_score - candidate_score)
+                trial.loc[index, "_minimum_entry_score"] = candidate_score + required
+                rank = int(
+                    _canonical_descending_rank(
+                        trial,
+                        "_minimum_entry_score",
+                    ).loc[index]
+                )
+                if rank <= config.top_k:
+                    break
+                target_score = float(np.nextafter(target_score, np.inf))
+            else:
+                raise RuntimeError("Minimum-entry final-score tie-break did not enter top-K.")
+
+        if required > float(proposed.loc[index]) + 1e-12:
+            # Preserve the legacy boundary-entry rejection path. The later
+            # tentative-rank check rejects this candidate without a boost.
+            continue
+        applied[frame.index.get_loc(index)] = required
+
+    return applied
+
+
 def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd.DataFrame:
     required = {
         "dense_score",
@@ -132,6 +189,15 @@ def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd
         raise ValueError(f"Coverage-overreach gate missing columns: {missing}")
     if config.promotion_mode not in {"in_window", "boundary_entry_only"}:
         raise ValueError("promotion_mode must be one of: in_window, boundary_entry_only")
+    if config.boost_allocation_mode not in {"fixed_cap", "minimum_entry"}:
+        raise ValueError("boost_allocation_mode must be one of: fixed_cap, minimum_entry")
+    if (
+        config.boost_allocation_mode == "minimum_entry"
+        and config.promotion_mode != "boundary_entry_only"
+    ):
+        raise ValueError("minimum_entry boost_allocation_mode requires boundary_entry_only")
+    if config.boost_allocation_mode == "minimum_entry" and config.max_promotions_per_query != 1:
+        raise ValueError("minimum_entry boost_allocation_mode requires max_promotions_per_query=1")
 
     result = compose_base_score(frame, config)
     cold = result["zero_history"] == 1
@@ -190,10 +256,18 @@ def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd
         selected.loc[chosen_index] = True
 
     boundary_entry_rejected = pd.Series(False, index=result.index)
+    applied_boost = proposed_boost
+    if config.boost_allocation_mode == "minimum_entry":
+        applied_boost = _minimum_entry_boosts(
+            result,
+            selected,
+            proposed_boost,
+            config,
+        )
     if config.promotion_mode == "boundary_entry_only":
         tentative_score = result["base_score"] + np.where(
             selected,
-            proposed_boost,
+            applied_boost,
             0.0,
         )
         tentative_rank = _canonical_descending_rank(
@@ -206,7 +280,7 @@ def apply_coverage_overreach_gate(frame: pd.DataFrame, config: GateConfig) -> pd
         selected = selected & ~boundary_entry_rejected
 
     result["boundary_entry_rejected"] = boundary_entry_rejected
-    result["qrsbt_boost"] = np.where(selected, proposed_boost, 0.0)
+    result["qrsbt_boost"] = np.where(selected, applied_boost, 0.0)
 
     blocked = cold & (~compatibility_ok | ~relevance_risk_ok | ~semantic_ok)
     promotion_budgeted = candidate_for_promotion & ~selected
