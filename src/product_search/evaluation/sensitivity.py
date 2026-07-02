@@ -24,6 +24,8 @@ DEFAULT_BOOSTS = (
     0.015,
 )
 DEFAULT_DYNAMIC_FINALISTS = (
+    0.01125,
+    0.012,
     0.0125,
     0.01275,
     0.013,
@@ -101,6 +103,11 @@ def evaluate_policy_sensitivity(
                 - static["irrelevant_exposure_base"],
                 "cold_relevant_exposure_delta": static["cold_relevant_exposure_final"]
                 - static["cold_relevant_exposure_base"],
+                "dynamic_irrelevant_exposure_delta": (
+                    dynamic["qrsbt_irrelevant_exposure"] - dynamic["base_irrelevant_exposure"]
+                    if dynamic is not None
+                    else float("nan")
+                ),
                 "mean_scenario_replication_utility_delta": (
                     dynamic["mean_scenario_replication_utility_delta"]
                     if dynamic is not None
@@ -124,6 +131,7 @@ def evaluate_policy_sensitivity(
         raise RuntimeError("Configured qrsbt.max_boost is not present in the sensitivity grid")
     selected_metrics = selected_rows.iloc[0].to_dict()
     dynamic_keys = (
+        "dynamic_irrelevant_exposure_delta",
         "mean_scenario_replication_utility_delta",
         "worst_scenario_utility_delta",
         "p10_scenario_replication_utility_delta",
@@ -139,6 +147,8 @@ def evaluate_policy_sensitivity(
         and float(selected_metrics["warm_ndcg_delta"]) >= -float(release["max_warm_ndcg_drop"])
         and float(selected_metrics["irrelevant_exposure_delta"])
         <= float(release["max_irrelevant_exposure_increase"])
+        and float(selected_metrics["dynamic_irrelevant_exposure_delta"])
+        <= float(release["max_dynamic_irrelevant_exposure_increase"])
         and float(selected_metrics["worst_scenario_utility_delta"])
         >= float(release["min_worst_scenario_utility_delta"])
         and float(selected_metrics["p10_scenario_replication_utility_delta"])

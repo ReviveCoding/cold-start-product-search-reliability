@@ -26,6 +26,7 @@ def _config() -> dict:
             "min_cold_ndcg_lift": 0.005,
             "min_cold_ndcg_lift_ci_low": 0.0,
             "max_warm_ndcg_drop": 0.01,
+            "max_dynamic_irrelevant_exposure_increase": 0.0,
             "max_irrelevant_exposure_increase": 0.0,
             "min_worst_scenario_utility_delta": 0.0,
             "min_p10_scenario_replication_utility_delta": 0.0,
@@ -74,6 +75,8 @@ def test_policy_sensitivity_evaluates_finalists_and_selected_gate(monkeypatch):
         del candidate, kwargs
         return SimpleNamespace(
             summary={
+                "base_irrelevant_exposure": 10.0,
+                "qrsbt_irrelevant_exposure": 10.0,
                 "mean_scenario_replication_utility_delta": 3.0,
                 "worst_scenario_utility_delta": 2.0,
                 "p10_scenario_replication_utility_delta": 1.0,
