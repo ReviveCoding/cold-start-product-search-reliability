@@ -20,7 +20,7 @@ permissions:
   actions: read
 
 jobs:
-  ci36-gate-only-credit-ubuntu-py3.11:
+  ci36_gate_only_credit_ubuntu_py311:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
