@@ -1,6 +1,12 @@
 name: ci35-promotion-family-ablation
 
 on:
+  push:
+    branches:
+      - ci35-promotion-family-forensics
+    paths:
+      - ".github/workflows/ci35-promotion-family-ablation.yml"
+      - "scripts/forensics/ci35_promotion_family_ablation_hosted.py"
   workflow_dispatch:
     inputs:
       artifact_run_id:
