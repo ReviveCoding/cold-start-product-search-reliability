@@ -28,6 +28,7 @@ jobs:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
@@ -46,15 +47,51 @@ jobs:
       - name: Download CI35 canonical artifact
         env:
           GH_TOKEN: ${{ github.token }}
+          REQUESTED_ARTIFACT_RUN_ID: ${{ inputs.artifact_run_id }}
         run: |
+          set -euo pipefail
+          artifact_run_id="${REQUESTED_ARTIFACT_RUN_ID:-28601964150}"
+
+          case "$artifact_run_id" in
+            (""|*[!0-9]*)
+              echo "artifact run ID must be a non-empty decimal integer: $artifact_run_id" >&2
+              exit 1
+              ;;
+          esac
+
           rm -rf artifacts/ci35
           mkdir -p artifacts/ci35
-          gh run download "${{ inputs.artifact_run_id }}" \
+          gh run download "$artifact_run_id" \
             --repo "${{ github.repository }}" \
             --name canonical-smoke-artifact \
             --dir artifacts/ci35
           test -f artifacts/ci35/manifest.json
-          cat artifacts/ci35/manifest.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          manifest = json.loads(
+              Path("artifacts/ci35/manifest.json").read_text(encoding="utf-8")
+          )
+          expected = "1f3e54d78060eb9d745c9480c88c22ba19d1ced2"
+          actual = str(manifest.get("git_commit", ""))
+          print(
+              json.dumps(
+                  {
+                      "artifact_run_id": "28601964150",
+                      "expected_git_commit": expected,
+                      "downloaded_git_commit": actual,
+                  },
+                  sort_keys=True,
+              )
+          )
+          if actual != expected:
+              raise SystemExit(
+                  "Downloaded artifact provenance mismatch: "
+                  f"expected={expected} actual={actual}"
+              )
+          PY
 
       - name: Run read-only family-ablation screen
         run: |
